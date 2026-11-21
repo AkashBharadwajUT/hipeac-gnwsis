@@ -1,4 +1,21 @@
-modules/__pycache__/
-output/
+# Vitis HLS synthesis artifacts (gigabytes)
+kv260_runs/
+
+# Regenerable CSVs
+CSVS/
+data/CSVS/
+
+# Generated output files
+SourceCodeFeatureVectors.csv
 GNΩSIS.csv
-.log
+
+# Logs and personal files
+*.log
+server_facts*.sh
+server_facts*.txt
+
+# Python
+__pycache__/
+*.pyc
+gnwsis_env/
+*.egg-info/
