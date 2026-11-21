@@ -1,0 +1,7 @@
+Device,Clock_Period_nsec,Total,Synthesizable,Not_Synthesizable,Feasible,Not_Feasible
+xczu7ev-ffvc1156-2-e,10.0,24,24,0,24,0
+xczu7ev-ffvc1156-2-e,5.0,24,24,0,24,0
+xczu7ev-ffvc1156-2-e,3.33,24,24,0,24,0
+xcu200-fsgd2104-2-e,10.0,24,24,0,24,0
+xcu200-fsgd2104-2-e,5.0,24,24,0,24,0
+xcu200-fsgd2104-2-e,3.33,24,24,0,24,0

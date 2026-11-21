@@ -1,0 +1,2 @@
+App,Run_ID,Version_ZCU104,Latency_ZCU104_ms,BRAM_ZCU104_pct,DSP_ZCU104_pct,FF_ZCU104_pct,LUT_ZCU104_pct,Pragmas,Synth_OK,Synth_Time_sec,Latency_KV260_ms,Cycles_KV260,BRAM_KV260_pct,DSP_KV260_pct,FF_KV260_pct,LUT_KV260_pct
+rodinia-knn-0-baseline,0,workload_4.cpp,20.97183,1,1,1,1,"{'L1': '#pragma HLS pipeline', 'L2': '#pragma HLS unroll'}",True,38.5,20.972,2097187,0.0,0.56,0.98,2.39
