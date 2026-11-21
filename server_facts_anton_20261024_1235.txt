@@ -1,0 +1,145 @@
+
+==================== 1. Host and OS ====================
+$ date -Is
+  2026-10-24T12:35:19+02:00
+$ hostname -f
+  anton.ewi.utwente.nl
+$ uname -srm
+  Linux 4.18.0-553.174.1.el8_10.x86_64 x86_64
+$ grep -E '^(PRETTY_NAME|VERSION_ID)=' /etc/os-release
+  VERSION_ID="8.10"
+  PRETTY_NAME="Rocky Linux 8.10 (Green Obsidian)"
+$ whoami; id
+  s3579816
+  uid=23579816(s3579816) gid=20035(students m-emsys) groups=20035(students m-emsys),20000(students),190000(linuxclusters-eemcs-caes-default)
+
+==================== 2. CPU ====================
+$ nproc
+  64
+$ lscpu | grep -E 'Model name|^CPU\(s\)|Thread|Core|Socket|NUMA node\(s\)|MHz'
+  CPU(s):              64
+  Thread(s) per core:  2
+  Core(s) per socket:  16
+  Socket(s):           2
+  NUMA node(s):        2
+  Model name:          Intel(R) Xeon(R) Silver 4216 CPU @ 2.10GHz
+  CPU MHz:             2100.000
+
+==================== 3. Memory ====================
+$ free -g
+                total        used        free      shared  buff/cache   available
+  Mem:            251          36          40           0         174         212
+  Swap:            15           0          15
+$ grep -E 'MemTotal|MemAvailable|SwapTotal' /proc/meminfo
+  MemTotal:       263208940 kB
+  MemAvailable:   222468328 kB
+  SwapTotal:      16777212 kB
+  -> Suggested parallel HLS jobs at 8 GB each, leaving 16 GB free: 29 (refine after measuring peak RAM in the smoke test)
+
+==================== 4. Load and other users (is the server shared?) ====================
+$ uptime
+   12:35:20 up 4 days, 20:27,  2 users,  load average: 4.56, 4.69, 4.82
+$ who | awk '{print $1}' | sort | uniq -c
+        1 bundast
+        1 s3710637
+$ ps -eo user,pcpu,pmem,comm --sort=-pcpu | head -15
+  USER     %CPU %MEM COMMAND
+  alachio+  248 10.6 python
+  beltsp   98.8  0.6 python
+  beltsp   22.5  0.4 pt_data_worker
+  beltsp   22.4  0.4 pt_data_worker
+  beltsp   19.3  0.4 pt_data_worker
+  sohails   4.4  0.0 htop
+  sohails   3.4  0.0 x2goagent
+  beltsp    3.2  0.2 MainThread
+  s3782581  2.0  0.1 MainThread
+  s3782581  1.8  0.0 code-e646868227
+  s3579816  1.5  0.1 MainThread
+  beltsp    1.1  0.1 claude
+  s3579816  1.0  0.0 MainThread
+  s3782581  1.0  0.0 MainThread
+
+==================== 5. Disk and quotas ====================
+$ df -h "$HOME" /tmp  2>/dev/null
+  Filesystem                                          Size  Used Avail Use% Mounted on
+  caes-storage1.ewi.utwente.nl:/savage/home/s3579816   10G  6.6G  3.5G  66% /home/s3579816
+  /dev/mapper/vg_os-lv_root                            98G   52G   41G  56% /
+$ df -h /local
+  Filesystem                  Size  Used Avail Use% Mounted on
+  /dev/mapper/vg_os-lv_local  324G  271G   37G  89% /local
+$ quota -s
+$ ulimit -a
+  core file size          (blocks, -c) 0
+  data seg size           (kbytes, -d) unlimited
+  scheduling priority             (-e) 0
+  file size               (blocks, -f) unlimited
+  pending signals                 (-i) 1027992
+  max locked memory       (kbytes, -l) 64
+  max memory size         (kbytes, -m) unlimited
+  open files                      (-n) 262144
+  pipe size            (512 bytes, -p) 8
+  POSIX message queues     (bytes, -q) 819200
+  real-time priority              (-r) 0
+  stack size              (kbytes, -s) 8192
+  cpu time               (seconds, -t) unlimited
+  max user processes              (-u) 1027992
+  virtual memory          (kbytes, -v) unlimited
+  file locks                      (-x) unlimited
+
+==================== 6. Job scheduler ====================
+  found: sbatch -> /usr/bin/sbatch
+  found: squeue -> /usr/bin/squeue
+  found: sinfo -> /usr/bin/sinfo
+$ sinfo -o '%P %a %l %D %c %m'
+  PARTITION AVAIL TIMELIMIT NODES CPUS MEMORY
+  socdesign* up 2:00 1 48 256000
+  test up 2:00 2 128 512000
+$ squeue -u "$USER"
+               JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+$ sacctmgr show assoc user=$USER format=account,partition,maxjobs,maxwall,grptres -P
+  You are not running a supported accounting_storage plugin
+  Only 'accounting_storage/slurmdbd' is supported.
+
+==================== 7. Containers and Python ====================
+  docker: not found
+$ podman --version
+  podman version 4.9.4-rhel
+$ apptainer --version
+  apptainer version 1.5.4-1.el8
+$ singularity --version
+  apptainer version 1.5.4-1.el8
+  conda: not found
+  mamba: not found
+  micromamba: not found
+$ python3 --version
+  Python 3.11.13
+$ python3.6 --version
+  Python 3.6.8
+
+==================== 8. AMD/Xilinx tools ====================
+  env: LM_LICENSE_FILE_modshare=27003@mentor.license.utwente.nl:1:27009@matlab.license.utwente.nl:1:27020@altera.license.utwente.nl:1
+  env: LM_LICENSE_FILE=27009@matlab.license.utwente.nl:27003@mentor.license.utwente.nl:27020@altera.license.utwente.nl
+  root: /opt/xilinx
+    aiebu
+    firmware
+    platforms
+    xrm
+    xrt
+  no vivado or vitis_hls found; set XILINX_ROOTS or ask the admins where the tools live
+
+==================== 9. Device support per Vivado version (parts we need) ====================
+  (Vitis HLS uses the same device files as the Vivado of the same version.)
+
+==================== 10. Licences ====================
+  no lmutil or licence server variable; licence check needs --license-check
+  skipped tiny synthesis per part (run with --license-check)
+
+==================== 11. KV260 access ====================
+$ lsusb | grep -iE 'xilinx|future|digilent|ftdi' || echo 'no JTAG cable on this host'
+  no JTAG cable on this host
+$ ls /dev/ttyUSB* 2>/dev/null || echo 'no /dev/ttyUSB* serial ports'
+  no /dev/ttyUSB* serial ports
+  skipped JTAG scan (run with --board); for a networked KV260 ask for its hostname and ssh/PYNQ access
+
+==================== Done ====================
+  report: server_facts_anton_20261024_1235.txt

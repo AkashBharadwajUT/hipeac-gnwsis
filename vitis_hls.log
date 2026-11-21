@@ -1,0 +1,166 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
+  **** SW Build 3779808 on Feb 17 2023
+  **** IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+source /remote/labware/packages/xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 's3579816' on host 'anton.ewi.utwente.nl' (Linux_x86_64 version 4.18.0-553.184.1.el8_10.x86_64) on Mon Nov 16 13:53:19 CET 2026
+INFO: [HLS 200-10] On os "Rocky Linux release 8.10 (Green Obsidian)"
+INFO: [HLS 200-10] In directory '/home/s3579816/HiPEAC/GNWSIS/GNWSIS'
+Sourcing Tcl script '/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008.tcl'
+INFO: [HLS 200-1510] Running: source /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008.tcl
+INFO: [HLS 200-1510] Running: open_project -reset proj_0008 
+INFO: [HLS 200-10] Creating and opening project '/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/proj_0008'.
+INFO: [HLS 200-1510] Running: set_top gemm 
+INFO: [HLS 200-1510] Running: add_files /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c -cflags -I/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008 
+INFO: [HLS 200-10] Adding design file '/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c' to the project
+INFO: [HLS 200-1510] Running: open_solution sol1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution '/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/proj_0008/sol1'.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+Running Dispatch Server on port: 39657
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.03 seconds. Elapsed time: 10.09 seconds; current allocated memory: 1.197 GB.
+INFO: [HLS 200-10] Analyzing design file '/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.44 seconds. CPU system time: 0.85 seconds. Elapsed time: 8.28 seconds; current allocated memory: 1.199 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'outer' (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:8:11) in function 'gemm' partially with a factor of 2 (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:3:0)
+INFO: [HLS 214-188] Unrolling loop 'middle' (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:10:12) in function 'gemm' partially with a factor of 4 (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:3:0)
+INFO: [HLS 214-186] Unrolling loop 'inner' (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:14:11) in function 'gemm' completely with a factor of 64 (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:3:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 7.21 seconds. CPU system time: 0.85 seconds. Elapsed time: 8.49 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 1.200 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.32 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 1.208 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1.208 GB.
+INFO: [XFORM 203-510] Pipelining loop 'middle' (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:13) in function 'gemm' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'middle' (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:13) in function 'gemm' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.41 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.49 seconds; current allocated memory: 1.253 GB.
+WARNING: [HLS 200-960] Cannot flatten loop 'outer' (/home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:4:9) in function 'gemm' more than one sub loop.
+Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-960.html
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.9 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.94 seconds; current allocated memory: 1.271 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gemm' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_middle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'middle'.
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('prod_addr_1_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20_1', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod' and 'store' operation ('prod_addr_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('prod_addr_2_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20_2', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod' and 'store' operation ('prod_addr_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('prod_addr_3_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20_3', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod' and 'store' operation ('prod_addr_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_193', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_97', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 67). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_240', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 98). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_248', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 114). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_252', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 122). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_254', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 126). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_127', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 127). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 128, Depth = 393, loop 'middle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 20.28 seconds. CPU system time: 0.13 seconds. Elapsed time: 20.61 seconds; current allocated memory: 1.293 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 5.47 seconds. CPU system time: 0.02 seconds. Elapsed time: 5.64 seconds; current allocated memory: 1.293 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_middle1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'middle'.
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('prod_addr_1_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20_1', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod' and 'store' operation ('prod_addr_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('prod_addr_2_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20_2', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod' and 'store' operation ('prod_addr_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'store' operation ('prod_addr_3_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20_3', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod' and 'store' operation ('prod_addr_write_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20) of variable 'bitcast_ln20', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:20 on array 'prod'.
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_193', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_97', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 67). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_240', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 98). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_248', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 114). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_252', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 122). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_254', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 126). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'gemm_Pipeline_middle1' (loop 'middle'): Unable to schedule 'load' operation ('m2_load_127', /home/s3579816/HiPEAC/GNWSIS/GNWSIS/kv260_runs/machsuite-gemm-ncubed/run_0008/gemm.c:17) on array 'm2' due to limited memory ports (II = 127). Please consider using a memory core with more ports or partitioning the array 'm2'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 128, Depth = 393, loop 'middle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 23.5 seconds. CPU system time: 0.02 seconds. Elapsed time: 23.91 seconds; current allocated memory: 1.314 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 5.39 seconds. CPU system time: 0.01 seconds. Elapsed time: 5.55 seconds; current allocated memory: 1.314 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.94 seconds. CPU system time: 0.02 seconds. Elapsed time: 4.14 seconds; current allocated memory: 1.317 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.65 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.75 seconds; current allocated memory: 1.317 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_middle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_middle' pipeline 'middle' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_middle'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.43 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.56 seconds; current allocated memory: 1.334 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_middle1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_middle1' pipeline 'middle' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_middle1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4.78 seconds. CPU system time: 0.14 seconds. Elapsed time: 5.29 seconds; current allocated memory: 1.378 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/m1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/m2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/prod' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gemm' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_5_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4.18 seconds. CPU system time: 0.12 seconds. Elapsed time: 4.68 seconds; current allocated memory: 1.412 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2.44 seconds. CPU system time: 0.1 seconds. Elapsed time: 3.04 seconds; current allocated memory: 1.424 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.52 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.66 seconds; current allocated memory: 1.428 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for gemm.
+INFO: [VLOG 209-307] Generating Verilog RTL for gemm.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.33 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 83.05 seconds. CPU system time: 2.43 seconds. Elapsed time: 95.81 seconds; current allocated memory: 235.801 MB.
+INFO: [HLS 200-112] Total CPU user time: 87.21 seconds. Total CPU system time: 3.46 seconds. Total elapsed time: 111.67 seconds; peak allocated memory: 1.428 GB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Nov 16 13:55:09 2026...
