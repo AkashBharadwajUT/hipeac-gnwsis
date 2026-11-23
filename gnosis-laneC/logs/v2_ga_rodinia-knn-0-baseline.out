@@ -1,0 +1,27 @@
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+GA: rodinia-knn-0-baseline top=workload src=knn.cpp part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=4 seed=42 vitis=2022.2
+Work dir: /local/scratch/user/ga/rodinia-knn-0-baseline_xck26_10_s42_g24
+Finished !
+Either failed to terminate or already terminated !
+Finished !
+Either failed to terminate or already terminated !
+    2 |      24 |  0.00000E+00 |  0.00000E+00 |       6 |  0.00000E+00 |            f
+    3 |      24 |  0.00000E+00 |  0.00000E+00 |       6 |  0.00000E+00 |            f
+Actual DSE Execution Time = 198
+
+Database Analytics
+
+Database Path=./Databases/rodinia-knn-0-baseline_xck26_10_s42_g24.sqlite
+
+#synthesis total = 24
+
+Synthesis timeout percentage = 0.000000 (0)
+Synthesis failed percentage  = 0.000000 (0)
+Synthesis success total percentage = 100.000000 (24)
+- Synthesis feasible percentage = 100.000000 (24)
+- Synthesis non feasible percentage = 0.000000 (0)
+
+24 designs, 24 feasible, 6 on the Pareto front -> /local/scratch/user/ga/rodinia-knn-0-baseline_xck26_10_s42_g24/rodinia-knn-0-baseline_xck26_10_s42_g24.csv
+CSV: /local/scratch/user/ga/rodinia-knn-0-baseline_xck26_10_s42_g24/rodinia-knn-0-baseline_xck26_10_s42_g24.csv

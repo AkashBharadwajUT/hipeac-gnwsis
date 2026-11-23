@@ -1,0 +1,4 @@
+INFO: [HLS 214-186] Unrolling loop 'STORE_TILE' (knn.cpp:31:17) in function 'store' completely with a factor of 512 (knn.cpp:29:0)
+INFO: [HLS 214-186] Unrolling loop 'COMPUTE_TILE' (knn.cpp:16:19) in function 'compute_dist' completely with a factor of 512 (knn.cpp:13:0)
+INFO: [HLS 214-186] Unrolling loop 'L3' (knn.cpp:19:5) in function 'compute_dist' completely with a factor of 2 (knn.cpp:13:0)
+INFO: [HLS 214-186] Unrolling loop 'LOAD_TILE' (knn.cpp:6:16) in function 'load' completely with a factor of 1024 (knn.cpp:4:0)

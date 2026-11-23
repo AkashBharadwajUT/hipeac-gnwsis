@@ -1,0 +1,8 @@
+kernel,zcu104_pareto,resynthesised,fit_kv260,no_fit_or_not_synth,same_latency,median_ratio,min_ratio,max_ratio
+MD KNN,20,20,20,0,20,1.0,1.0,1.0
+SPMV,13,13,13,0,10,1.0,1.0,1.0333
+Stencil2D,168,168,167,1,145,1.0,0.7514,1.0677
+Stencil3D,219,219,217,2,168,1.0,0.9422,1.3102
+KNN (B),2,2,2,0,2,1.0,1.0,1.0
+KNN (T),228,224,215,13,37,1.966,0.9979,1.9669
+Pathfinder (B),311,311,42,269,35,0.9933,0.7597,1.1888

@@ -1,0 +1,5 @@
+nohup: ignoring input
+rodinia-backprop-0-baseline-back: 22 feasible GA designs to re-score, 8 at a time
+rodinia-backprop-0-baseline-back: 22/22 re-scored, 0 with variable latency
+  GA's believed best : ga_2_0  10.49289 ms (best case) -> worst case 10.49289 ms
+  true best (worst-case latency): ga_2_0  10.49289 ms

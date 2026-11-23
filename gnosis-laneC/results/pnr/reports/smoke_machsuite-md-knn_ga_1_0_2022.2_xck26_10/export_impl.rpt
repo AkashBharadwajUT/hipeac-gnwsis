@@ -1,0 +1,550 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Sun Nov 22 20:47:15 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       none
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              36685
+FF:               46072
+DSP:              208
+BRAM:             0
+URAM:             0
+SRL:              2763
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 4.122       |
+| Post-Route     | 7.800       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++-----------------------------------------+-------+-------+-----+------+------+-----+--------+---------+---------+--------------+---------+
+| Name                                    | LUT   | FF    | DSP | BRAM | URAM | SRL | Pragma | Impl    | Latency | Variable     | Source  |
++-----------------------------------------+-------+-------+-----+------+------+-----+--------+---------+---------+--------------+---------+
+| inst                                    | 36685 | 46072 | 208 |      |      |     |        |         |         |              |         |
+|   (inst)                                | 2695  | 30726 |     |      |      |     |        |         |         |              |         |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U10    | 1147  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_5      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_9      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_10     | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_10     | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_11        | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_12     | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_12     | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_12     | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_14     | md.c:44 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U11    | 1020  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub          | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx           | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_2      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_6      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_8      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_8         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_13        | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_13     | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_14     | md.c:47 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U12    | 1056  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy           | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_1      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_1         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_3      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_3         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_7      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_8         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_9      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_13        | md.c:51 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U13    | 1303  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz           | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_1         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_2         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_3         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_4         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_5         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_7         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_8         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_14        | md.c:50 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U14    | 1220  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_1         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_2         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_3         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_4         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_5         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_7         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_9         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_13        | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_14        | md.c:51 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U15    | 1222  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_2         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_4         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_5         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_7         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_9         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_10        | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_10        | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_14        | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_15        | md.c:51 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U16    | 1217  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_9         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_10        | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_11        | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_11        | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_12        | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_12        | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_12        | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_15        | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_15        | md.c:52 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U7     | 1216  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add          | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add1         | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_2      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_2      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_4      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_6      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_6      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fx_6         | md.c:50 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_8      | md.c:44 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U8     | 1209  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_1      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_1      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_3      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_3      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_5      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fy_6         | md.c:51 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_7      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_7      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_9      | md.c:44 |
+|   dadd_64ns_64ns_64_5_full_dsp_1_U9     | 1149  | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_4      | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | fz_6         | md.c:52 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_8      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_s      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_s      | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_11     | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_11     | md.c:44 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_11     | md.c:47 |
+|     bind_op dadd                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_13     | md.c:44 |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U1 | 832   | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx         | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_2       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_4       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_4      | md.c:44 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_6       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_8       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_10      | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_12      | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_14      | md.c:41 |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U2 | 824   | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely         | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_2       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_4       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | add22_5      | md.c:44 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_6       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_8       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_10      | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_12      | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_14      | md.c:42 |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U3 | 824   | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz         | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_2       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_4       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_6       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_8       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_10      | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_12      | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_14      | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_13     | md.c:44 |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U4 | 827   | 394   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_1       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_3       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_5       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_7       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_9       | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_11      | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_13      | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delx_15      | md.c:41 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | add20_14     | md.c:44 |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U5 | 826   | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_1       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_3       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_5       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_7       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_9       | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_s      | md.c:47 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_11      | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_13      | md.c:42 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | dely_15      | md.c:42 |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U6 | 796   | 393   | 3   |      |      |     |        |         |         |              |         |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_1       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_3       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_5       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_7       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_9       | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_11      | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | sub26_10     | md.c:47 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_13      | md.c:43 |
+|     bind_op dsub                        |       |       |     |      |      |     |        | fulldsp | 4       | delz_15      | md.c:43 |
+|   ddiv_64ns_64ns_64_22_no_dsp_1_U37     | 3438  | 2120  |     |      |      |     |        |         |         |              |         |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv        | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_2      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_4      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_6      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_8      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_10     | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_12     | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_14     | md.c:44 |
+|   ddiv_64ns_64ns_64_22_no_dsp_1_U38     | 3374  | 2120  |     |      |      |     |        |         |         |              |         |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_1      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_3      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_5      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_7      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_9      | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_11     | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_13     | md.c:44 |
+|     bind_op ddiv                        |       |       |     |      |      |     |        | fabric  | 21      | r2inv_15     | md.c:44 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U17     | 383   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul          | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_2      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_4      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_4      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_6      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_8      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_s      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_11     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_13     | md.c:44 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U18     | 424   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul1         | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_2      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_4      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_5      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_6      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_8      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_s      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_11     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_13     | md.c:44 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U19     | 358   | 176   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul2         | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_2      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_4      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_6      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_8      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_s      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_11     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_13     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_13     | md.c:46 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U20     | 372   | 176   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_1      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_3      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_5      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_7      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_9      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_10     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_12     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul18_14     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_14     | md.c:46 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U21     | 401   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_1      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_3      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_5      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_7      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_9      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_10     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_11     | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_12     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul19_14     | md.c:44 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U22     | 391   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_1      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_3      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_5      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_7      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_9      | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_10     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_12     | md.c:44 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_12     | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul21_14     | md.c:44 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U23     | 552   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul3         | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv        | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force        | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_2      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_2      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_4      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_6      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_6      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_8      | md.c:46 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U24     | 650   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_1      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_1      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_1      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_3      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_3      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_5      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_7      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_7      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_9      | md.c:46 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U25     | 454   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul5         | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_2      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_4      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_6      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_8      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_s      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_10 | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_11     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_13     | md.c:47 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U26     | 588   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_1      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_2      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_3      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_5      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_7      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_9      | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_10     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_11 | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul23_12     | md.c:46 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U27     | 548   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_3      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_8      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_8      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_10     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_s      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_12     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_14     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_15     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_14     | md.c:47 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U28     | 743   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_2  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_4  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_4      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_8      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_9      | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_11     | md.c:46 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul25_10     | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_12 | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | r6inv_13     | md.c:46 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U29     | 681   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential    | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_3  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_5  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_5      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_6  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_6      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_8  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_8      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_13 | md.c:47 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U30     | 615   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul8         | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_1  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_2      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_7  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_7      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_9  | md.c:47 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_9      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_s      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_14 | md.c:47 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U31     | 615   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul9         | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_2      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_4      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_6      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_8      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_9      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_s      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_10     | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | potential_15 | md.c:47 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U32     | 615   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul4         | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_2      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_4      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_6      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_9      | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_9      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_s      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_10     | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_13     | md.c:51 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U33     | 570   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_1      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_3      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_4      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_6      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_10     | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_12     | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_14     | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_13     | md.c:52 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U34     | 494   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_1      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_3      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_5      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_7      | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_11     | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_13     | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_15     | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_14     | md.c:50 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U35     | 453   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_1      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_3      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_5      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_7      | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_11     | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_12     | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_12     | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_14     | md.c:51 |
+|   dmul_64ns_64ns_64_5_max_dsp_1_U36     | 618   | 248   | 8   |      |      |     |        |         |         |              |         |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_5      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_7      | md.c:52 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_10     | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | force_11     | md.c:49 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_11     | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul31_12     | md.c:51 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul29_13     | md.c:50 |
+|     bind_op dmul                        |       |       |     |      |      |     |        | maxdsp  | 4       | mul33_14     | md.c:52 |
+|   flow_control_loop_pipe_U              | 28    | 1     |     |      |      |     |        |         |         |              |         |
++-----------------------------------------+-------+-------+-----+------+------+-----+--------+---------+---------+--------------+---------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 31.32% | OK     |
+| FD                                                        | 50%       | 19.67% | OK     |
+| LUTRAM+SRL                                                | 25%       | 4.80%  | OK     |
+| CARRY8                                                    | 25%       | 10.16% | OK     |
+| MUXF7                                                     | 15%       | 0.27%  | OK     |
+| DSP                                                       | 80%       | 16.67% | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 16.67% | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 153    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+----------------------------+-------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN             | ENDPOINT PIN                                          | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                            |                                                       |              |            |                |          DELAY |        DELAY |
++-------+-------+----------------------------+-------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 2.200 | ap_CS_fsm_reg[1]_replica/C | dmul_64ns_64ns_64_5_max_dsp_1_U24/din1_buf1_reg[12]/D |            2 |       1770 |          7.798 |          0.438 |        7.360 |
+| Path2 | 2.286 | ap_CS_fsm_reg[1]_replica/C | dmul_64ns_64ns_64_5_max_dsp_1_U24/din0_buf1_reg[45]/D |            2 |       1770 |          7.711 |          0.526 |        7.185 |
+| Path3 | 2.360 | ap_CS_fsm_reg[2]_replica/C | fy_9_reg_3865_reg[6]/CE                               |            1 |        995 |          7.511 |          0.299 |        7.212 |
+| Path4 | 2.370 | ap_CS_fsm_reg[2]_replica/C | fy_9_reg_3865_reg[0]/CE                               |            1 |        995 |          7.501 |          0.299 |        7.202 |
+| Path5 | 2.370 | ap_CS_fsm_reg[2]_replica/C | fy_9_reg_3865_reg[3]/CE                               |            1 |        995 |          7.501 |          0.299 |        7.202 |
++-------+-------+----------------------------+-------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +---------------------------------------------------------+-------------------+
+    | Path1 Cells                                             | Primitive Type    |
+    +---------------------------------------------------------+-------------------+
+    | ap_CS_fsm_reg[1]_replica                                | REGISTER.SDR.FDRE |
+    | dmul_64ns_64ns_64_5_max_dsp_1_U24/din1_buf1[12]_i_2__22 | CLB.LUT.LUT6      |
+    | dmul_64ns_64ns_64_5_max_dsp_1_U24/din1_buf1[12]_i_1__16 | CLB.LUT.LUT5      |
+    | dmul_64ns_64ns_64_5_max_dsp_1_U24/din1_buf1_reg[12]     | REGISTER.SDR.FDRE |
+    +---------------------------------------------------------+-------------------+
+
+    +--------------------------------------------------------+-------------------+
+    | Path2 Cells                                            | Primitive Type    |
+    +--------------------------------------------------------+-------------------+
+    | ap_CS_fsm_reg[1]_replica                               | REGISTER.SDR.FDRE |
+    | dmul_64ns_64ns_64_5_max_dsp_1_U24/din0_buf1[45]_i_6    | CLB.LUT.LUT6      |
+    | dmul_64ns_64ns_64_5_max_dsp_1_U24/din0_buf1[45]_i_1__9 | CLB.LUT.LUT6      |
+    | dmul_64ns_64ns_64_5_max_dsp_1_U24/din0_buf1_reg[45]    | REGISTER.SDR.FDRE |
+    +--------------------------------------------------------+-------------------+
+
+    +--------------------------+-------------------+
+    | Path3 Cells              | Primitive Type    |
+    +--------------------------+-------------------+
+    | ap_CS_fsm_reg[2]_replica | REGISTER.SDR.FDRE |
+    | fy_9_reg_3865[63]_i_1    | CLB.LUT.LUT2      |
+    | fy_9_reg_3865_reg[6]     | REGISTER.SDR.FDRE |
+    +--------------------------+-------------------+
+
+    +--------------------------+-------------------+
+    | Path4 Cells              | Primitive Type    |
+    +--------------------------+-------------------+
+    | ap_CS_fsm_reg[2]_replica | REGISTER.SDR.FDRE |
+    | fy_9_reg_3865[63]_i_1    | CLB.LUT.LUT2      |
+    | fy_9_reg_3865_reg[0]     | REGISTER.SDR.FDRE |
+    +--------------------------+-------------------+
+
+    +--------------------------+-------------------+
+    | Path5 Cells              | Primitive Type    |
+    +--------------------------+-------------------+
+    | ap_CS_fsm_reg[2]_replica | REGISTER.SDR.FDRE |
+    | fy_9_reg_3865[63]_i_1    | CLB.LUT.LUT2      |
+    | fy_9_reg_3865_reg[3]     | REGISTER.SDR.FDRE |
+    +--------------------------+-------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+-------------------------------------------------------------------+
+| Report Type              | Report Location                                                   |
++--------------------------+-------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/md_kernel_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/md_kernel_failfast_routed.rpt                 |
+| status                   | impl/verilog/report/md_kernel_status_routed.rpt                   |
+| timing                   | impl/verilog/report/md_kernel_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/md_kernel_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/md_kernel_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/md_kernel_utilization_hierarchical_routed.rpt |
++--------------------------+-------------------------------------------------------------------+
+
+

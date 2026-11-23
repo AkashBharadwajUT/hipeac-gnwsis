@@ -1,0 +1,11 @@
+machsuite-md-knn ga_1_0 fastest
+machsuite-md-knn ga_2_0 smallest
+machsuite-spmv-ellpack ga_1_0 fastest
+machsuite-spmv-ellpack ga_3_1 smallest
+machsuite-stencil2d ga_0_3_0_2 fastest
+machsuite-stencil2d ga_2_3_1_0 smallest
+machsuite-stencil3d ga_0_0_0_5_4_2_0_2_2 fastest
+machsuite-stencil3d ga_3_2_1_4_4_0_3_3_3 smallest
+rodinia-knn-0-baseline ga_1_0 fastest
+rodinia-knn-1-tiling ga_3_2_1_1_0_5_6_2_1 fastest
+rodinia-knn-1-tiling ga_0_2_0_4_0_0_7_2_4 smallest

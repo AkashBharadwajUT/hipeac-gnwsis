@@ -1,0 +1,251 @@
+app,part,clock_ns,tool_version,index_vector,latency_ms,BRAM_pct,DSP_pct,FF_pct,LUT_pct,URAM_pct,synth_time_s,feasible,L1,L2,L3,L4,pareto
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 2 1,0.39696,0.0,4.0,0.0,1.0,0.0,22,True,unroll factor=2,pipeline,unroll,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 0 1,0.0033,0.0,15.0,1.0,11.0,0.0,33,True,unroll factor=4,unroll factor=8,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 1 0 0,0.10086,0.0,69.0,4.0,22.0,0.0,42,True,unroll factor=32,pipeline II=1,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 6 2 1,0.42652,0.0,23.0,1.0,15.0,0.0,46,True,unroll factor=2,unroll factor=16,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 1 0,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=2,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 1 0,0.82216,0.0,1.0,0.0,1.0,0.0,20,True,unroll factor=2,unroll factor=2,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 0 1,0.05356,0.0,3.0,0.0,3.0,0.0,22,True,unroll factor=2,unroll factor=4,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline II=1,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 0 1,0.02526,0.0,17.0,1.0,5.0,0.0,25,True,unroll factor=8,pipeline,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 6 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=16,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 2 2,0.02526,0.0,17.0,1.0,5.0,0.0,25,True,unroll factor=8,pipeline II=1,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 2 1,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,unroll,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 0 2,0.00338,0.0,15.0,1.0,11.0,0.0,31,True,unroll factor=8,unroll factor=4,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 0 2,0.82216,0.0,1.0,0.0,1.0,0.0,20,True,unroll factor=2,unroll factor=2,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 5 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,unroll factor=8,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 6 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=16,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 0 1 0,0.10086,0.0,69.0,4.0,22.0,0.0,39,True,unroll factor=32,pipeline,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 4 0 0,0.01346,0.0,61.0,7.0,47.0,0.0,85,True,unroll factor=32,unroll factor=4,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 2 1,1.64116,0.0,89.0,6.0,60.0,0.0,241,True,unroll factor=2,unroll,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 3 0 2,0.4173,0.0,61.0,6.0,49.0,0.0,88,True,unroll factor=64,unroll factor=2,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 3 2 1,0.4269,0.0,46.0,3.0,32.0,0.0,91,True,unroll factor=32,unroll factor=2,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 2 0 0,0.04962,0.0,238.0,22.0,182.0,0.0,536,False,unroll factor=8,unroll,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 4 0 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=4,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 1 1 2,0.20166,0.0,138.0,8.0,44.0,0.0,63,False,unroll factor=64,pipeline II=1,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 2 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 1 2,0.00338,0.0,15.0,1.0,11.0,0.0,31,True,unroll factor=8,unroll factor=4,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 5 1 2,0.0525,0.0,246.0,27.0,184.0,0.0,584,False,unroll factor=64,unroll factor=8,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 1 2 1,0.10086,0.0,69.0,4.0,22.0,0.0,39,True,unroll factor=32,pipeline II=1,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 1 1 0,0.20166,0.0,138.0,8.0,44.0,0.0,63,False,unroll factor=64,pipeline II=1,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 1 1,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline,pipeline II=1,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 5 0 2,0.01314,0.0,61.0,6.0,46.0,0.0,83,True,unroll factor=16,unroll factor=8,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 6 0 0,0.05186,0.0,246.0,26.0,183.0,0.0,586,False,unroll factor=32,unroll factor=16,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 2 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,unroll,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=2,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 6 1 2,0.1037,0.0,492.0,53.0,340.0,0.0,2396,False,unroll factor=64,unroll factor=16,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,pipeline II=1,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 1 0,0.05356,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=2,unroll factor=4,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 5 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline,unroll factor=8,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 0 0 0,0.10086,0.0,69.0,4.0,22.0,0.0,40,True,unroll factor=32,pipeline,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 1 1 1,0.10086,0.0,69.0,4.0,22.0,0.0,40,True,unroll factor=32,pipeline II=1,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 1 1,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 0 2,0.05218,0.0,7.0,0.0,6.0,0.0,24,True,unroll factor=8,unroll factor=2,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 2 1,0.109,0.0,5.0,0.0,3.0,0.0,23,True,unroll factor=2,unroll factor=4,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 0 1 1,0.20166,0.0,138.0,8.0,44.0,0.0,64,False,unroll factor=64,pipeline,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 6 0 0,0.20476,0.0,15.0,1.0,11.0,0.0,30,True,unroll factor=2,unroll factor=16,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=2,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 2 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 0 2 0,0.10086,0.0,69.0,4.0,22.0,0.0,39,True,unroll factor=32,pipeline,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 2 1,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline II=1,unroll,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 2 0,0.02526,0.0,17.0,1.0,5.0,0.0,24,True,unroll factor=8,pipeline,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 6 1 2,0.02594,0.0,123.0,13.0,92.0,0.0,188,False,unroll factor=16,unroll factor=16,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 3 0 2,0.20866,0.0,30.0,3.0,24.0,0.0,47,True,unroll factor=32,unroll factor=2,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 4 2 0,0.02754,0.0,92.0,7.0,60.0,0.0,247,True,unroll factor=32,unroll factor=4,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,pipeline,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 2 1,1.68148,0.0,2.0,0.0,2.0,0.0,21,True,unroll factor=2,unroll factor=2,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 0 1,0.02526,0.0,17.0,1.0,5.0,0.0,24,True,unroll factor=8,pipeline II=1,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 6 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=16,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 1 0,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 0 2,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 2 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline II=1,unroll,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 6 2 0,0.42652,0.0,23.0,1.0,15.0,0.0,44,True,unroll factor=2,unroll factor=16,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 3 1 2,0.4173,0.0,61.0,6.0,49.0,0.0,87,True,unroll factor=64,unroll factor=2,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 0 1 2,0.10086,0.0,69.0,4.0,22.0,0.0,39,True,unroll factor=32,pipeline,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 4 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=4,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 0 2,0.0017,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=4,unroll factor=4,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 3 0 0,0.4173,0.0,61.0,6.0,49.0,0.0,87,True,unroll factor=64,unroll factor=2,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 1 1,0.39696,0.0,4.0,0.0,1.0,0.0,19,True,unroll factor=2,pipeline II=1,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 2 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,unroll,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 5 0 2,0.0525,0.0,246.0,27.0,184.0,0.0,599,False,unroll factor=64,unroll factor=8,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,pipeline II=1,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 1 2 0,0.20166,0.0,138.0,8.0,44.0,0.0,70,False,unroll factor=64,pipeline II=1,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline II=1,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 2 0 2,0.04962,0.0,238.0,22.0,182.0,0.0,532,False,unroll factor=8,unroll,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 6 1 0,0.1037,0.0,492.0,53.0,340.0,0.0,2342,False,unroll factor=64,unroll factor=16,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 6 2 1,0.0,101.0,101.0,101.0,101.0,101.0,3601,False,unroll factor=32,unroll factor=16,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 2 1 0,0.0,101.0,101.0,101.0,101.0,101.0,3600,False,unroll factor=64,unroll,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 0 0,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 1 1,0.05356,0.0,3.0,0.0,3.0,0.0,22,True,unroll factor=2,unroll factor=4,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 2 1,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 0 2,0.0261,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=4,unroll factor=2,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 2 0,0.00682,0.0,23.0,1.0,15.0,0.0,45,True,unroll factor=4,unroll factor=8,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 0 2,0.39696,0.0,4.0,0.0,1.0,0.0,19,True,unroll factor=2,pipeline II=1,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 2 0,0.109,0.0,5.0,0.0,3.0,0.0,23,True,unroll factor=2,unroll factor=4,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 1 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1 0 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,pipeline II=1,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 1 0,0.05218,0.0,7.0,0.0,6.0,0.0,25,True,unroll factor=8,unroll factor=2,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline,pipeline,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 1 0,0.01266,0.0,8.0,0.0,2.0,0.0,22,True,unroll factor=4,pipeline II=1,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline,pipeline,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 0 0,0.05356,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=2,unroll factor=4,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 1 2,0.05356,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=2,unroll factor=4,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1 1 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,pipeline II=1,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 0 0,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,unroll factor=2,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 0 1,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 4 1 1,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,unroll factor=4,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,pipeline,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,pipeline,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 6 0 1,0.01298,0.0,61.0,6.0,46.0,0.0,81,True,unroll factor=8,unroll factor=16,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 2 0,0.0069,0.0,23.0,1.0,15.0,0.0,45,True,unroll factor=8,unroll factor=4,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 0 1,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline II=1,pipeline,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 5 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=8,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 1 0,0.10396,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=2,unroll factor=8,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 0 1,0.10396,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=2,unroll factor=8,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 0 1,0.82216,0.0,1.0,0.0,1.0,0.0,20,True,unroll factor=2,unroll factor=2,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,pipeline,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,unroll factor=2,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline II=1,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 2 0,1.64116,0.0,89.0,6.0,60.0,0.0,227,True,unroll factor=2,unroll,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 4 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=4,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 2 0,0.02526,0.0,17.0,1.0,5.0,0.0,24,True,unroll factor=8,pipeline II=1,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 0 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=2,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 2 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline,unroll,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 1 0,0.0017,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=4,unroll factor=4,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 0 1,0.0017,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=4,unroll factor=4,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 0 0,0.0017,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=4,unroll factor=4,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline II=1,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 0 1,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline II=1,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 2 0,1.68148,0.0,2.0,0.0,2.0,0.0,22,True,unroll factor=2,unroll factor=2,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 2 1,0.0069,0.0,23.0,1.0,15.0,0.0,46,True,unroll factor=8,unroll factor=4,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 2 0,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,unroll,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 0 2,0.05356,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=2,unroll factor=4,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,pipeline II=1,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 4 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=4,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 1 0,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline II=1,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 0 2,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 0 0,0.0033,0.0,15.0,1.0,11.0,0.0,30,True,unroll factor=4,unroll factor=8,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 1 2,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 0 0,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline II=1,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 0 1,0.39696,0.0,4.0,0.0,1.0,0.0,19,True,unroll factor=2,pipeline,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 0 0,0.82216,0.0,1.0,0.0,1.0,0.0,20,True,unroll factor=2,unroll factor=2,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 2 2,0.09001,0.0,266.0,6.0,83.0,0.0,96,False,unroll factor=4,unroll,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 1 1,0.82216,0.0,1.0,0.0,1.0,0.0,19,True,unroll factor=2,unroll factor=2,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 0 2,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline,pipeline,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 1 0,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline II=1,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 0 2,0.02526,0.0,17.0,1.0,5.0,0.0,24,True,unroll factor=8,pipeline,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 0 1,0.0261,0.0,3.0,0.0,3.0,0.0,22,True,unroll factor=4,unroll factor=2,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 2 0,0.01266,0.0,8.0,0.0,2.0,0.0,22,True,unroll factor=4,pipeline,unroll,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 0 1,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline,pipeline,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 1 2,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 2 0,0.39696,0.0,4.0,0.0,1.0,0.0,19,True,unroll factor=2,pipeline II=1,unroll,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 0 2,0.0033,0.0,15.0,1.0,11.0,0.0,30,True,unroll factor=4,unroll factor=8,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 0 0,0.10396,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=2,unroll factor=8,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 2 1,0.10674,0.0,11.0,1.0,7.0,0.0,30,True,unroll factor=8,unroll factor=2,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 0 0,0.0261,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=4,unroll factor=2,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 2 0 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,unroll,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 0 2,0.10396,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=2,unroll factor=8,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 2 1,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline II=1,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 2 1 0,0.04962,0.0,238.0,22.0,182.0,0.0,516,False,unroll factor=8,unroll,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 1 0,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 1 2,0.0017,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=4,unroll factor=4,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 2 0,0.00346,0.0,11.0,0.0,7.0,0.0,29,True,unroll factor=4,unroll factor=4,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 4 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=4,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 2 2,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline II=1,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 2 1,0.05338,0.0,5.0,0.0,4.0,0.0,23,True,unroll factor=4,unroll factor=2,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 1 1,0.0261,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=4,unroll factor=2,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 1 1,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 1 1,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline II=1,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 1 2,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 1 0,0.0261,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=4,unroll factor=2,pipeline II=1,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 2 0,0.39696,0.0,4.0,0.0,1.0,0.0,19,True,unroll factor=2,pipeline,unroll,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 0 0,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 1 2,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 1 2,0.82216,0.0,1.0,0.0,1.0,0.0,20,True,unroll factor=2,unroll factor=2,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 0 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline II=1,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 5 2 1,0.01362,0.0,46.0,3.0,30.0,0.0,94,True,unroll factor=8,unroll factor=8,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 0 0,0.01266,0.0,8.0,0.0,2.0,0.0,20,True,unroll factor=4,pipeline,pipeline,pipeline,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 2 0,0.05338,0.0,5.0,0.0,4.0,0.0,23,True,unroll factor=4,unroll factor=2,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 0 1,0.78184,0.0,59.0,5.0,46.0,0.0,76,True,unroll factor=2,unroll,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 1 0,0.00338,0.0,15.0,1.0,11.0,0.0,32,True,unroll factor=8,unroll factor=4,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 1 0 2,0.05046,0.0,34.0,2.0,11.0,0.0,30,True,unroll factor=16,pipeline II=1,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,pipeline,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 2 2,0.01266,0.0,8.0,0.0,2.0,0.0,20,True,unroll factor=4,pipeline,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 0 0,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 1 1,0.10396,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=2,unroll factor=8,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 0 0,0.78184,0.0,59.0,5.0,46.0,0.0,78,True,unroll factor=2,unroll,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 0 1,0.02482,0.0,119.0,11.0,92.0,0.0,175,False,unroll factor=4,unroll,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1 2 2,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline II=1,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 1 2,0.0261,0.0,3.0,0.0,3.0,0.0,21,True,unroll factor=4,unroll factor=2,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 2 1,0.00346,0.0,11.0,0.0,7.0,0.0,29,True,unroll factor=4,unroll factor=4,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 2 1,0.01266,0.0,8.0,0.0,2.0,0.0,20,True,unroll factor=4,pipeline,unroll,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 1 1,0.0017,0.0,7.0,0.0,5.0,0.0,24,True,unroll factor=4,unroll factor=4,pipeline II=1,pipeline II=1,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 2 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline II=1,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 1 0,0.78184,0.0,59.0,5.0,46.0,0.0,77,True,unroll factor=2,unroll,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0 1 2,0.01266,0.0,8.0,0.0,2.0,0.0,21,True,unroll factor=4,pipeline,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1 1 2,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline II=1,pipeline II=1,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 0 2,0.78184,0.0,59.0,5.0,46.0,0.0,77,True,unroll factor=2,unroll,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 1 1,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 1 1,0.00338,0.0,15.0,1.0,11.0,0.0,30,True,unroll factor=8,unroll factor=4,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 0 1,0.00338,0.0,15.0,1.0,11.0,0.0,31,True,unroll factor=8,unroll factor=4,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 1 2,0.78184,0.0,59.0,5.0,46.0,0.0,77,True,unroll factor=2,unroll,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 1 1,0.78184,0.0,59.0,5.0,46.0,0.0,77,True,unroll factor=2,unroll,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 1 0,0.02482,0.0,119.0,11.0,92.0,0.0,176,False,unroll factor=4,unroll,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0 2 2,0.39696,0.0,4.0,0.0,1.0,0.0,20,True,unroll factor=2,pipeline,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 2 0 2,0.09922,0.0,476.0,43.0,346.0,0.0,2157,False,unroll factor=16,unroll,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 0 2,0.02526,0.0,17.0,1.0,5.0,0.0,24,True,unroll factor=8,pipeline II=1,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 3 0 0,0.10434,0.0,15.0,1.0,12.0,0.0,32,True,unroll factor=16,unroll factor=2,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 1 2,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline II=1,unroll factor=2,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 1 2,0.05218,0.0,7.0,0.0,6.0,0.0,24,True,unroll factor=8,unroll factor=2,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 3 2 2,0.45114,0.0,4.0,0.0,2.0,0.0,20,True,unroll factor=2,unroll factor=2,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 1 2,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline II=1,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2 2 2,0.08196,0.0,189.0,3.0,47.0,0.0,56,False,unroll factor=2,unroll,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 4 0 0,0.00338,0.0,15.0,1.0,11.0,0.0,31,True,unroll factor=8,unroll factor=4,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 0 2,0.02482,0.0,119.0,11.0,92.0,0.0,178,False,unroll factor=4,unroll,pipeline,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0 2 2,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 1 2,0.02482,0.0,119.0,11.0,92.0,0.0,173,False,unroll factor=4,unroll,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 3 2 2,0.01468,0.0,5.0,0.0,3.0,0.0,21,True,unroll factor=4,unroll factor=2,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 1 0,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 0 0,0.02482,0.0,119.0,11.0,92.0,0.0,174,False,unroll factor=4,unroll,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 1 1,0.02482,0.0,119.0,11.0,92.0,0.0,174,False,unroll factor=4,unroll,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 4 2 2,0.01356,0.0,5.0,0.0,4.0,0.0,23,True,unroll factor=4,unroll factor=4,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 0 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,pipeline,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 4 2 2,0.4209,0.0,5.0,0.0,2.0,0.0,21,True,unroll factor=2,unroll factor=4,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 2 0,0.0521,0.0,178.0,13.0,113.0,0.0,826,False,unroll factor=4,unroll,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 0 1,0.05218,0.0,7.0,0.0,6.0,0.0,24,True,unroll factor=8,unroll factor=2,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 0 1 0,0.05046,0.0,34.0,2.0,11.0,0.0,28,True,unroll factor=16,pipeline,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2 2 1,0.0521,0.0,178.0,13.0,113.0,0.0,826,False,unroll factor=4,unroll,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 4 1 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,unroll factor=4,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 2 2,0.0296,0.0,5.0,0.0,4.0,0.0,24,True,unroll factor=8,unroll factor=2,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 1 1,0.05218,0.0,7.0,0.0,6.0,0.0,25,True,unroll factor=8,unroll factor=2,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 1 2,0.0033,0.0,15.0,1.0,11.0,0.0,30,True,unroll factor=4,unroll factor=8,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0 1 2,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline,pipeline,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 2 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,unroll factor=2,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 0 0,0.05218,0.0,7.0,0.0,6.0,0.0,25,True,unroll factor=8,unroll factor=2,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 2 2,0.01236,0.0,5.0,1.0,6.0,0.0,27,True,unroll factor=4,unroll factor=8,unroll,unroll,True
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 1 2,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,pipeline II=1,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 1 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 3 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline II=1,unroll factor=2,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 4 1 1,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline II=1,unroll factor=4,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline,pipeline II=1,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 2 1,0.00682,0.0,23.0,1.0,15.0,0.0,45,True,unroll factor=4,unroll factor=8,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 2 2,0.38562,0.0,5.0,0.0,3.0,0.0,22,True,unroll factor=2,unroll factor=8,unroll,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1 0 0,0.02526,0.0,17.0,1.0,5.0,0.0,23,True,unroll factor=8,pipeline II=1,pipeline,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 2 0,0.21484,0.0,11.0,0.0,7.0,0.0,29,True,unroll factor=2,unroll factor=8,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 2 1 1,0.12105,0.0,4.0,0.0,7.0,0.0,36,True,pipeline II=1,unroll,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 3 2 0,0.10674,0.0,11.0,1.0,7.0,0.0,29,True,unroll factor=8,unroll factor=2,unroll,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 5 1 0,0.0033,0.0,15.0,1.0,11.0,0.0,30,True,unroll factor=4,unroll factor=8,pipeline II=1,pipeline,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 3 2 1,0.12105,0.0,4.0,0.0,7.0,0.0,37,True,pipeline,unroll factor=2,unroll,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 6 0 1,0.0065,0.0,30.0,3.0,22.0,0.0,45,True,unroll factor=4,unroll factor=16,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 0 0 1,0.05046,0.0,34.0,2.0,11.0,0.0,28,True,unroll factor=16,pipeline,pipeline,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1 1 1,0.12105,0.0,4.0,0.0,7.0,0.0,38,True,pipeline II=1,pipeline II=1,pipeline II=1,pipeline II=1,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 5 1 2,0.00658,0.0,30.0,3.0,22.0,0.0,45,True,unroll factor=8,unroll factor=8,pipeline II=1,unroll,False
+machsuite-stencil2d,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 5 2 1,0.21484,0.0,11.0,0.0,7.0,0.0,30,True,unroll factor=2,unroll factor=8,unroll,pipeline II=1,False

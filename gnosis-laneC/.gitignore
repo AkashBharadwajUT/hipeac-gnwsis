@@ -1,0 +1,13 @@
+venv36/
+__pycache__/
+*.pyc
+*.bit
+*.hwh
+*.tgz
+*.zip
+GNWSIS/
+GenHLSOptimizer/
+
+# The repository root ignores *.log and server_facts*.sh; keep this folder's logs and script
+!*.log
+!server_facts.sh

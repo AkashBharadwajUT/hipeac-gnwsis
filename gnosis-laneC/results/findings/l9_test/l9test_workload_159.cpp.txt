@@ -1,0 +1,21 @@
+Kernel: rodinia-knn-1-tiling  top: workload  source: knn.cpp  row: workload_159.cpp
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+Dataset row workload_159.cpp (xczu7ev-ffvc1156-2-e, 10 ns), 863 feasible of 868 rows
+  WARNING: the dataset records no directive for L8; the original run applied one there, so this row may not reproduce exactly
+  L1: L1:	LOAD_TILE: for (int i(0); i < NUM_PT_IN_BUFFER*NUM_FEATU -> #pragma HLS pipeline
+  L2: L2:	COMPUTE_TILE: for (int i = 0; i < NUM_PT_IN_BUFFER; ++i) -> #pragma HLS unroll factor=8
+  L3: L3:		for (int j = 0; j < NUM_FEATURE; ++j){                  -> #pragma HLS pipeline
+  L4: L4:	STORE_TILE: for (int i(0); i < NUM_PT_IN_BUFFER; ++i){   -> #pragma HLS unroll factor=8
+  L5: L5:	float local_inputQuery[NUM_FEATURE];                     -> #pragma HLS array_partition variable=local_inputQuery complete dim=1
+  L6: L6:	float local_searchSpace[NUM_PT_IN_BUFFER*NUM_FEATURE];   -> #pragma HLS array_partition variable=local_searchSpace block factor=16 dim=1
+  L7: L7:	float local_distance[NUM_PT_IN_BUFFER];                  -> #pragma HLS array_partition variable=local_distance cyclic factor=64 dim=1
+  L9: L9:	TILED_PE: for (int tile_idx(0); tile_idx<NUM_TILES; ++ti -> #pragma HLS pipeline II=1
+Work dir: /local/scratch/user/smoke_rodinia-knn-1-tiling_workload_159_2022.2_xczu7ev_10
+Exit code: 0   Peak RAM: 1914 MB   Wall time: 2:55.14
+
+Ours:    latency=27.52528 ms (2752528 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 0, 'FF': 1, 'LUT': 6}
+Dataset: latency=33.03437 ms  util%={'BRAM': 5, 'DSP': 12, 'FF': 12, 'LUT': 28}  synth=937 s (Vitis 2021.1)
+Ratio ours/dataset latency: 0.8332   exact resource match: False
+Kept reports in /local/scratch/user/smoke_rodinia-knn-1-tiling_workload_159_2022.2_xczu7ev_10/reports (KEEP=1 keeps the whole project)

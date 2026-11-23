@@ -1,0 +1,14 @@
+Kernel: machsuite-md-knn  top: md_kernel  source: md.c  row: ga_5_4
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+GA row [5 4] from /home/user/gnosis/results/machsuite-md-knn_xck26_10_s42_g24.csv (xck26-sfvc784-2LV-c, 10 ns), 47 feasible of 48
+  L1: L1:loop_i : for (i = 0; i < nAtoms; i++){                    -> #pragma HLS unroll factor=16
+  L2: L2:loop_j : for( j = 0; j < maxNeighbors; j++){              -> #pragma HLS unroll factor=4
+Work dir: /local/scratch/user/smoke_machsuite-md-knn_ga_5_4_2022.2_xck26_10
+Exit code: 0   Peak RAM: 1703 MB   Wall time: 1:16.45
+
+Ours:    latency=1.01905 ms (101905 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 7, 'FF': 6, 'LUT': 13}
+GA row: latency=1.01905 ms  util%={'BRAM': 0, 'DSP': 7, 'FF': 6, 'LUT': 13}  synth=52 s (our GA, xck26-sfvc784-2LV-c)
+Ratio ours/dataset latency: 1.0000   exact resource match: True
+Kept reports in /local/scratch/user/smoke_machsuite-md-knn_ga_5_4_2022.2_xck26_10/reports (KEEP=1 keeps the whole project)

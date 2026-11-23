@@ -10,6 +10,15 @@ Together with the aforementioned tools and repositories, this setup enables user
 
 It also includes a detailed schema of the dataset and utility scripts for visualizing key metrics for individual applications.
 
+## HiPEAC Student Challenge 2027: reproduction on the Kria KV260
+
+This fork extends the GNΩSIS repository with our reproduction for the HiPEAC Student Challenge 2027 (Option B): 
+do GNΩSIS's design lessons survive a new device (Kria KV260), a newer tool (Vitis 2022.2 instead of 2021.1), and real hardware? Everything below this section is the original GNΩSIS documentation and is unchanged.
+
+Added by the team:
+- `kv260_synthesis.py`, `kv260_all_results.csv`, `output/<app>/kv260_results.csv`: ZCU104 Pareto configurations re-synthesised on the KV260 (`xck26-sfvc784-2LV-c`) with Vitis HLS 2022.2 for selected kernels.
+- `gnosis-laneC/`: KV260 design-space exploration with the original GenHLSOptimizer (10 kernels), worst-case re-scoring, transfer of 961 ZCU104 Pareto designs to the KV260, out-of-context place-and-route at 100 and 300 MHz, and on-board measurements with PYNQ. Scripts, results, figures and its own `README.md` and `requirements.txt` (Python 3.6, needed by GenHLSOptimizer) are inside the folder.
+
 ## Repository Structure
 
 - `data/`

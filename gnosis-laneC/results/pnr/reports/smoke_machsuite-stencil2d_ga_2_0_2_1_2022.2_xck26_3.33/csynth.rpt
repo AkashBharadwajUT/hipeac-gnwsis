@@ -1,0 +1,146 @@
+
+
+================================================================
+== Synthesis Summary Report of 'stencil'
+================================================================
++ General Information: 
+    * Date:           Sun Nov 22 23:51:13 2026
+    * Version:        2022.2.2 (Build 3779808 on Feb 17 2023)
+    * Project:        smoke
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |                Modules               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |           |           |     |
+    |                & Loops               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |+ stencil                             |     -|  0.06|    40137|  1.337e+05|         -|    40138|     -|        no|     -|  27 (2%)|  3080 (1%)|  2259 (1%)|    -|
+    | o stencil_label1                     |     -|  2.43|    40131|  1.336e+05|       637|        -|    63|        no|     -|        -|          -|          -|    -|
+    |  + stencil_Pipeline_stencil_label2   |     -|  0.06|      316|  1.052e+03|         -|      316|     -|        no|     -|        -|  637 (~0%)|  580 (~0%)|    -|
+    |   o stencil_label2                   |    II|  2.43|      314|  1.046e+03|        10|        5|    62|       yes|     -|        -|          -|          -|    -|
+    |  + stencil_Pipeline_stencil_label21  |     -|  0.06|      316|  1.052e+03|         -|      316|     -|        no|     -|        -|  630 (~0%)|  580 (~0%)|    -|
+    |   o stencil_label2                   |    II|  2.43|      314|  1.046e+03|        10|        5|    62|       yes|     -|        -|          -|          -|    -|
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-----------------+----------+
+| Interface       | Bitwidth |
++-----------------+----------+
+| filter_address0 | 4        |
+| filter_address1 | 4        |
+| filter_q0       | 32       |
+| filter_q1       | 32       |
+| orig_address0   | 13       |
+| orig_address1   | 13       |
+| orig_q0         | 32       |
+| orig_q1         | 32       |
+| sol_address0    | 13       |
+| sol_d0          | 32       |
++-----------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| orig     | in        | int*     |
+| sol      | out       | int*     |
+| filter   | in        | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+----------+
+| Argument | HW Interface    | HW Type | HW Usage |
++----------+-----------------+---------+----------+
+| orig     | orig_address0   | port    | offset   |
+| orig     | orig_ce0        | port    |          |
+| orig     | orig_q0         | port    |          |
+| orig     | orig_address1   | port    | offset   |
+| orig     | orig_ce1        | port    |          |
+| orig     | orig_q1         | port    |          |
+| sol      | sol_address0    | port    | offset   |
+| sol      | sol_ce0         | port    |          |
+| sol      | sol_we0         | port    |          |
+| sol      | sol_d0          | port    |          |
+| filter   | filter_address0 | port    | offset   |
+| filter   | filter_ce0      | port    |          |
+| filter   | filter_q0       | port    |          |
+| filter   | filter_address1 | port    | offset   |
+| filter   | filter_ce1      | port    |          |
+| filter   | filter_q1       | port    |          |
++----------+-----------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------+-----+--------+-------------------+-----+--------+---------+
+| Name                                | DSP | Pragma | Variable          | Op  | Impl   | Latency |
++-------------------------------------+-----+--------+-------------------+-----+--------+---------+
+| + stencil                           | 27  |        |                   |     |        |         |
+|   indvars_iv_next85_fu_229_p2       | -   |        | indvars_iv_next85 | add | fabric | 0       |
+|  + stencil_Pipeline_stencil_label2  | 0   |        |                   |     |        |         |
+|    add_ln9_fu_377_p2                | -   |        | add_ln9           | add | fabric | 0       |
+|    add_ln16_fu_315_p2               | -   |        | add_ln16          | add | fabric | 0       |
+|    add_ln16_1_fu_336_p2             | -   |        | add_ln16_1        | add | fabric | 0       |
+|    add_ln16_2_fu_400_p2             | -   |        | add_ln16_2        | add | fabric | 0       |
+|    add_ln16_3_fu_421_p2             | -   |        | add_ln16_3        | add | fabric | 0       |
+|    empty_14_fu_453_p2               | -   |        | empty_14          | add | fabric | 0       |
+|    add_ln16_4_fu_484_p2             | -   |        | add_ln16_4        | add | fabric | 0       |
+|    add_ln16_5_fu_505_p2             | -   |        | add_ln16_5        | add | fabric | 0       |
+|    add_ln17_fu_535_p2               | -   |        | add_ln17          | add | fabric | 0       |
+|    add_ln17_1_fu_549_p2             | -   |        | add_ln17_1        | add | fabric | 0       |
+|  + stencil_Pipeline_stencil_label21 | 0   |        |                   |     |        |         |
+|    add_ln9_fu_377_p2                | -   |        | add_ln9           | add | fabric | 0       |
+|    add_ln16_fu_325_p2               | -   |        | add_ln16          | add | fabric | 0       |
+|    add_ln16_1_fu_346_p2             | -   |        | add_ln16_1        | add | fabric | 0       |
+|    add_ln16_2_fu_400_p2             | -   |        | add_ln16_2        | add | fabric | 0       |
+|    add_ln16_3_fu_421_p2             | -   |        | add_ln16_3        | add | fabric | 0       |
+|    empty_12_fu_457_p2               | -   |        | empty_12          | add | fabric | 0       |
+|    add_ln16_4_fu_488_p2             | -   |        | add_ln16_4        | add | fabric | 0       |
+|    add_ln16_5_fu_509_p2             | -   |        | add_ln16_5        | add | fabric | 0       |
+|    add_ln17_fu_539_p2               | -   |        | add_ln17          | add | fabric | 0       |
+|    add_ln17_1_fu_553_p2             | -   |        | add_ln17_1        | add | fabric | 0       |
++-------------------------------------+-----+--------+-------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+----------+-------------------------+
+| Type     | Options  | Location                |
++----------+----------+-------------------------+
+| unroll   | factor=2 | stencil.c:8 in stencil  |
+| pipeline |          | stencil.c:10 in stencil |
+| unroll   |          | stencil.c:13 in stencil |
+| pipeline | II=1     | stencil.c:15 in stencil |
++----------+----------+-------------------------+
+
+

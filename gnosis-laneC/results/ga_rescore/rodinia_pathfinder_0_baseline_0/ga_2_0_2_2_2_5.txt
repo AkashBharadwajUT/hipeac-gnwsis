@@ -1,0 +1,18 @@
+Kernel: rodinia_pathfinder_0_baseline_0  top: workload  source: pathfinder.cpp  row: ga_2_0_2_2_2_5
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+GA row [2 0 2 2 2 5] from /home/user/gnosis/results/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24.csv (xck26-sfvc784-2LV-c, 10 ns), 675 feasible of 761
+  L1: L1:	KERNEL2: for(t = 0; t < ROWS-1 ;t++){                    -> #pragma HLS unroll factor=2
+  L2: L2:		for(n = 0; n < COLS; n++){                              -> #pragma HLS pipeline
+  L3: L3:	int32_t dst[COLS];                                       -> #pragma HLS array_partition variable=dst block factor=8 dim=1
+  L4: L4:	int32_t src[COLS];                                       -> #pragma HLS array_partition variable=src block factor=8 dim=1
+  L5: L5:	KERNEL_OUTER: for(t = 0; t < ROWS-1 ;t++){               -> #pragma HLS unroll factor=2
+  L6: L6:		KERNEL_INNER: for(n = 0; n < COLS; n++){                -> #pragma HLS unroll factor=16
+Work dir: /local/scratch/user/smoke_rodinia_pathfinder_0_baseline_0_ga_2_0_2_2_2_5_2022.2_xck26_10
+Exit code: 0   Peak RAM: 1674 MB   Wall time: 0:48.73
+
+Ours:    latency=48.01050 ms (4801050 cycles x 10.0 ns)  util%={'BRAM': 11, 'DSP': 0, 'FF': 2, 'LUT': 10}  [latency range: best 16547, worst 4801050 cycles; worst used]
+GA row: latency=0.16547 ms  util%={'BRAM': 11, 'DSP': 0, 'FF': 2, 'LUT': 10}  synth=30 s (our GA, xck26-sfvc784-2LV-c)
+Ratio ours/dataset latency: 290.1463   exact resource match: True
+Kept reports in /local/scratch/user/smoke_rodinia_pathfinder_0_baseline_0_ga_2_0_2_2_2_5_2022.2_xck26_10/reports (KEEP=1 keeps the whole project)

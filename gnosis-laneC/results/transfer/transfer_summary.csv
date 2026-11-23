@@ -1,0 +1,8 @@
+app,zcu104_pareto_designs,resynthesised,not_synth_1h,still_running_or_unknown,not_started,fit_kv260,dont_fit_kv260,best_ds_latency_ms_zcu104_2021_1,best_transferred_latency_ms_kv260_2022_2,kv260_ga_best_latency_ms,kv260_ga_feasible_designs,ga_speedup_over_best_transferred,median_latency_ratio_kv_over_ds,min_ratio,max_ratio,same_latency_within_0.5pct,variable_latency_designs
+machsuite-md-knn,20,20,0,0,0,20,0,0.02465,0.02465,0.02465,47,1.0,1.0,1.0,1.0,20,0
+machsuite-spmv-ellpack,13,13,0,0,0,13,0,0.02528,0.02528,0.00172,40,14.698,1.0,1.0,1.0333,10,3
+machsuite-stencil2d,168,168,0,0,0,167,1,0.11979,0.12105,0.0017,224,71.206,1.0,0.7514,1.0677,145,22
+machsuite-stencil3d,219,219,0,0,0,217,2,0.22183,0.22215,0.01714,879,12.961,1.0,0.9422,1.3102,168,22
+rodinia-knn-0-baseline,2,2,0,0,0,2,0,20.97183,20.97187,20.97187,24,1.0,1.0,1.0,1.0,2,0
+rodinia-knn-1-tiling,228,224,4,0,0,215,13,21.62698,28.48784,27.52524,909,1.035,1.966,0.9979,1.9669,37,0
+rodinia_pathfinder_0_baseline_0,311,311,0,0,0,42,269,10.6292,31.65487,0.12331,675,256.71,0.9933,0.7597,1.1888,35,42

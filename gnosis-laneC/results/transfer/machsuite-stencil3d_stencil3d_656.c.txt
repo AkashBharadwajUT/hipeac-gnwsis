@@ -1,0 +1,21 @@
+Kernel: machsuite-stencil3d  top: stencil3d  source: stencil.c  row: stencil3d_656.c
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+Dataset row stencil3d_656.c (xczu7ev-ffvc1156-2-e, 10 ns), 708 feasible of 726 rows
+  L1: L1:    height_bound_col : for(j=0; j<col_size; j++) {        -> #pragma HLS pipeline II=1
+  L2: L2:        height_bound_row : for(k=0; k<row_size; k++) {    -> #pragma HLS pipeline
+  L3: L3:    col_bound_height : for(i=1; i<height_size-1; i++) {   -> #pragma HLS pipeline
+  L4: L4:        col_bound_row : for(k=0; k<row_size; k++) {       -> #pragma HLS pipeline II=1
+  L5: L5:    row_bound_height : for(i=1; i<height_size-1; i++) {   -> #pragma HLS pipeline
+  L6: L6:        row_bound_col : for(j=1; j<col_size-1; j++) {     -> #pragma HLS unroll
+  L7: L7:    loop_height : for(i = 1; i < height_size - 1; i++){   -> #pragma HLS unroll factor=8
+  L8: L8:        loop_col : for(j = 1; j < col_size - 1; j++){     -> #pragma HLS pipeline
+  L9: L9:            loop_row : for(k = 1; k < row_size - 1; k++){ -> #pragma HLS unroll
+Work dir: /local/scratch/user/smoke_machsuite-stencil3d_stencil3d_656_2022.2_xck26_10
+Exit code: 0   Peak RAM: 1669 MB   Wall time: 1:06.34
+
+Ours:    latency=0.10616 ms (10616 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 15, 'FF': 3, 'LUT': 21}
+Dataset: latency=0.27987 ms  util%={'BRAM': 0, 'DSP': 11, 'FF': 1, 'LUT': 10}  synth=57 s (Vitis 2021.1)  [dataset is xczu7ev-ffvc1156-2-e; ours is xck26-sfvc784-2LV-c]
+Ratio ours/dataset latency: 0.3793   exact resource match: False
+Kept reports in /local/scratch/user/smoke_machsuite-stencil3d_stencil3d_656_2022.2_xck26_10/reports (KEEP=1 keeps the whole project)

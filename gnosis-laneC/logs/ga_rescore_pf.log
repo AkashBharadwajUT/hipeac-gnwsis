@@ -1,0 +1,5 @@
+nohup: ignoring input
+rodinia_pathfinder_0_baseline_0: 40 feasible GA designs to re-score, 8 at a time
+rodinia_pathfinder_0_baseline_0: 40/40 re-scored, 40 with variable latency
+  GA's believed best : ga_5_4_1_11_2_1  0.12331 ms (best case) -> worst case 31.65723 ms
+  true best (worst-case latency): ga_5_4_1_11_2_1  31.65723 ms

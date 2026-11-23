@@ -1,0 +1,837 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Sun Nov 22 20:43:26 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       none
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              2149
+FF:               1043
+DSP:              54
+BRAM:             0
+URAM:             0
+SRL:              0
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 6.145       |
+| Post-Route     | 7.604       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++--------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------------+
+| Name                                             | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source       |
++--------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------------+
+| inst                                             | 2149 | 1043 | 54  |      |      |     |        |      |         |          |              |
+|   (inst)                                         | 7    | 8    |     |      |      |     |        |      |         |          |              |
+|   grp_stencil_Pipeline_stencil_label1_fu_132     | 2142 | 1035 | 54  |      |      |     |        |      |         |          |              |
+|     (grp_stencil_Pipeline_stencil_label1_fu_132) | 1339 | 1033 | 7   |      |      |     |        |      |         |          |              |
+|     flow_control_loop_pipe_sequential_init_U     | 58   | 2    |     |      |      |     |        |      |         |          |              |
+|     mul_32s_32s_32_1_1_U1                        | 47   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_558  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_560  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_562  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_564  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_566  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_568  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_570  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_572  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_574  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_576  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_578  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_580  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_582  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_584  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_586  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_588  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_590  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_592  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_594  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_596  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_598  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_600  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_602  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_604  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_606  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_608  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_610  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_612  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_614  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_616  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_618  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U10                       | 15   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_13   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_31   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_49   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_67   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_85   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_103  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_121  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_139  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_157  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_175  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_193  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_211  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_229  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_247  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_265  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_283  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_301  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_319  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_337  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_355  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_373  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_391  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_409  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_427  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_445  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_463  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_481  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_499  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_517  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_535  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_553  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U11                       | 47   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_6    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_24   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_42   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_60   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_78   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_96   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_114  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_132  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_150  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_168  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_186  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_204  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_222  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_240  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_258  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_276  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_294  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_312  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_330  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_348  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_366  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_384  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_402  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_420  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_438  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_456  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_474  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_492  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_510  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_528  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_546  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U12                       | 15   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_7    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_25   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_43   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_61   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_79   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_97   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_115  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_133  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_151  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_169  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_187  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_205  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_223  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_241  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_259  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_277  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_295  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_313  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_331  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_349  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_367  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_385  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_403  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_421  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_439  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_457  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_475  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_493  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_511  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_529  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_547  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U13                       | 42   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_15   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_33   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_51   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_69   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_87   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_105  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_123  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_141  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_159  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_177  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_195  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_213  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_231  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_249  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_267  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_285  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_303  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_321  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_339  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_357  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_375  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_393  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_411  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_429  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_447  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_465  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_483  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_501  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_519  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_537  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_555  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U14                       | 51   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_8    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_26   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_44   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_62   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_80   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_98   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_116  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_134  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_152  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_170  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_188  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_206  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_224  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_242  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_260  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_278  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_296  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_314  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_332  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_350  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_368  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_386  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_404  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_422  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_440  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_458  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_476  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_494  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_512  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_530  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_548  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U15                       | 28   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_11   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_29   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_47   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_65   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_83   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_101  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_119  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_137  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_155  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_173  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_191  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_209  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_227  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_245  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_263  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_281  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_299  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_317  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_335  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_353  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_371  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_389  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_407  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_425  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_443  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_461  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_479  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_497  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_515  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_533  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_551  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U16                       | 55   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_16   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_34   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_52   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_70   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_88   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_106  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_124  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_142  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_160  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_178  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_196  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_214  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_232  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_250  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_268  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_286  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_304  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_322  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_340  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_358  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_376  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_394  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_412  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_430  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_448  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_466  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_484  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_502  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_520  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_538  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_556  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U17                       | 15   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_14   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_32   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_50   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_68   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_86   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_104  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_122  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_140  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_158  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_176  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_194  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_212  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_230  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_248  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_266  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_284  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_302  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_320  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_338  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_356  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_374  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_392  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_410  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_428  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_446  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_464  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_482  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_500  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_518  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_536  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_554  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U18                       | 48   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_17   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_35   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_53   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_71   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_89   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_107  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_125  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_143  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_161  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_179  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_197  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_215  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_233  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_251  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_269  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_287  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_305  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_323  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_341  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_359  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_377  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_395  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_413  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_431  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_449  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_467  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_485  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_503  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_521  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_539  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_557  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U2                        | 15   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul      | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_19   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_37   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_55   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_73   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_91   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_109  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_127  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_145  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_163  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_181  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_199  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_217  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_235  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_253  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_271  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_289  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_307  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_325  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_343  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_361  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_379  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_397  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_415  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_433  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_451  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_469  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_487  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_505  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_523  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_541  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U3                        | 40   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_559  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_561  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_563  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_565  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_567  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_569  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_571  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_573  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_575  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_577  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_579  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_581  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_583  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_585  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_587  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_589  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_591  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_593  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_595  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_597  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_599  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_601  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_603  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_605  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_607  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_609  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_611  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_613  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_615  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_617  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_619  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U4                        | 47   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_2    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_20   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_38   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_56   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_74   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_92   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_110  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_128  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_146  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_164  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_182  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_200  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_218  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_236  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_254  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_272  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_290  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_308  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_326  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_344  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_362  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_380  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_398  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_416  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_434  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_452  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_470  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_488  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_506  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_524  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_542  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U5                        | 79   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_3    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_21   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_39   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_57   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_75   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_93   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_111  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_129  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_147  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_165  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_183  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_201  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_219  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_237  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_255  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_273  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_291  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_309  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_327  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_345  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_363  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_381  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_399  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_417  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_435  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_453  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_471  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_489  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_507  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_525  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_543  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U6                        | 79   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_10   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_28   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_46   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_64   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_82   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_100  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_118  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_136  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_154  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_172  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_190  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_208  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_226  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_244  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_262  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_280  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_298  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_316  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_334  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_352  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_370  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_388  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_406  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_424  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_442  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_460  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_478  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_496  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_514  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_532  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_550  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U7                        | 44   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_4    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_22   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_40   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_58   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_76   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_94   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_112  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_130  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_148  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_166  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_184  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_202  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_220  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_238  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_256  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_274  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_292  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_310  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_328  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_346  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_364  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_382  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_400  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_418  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_436  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_454  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_472  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_490  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_508  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_526  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_544  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U8                        | 29   |      | 2   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_5    | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_23   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_41   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_59   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_77   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_95   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_113  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_131  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_149  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_167  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_185  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_203  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_221  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_239  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_257  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_275  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_293  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_311  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_329  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_347  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_365  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_383  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_401  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_419  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_437  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_455  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_473  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_491  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_509  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_527  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_545  | stencil.c:16 |
+|     mul_32s_32s_32_1_1_U9                        | 63   |      | 3   |      |      |     |        |      |         |          |              |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_12   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_30   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_48   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_66   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_84   | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_102  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_120  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_138  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_156  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_174  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_192  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_210  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_228  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_246  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_264  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_282  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_300  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_318  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_336  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_354  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_372  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_390  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_408  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_426  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_444  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_462  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_480  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_498  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_516  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_534  | stencil.c:16 |
+|       bind_op mul                                |      |      |     |      |      |     |        | auto | 0       | mul_552  | stencil.c:16 |
++--------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 1.83%  | OK     |
+| FD                                                        | 50%       | 0.45%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.00%  | OK     |
+| CARRY8                                                    | 25%       | 0.79%  | OK     |
+| MUXF7                                                     | 15%       | 0.02%  | OK     |
+| DSP                                                       | 80%       | 4.33%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 4.33%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 42     | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                                                                  | ENDPOINT PIN                                                         | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                                                                 |                                                                      |              |            |                |          DELAY |        DELAY |
++-------+-------+-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 2.396 | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST/CLK | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[31]/D |           18 |          9 |          7.564 |          4.995 |        2.569 |
+| Path2 | 2.401 | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST/CLK | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[29]/D |           18 |          9 |          7.559 |          4.991 |        2.568 |
+| Path3 | 2.416 | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST/CLK | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[30]/D |           18 |          9 |          7.544 |          4.975 |        2.569 |
+| Path4 | 2.418 | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST/CLK | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2728_reg[31]/D        |           18 |          9 |          7.545 |          4.870 |        2.675 |
+| Path5 | 2.427 | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST/CLK | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]/D        |           18 |          9 |          7.534 |          4.867 |        2.667 |
++-------+-------+-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                    | Primitive Type         |
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry_i_7__5            | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry                   | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry__0                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_65        | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_34        | CLB.LUT.LUT5           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_42        | CLB.LUT.LUT6           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571_reg[31]_i_17    | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733[31]_i_25                                   | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]_i_18                               | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623[31]_i_5                             | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[31]_i_1                         | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[31]                             | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                    | Primitive Type         |
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry_i_7__5            | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry                   | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry__0                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_65        | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_34        | CLB.LUT.LUT5           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_42        | CLB.LUT.LUT6           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571_reg[31]_i_17    | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733[31]_i_25                                   | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]_i_18                               | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623[31]_i_5                             | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[31]_i_1                         | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[29]                             | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                    | Primitive Type         |
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry_i_7__5            | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry                   | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry__0                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_65        | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_34        | CLB.LUT.LUT5           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_42        | CLB.LUT.LUT6           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571_reg[31]_i_17    | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733[31]_i_25                                   | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]_i_18                               | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623[31]_i_5                             | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[31]_i_1                         | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/temp_5_reg_7623_reg[30]                             | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                    | Primitive Type         |
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry_i_7__5            | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry                   | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry__0                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_65        | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_34        | CLB.LUT.LUT5           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_42        | CLB.LUT.LUT6           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571_reg[31]_i_17    | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733[31]_i_25                                   | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]_i_18                               | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2728[31]_i_5                                    | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2728_reg[31]_i_2                                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2728_reg[31]                                    | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------+------------------------+
+
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                    | Primitive Type         |
+    +------------------------------------------------------------------------------------------------+------------------------+
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__0/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout__1/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry_i_7__5            | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry                   | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U14/dout_carry__0                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_65        | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_34        | CLB.LUT.LUT5           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571[31]_i_42        | CLB.LUT.LUT6           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/mul_32s_32s_32_1_1_U7/temp_reg_7571_reg[31]_i_17    | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733[31]_i_25                                   | CLB.LUT.LUT2           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]_i_18                               | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733[31]_i_5                                    | CLB.LUT.LUT3           |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]_i_2                                | CLB.CARRY.CARRY8       |
+    | grp_stencil_Pipeline_stencil_label1_fu_132/reg_2733_reg[31]                                    | REGISTER.SDR.FDRE      |
+    +------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+-----------------------------------------------------------------+
+| Report Type              | Report Location                                                 |
++--------------------------+-----------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/stencil_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/stencil_failfast_routed.rpt                 |
+| status                   | impl/verilog/report/stencil_status_routed.rpt                   |
+| timing                   | impl/verilog/report/stencil_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/stencil_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/stencil_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/stencil_utilization_hierarchical_routed.rpt |
++--------------------------+-----------------------------------------------------------------+
+
+

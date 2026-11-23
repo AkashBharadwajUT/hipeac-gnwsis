@@ -1,0 +1,14 @@
+Kernel: machsuite-spmv-ellpack  top: ellpack  source: spmv.c  row: ellpack_35.c
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+Dataset row ellpack_35.c (xczu7ev-ffvc1156-2-e, 10 ns), 40 feasible of 40 rows
+  L1: L1:    ellpack_1 : for (i=0; i<N; i++) {                     -> #pragma HLS pipeline II=1
+  L2: L2:        ellpack_2 : for (j=0; j<L; j++) {                 -> #pragma HLS pipeline II=1
+Work dir: /local/scratch/user/smoke_machsuite-spmv-ellpack_ellpack_35_2022.2_xck26_10
+Exit code: 0   Peak RAM: 1694 MB   Wall time: 0:44.78
+
+Ours:    latency=0.02528 ms (2528 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 2, 'FF': 1, 'LUT': 2}
+Dataset: latency=0.02528 ms  util%={'BRAM': 0, 'DSP': 1, 'FF': 0, 'LUT': 1}  synth=27 s (Vitis 2021.1)  [dataset is xczu7ev-ffvc1156-2-e; ours is xck26-sfvc784-2LV-c]
+Ratio ours/dataset latency: 1.0000   exact resource match: False
+Kept reports in /local/scratch/user/smoke_machsuite-spmv-ellpack_ellpack_35_2022.2_xck26_10/reports (KEEP=1 keeps the whole project)

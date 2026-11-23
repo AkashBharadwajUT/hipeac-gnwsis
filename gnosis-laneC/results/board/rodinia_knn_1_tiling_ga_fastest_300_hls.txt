@@ -1,0 +1,18 @@
+Kernel: rodinia-knn-1-tiling  top: workload  source: knn.cpp  row: ga_fastest
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+GA row [3 2 1 1 0 5 6 2 1] from /home/user/gnosis/results/rodinia-knn-1-tiling_xck26_10_s42_g24.csv (xck26-sfvc784-2LV-c, 10 ns), 909 feasible of 919
+  L1: L1:	LOAD_TILE: for (int i(0); i < NUM_PT_IN_BUFFER*NUM_FEATU -> #pragma HLS unroll factor=4
+  L2: L2:	COMPUTE_TILE: for (int i = 0; i < NUM_PT_IN_BUFFER; ++i) -> #pragma HLS unroll factor=2
+  L3: L3:		for (int j = 0; j < NUM_FEATURE; ++j){                  -> #pragma HLS pipeline II=1
+  L4: L4:	STORE_TILE: for (int i(0); i < NUM_PT_IN_BUFFER; ++i){   -> #pragma HLS pipeline II=1
+  L5: L5:	float local_inputQuery[NUM_FEATURE];                     -> #pragma HLS array_partition variable=local_inputQuery complete dim=1
+  L6: L6:	float local_searchSpace[NUM_PT_IN_BUFFER*NUM_FEATURE];   -> #pragma HLS array_partition variable=local_searchSpace block factor=64 dim=1
+  L7: L7:	float local_distance[NUM_PT_IN_BUFFER];                  -> #pragma HLS array_partition variable=local_distance block factor=128 dim=1
+  L8: L8:	LOAD_INPUTQUERY: for (int i(0); i<NUM_FEATURE; ++i){     -> #pragma HLS unroll
+  L9: L9:	TILED_PE: for (int tile_idx(0); tile_idx<NUM_TILES; ++ti -> #pragma HLS pipeline II=1
+Work dir: /local/scratch/user/smoke_rodinia-knn-1-tiling_ga_fastest_2022.2_xck26_3.33
+Exit code: 0   Peak RAM: 1946 MB   Wall time: 3:32.90
+
+Ours:    latency=8.05427 ms (2418700 cycles x 3.33 ns)  util%={'BRAM': 0, 'DSP': 1, 'FF': 2, 'LUT': 11}
+GA row: latency=27.52524 ms  util%={'BRAM': 0, 'DSP': 1, 'FF': 1, 'LUT': 12}  synth=152 s (our GA, xck26-sfvc784-2LV-c)
+Ratio ours/dataset latency: 0.2926   exact resource match: False

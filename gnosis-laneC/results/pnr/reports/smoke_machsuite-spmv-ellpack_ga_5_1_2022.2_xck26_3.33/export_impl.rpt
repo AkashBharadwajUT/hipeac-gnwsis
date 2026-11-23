@@ -1,0 +1,220 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Sun Nov 22 23:50:25 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  3.33 ns
+    * C-Synthesis target clock:    3.33 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       none
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              8067
+FF:               9624
+DSP:              0
+BRAM:             0
+URAM:             0
+SRL:              70
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 3.330       |
+| Post-Synthesis | 1.666       |
+| Post-Route     | 3.052       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++-----------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                          | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++-----------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                          | 8067 | 9624 |     |      |      |     |        |      |         |          |        |
+|   (inst)                                      | 112  | 1321 |     |      |      |     |        |      |         |          |        |
+|   dadd_64ns_64ns_64_12_no_dsp_1_U129          | 632  | 1085 |     |      |      |     |        |      |         |          |        |
+|     (dadd_64ns_64ns_64_12_no_dsp_1_U129)      | 9    | 128  |     |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U130          | 2232 | 2547 |     |      |      |     |        |      |         |          |        |
+|     (dmul_64ns_64ns_64_11_no_dsp_1_U130)      | 6    | 128  |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_210_fu_448     | 469  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_210_fu_448) | 361  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 109  | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_211_fu_461     | 159  | 288  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_211_fu_461) | 77   | 286  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 82   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_212_fu_474     | 164  | 294  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_212_fu_474) | 81   | 292  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 84   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_213_fu_487     | 878  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_213_fu_487) | 802  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 77   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_214_fu_500     | 162  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_214_fu_500) | 86   | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 77   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_215_fu_513     | 160  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_215_fu_513) | 83   | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 78   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_21_fu_331      | 355  | 288  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_21_fu_331)  | 278  | 286  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 77   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_22_fu_344      | 296  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_22_fu_344)  | 219  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 78   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_23_fu_357      | 282  | 288  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_23_fu_357)  | 205  | 286  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 77   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_24_fu_370      | 688  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_24_fu_370)  | 613  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 76   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_25_fu_383      | 285  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_25_fu_383)  | 210  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 76   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_26_fu_396      | 157  | 294  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_26_fu_396)  | 81   | 292  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 77   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_27_fu_409      | 436  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_27_fu_409)  | 361  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 76   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_28_fu_422      | 226  | 293  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_28_fu_422)  | 151  | 291  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 76   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_29_fu_435      | 222  | 294  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_29_fu_435)  | 146  | 292  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 77   | 2    |     |      |      |     |        |      |         |          |        |
+|   grp_ellpack_Pipeline_ellpack_2_fu_318       | 156  | 288  |     |      |      |     |        |      |         |          |        |
+|     (grp_ellpack_Pipeline_ellpack_2_fu_318)   | 78   | 286  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U  | 78   | 2    |     |      |      |     |        |      |         |          |        |
++-----------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 6.89%  | OK     |
+| FD                                                        | 50%       | 4.11%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.12%  | OK     |
+| CARRY8                                                    | 25%       | 2.39%  | OK     |
+| MUXF7                                                     | 15%       | 0.02%  | OK     |
+| DSP                                                       | 80%       | 0.00%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 0.00%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 152    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+---------------------+----------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN      | ENDPOINT PIN               | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                     |                            |              |            |                |          DELAY |        DELAY |
++-------+-------+---------------------+----------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 0.278 | ap_CS_fsm_reg[29]/C | sum_31_reg_1430_reg[52]/CE |            0 |        280 |          2.924 |          0.114 |        2.810 |
+| Path2 | 0.289 | ap_CS_fsm_reg[21]/C | sum_27_reg_1381_reg[61]/CE |            0 |         66 |          2.913 |          0.113 |        2.800 |
+| Path3 | 0.292 | ap_CS_fsm_reg[27]/C | sum_30_reg_1425_reg[45]/CE |            0 |        215 |          2.910 |          0.114 |        2.796 |
+| Path4 | 0.292 | ap_CS_fsm_reg[27]/C | sum_30_reg_1425_reg[51]/CE |            0 |        215 |          2.910 |          0.114 |        2.796 |
+| Path5 | 0.302 | ap_CS_fsm_reg[21]/C | sum_27_reg_1381_reg[45]/CE |            0 |         66 |          2.899 |          0.113 |        2.786 |
++-------+-------+---------------------+----------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +-------------------------+-------------------+
+    | Path1 Cells             | Primitive Type    |
+    +-------------------------+-------------------+
+    | ap_CS_fsm_reg[29]       | REGISTER.SDR.FDRE |
+    | sum_31_reg_1430_reg[52] | REGISTER.SDR.FDRE |
+    +-------------------------+-------------------+
+
+    +-------------------------+-------------------+
+    | Path2 Cells             | Primitive Type    |
+    +-------------------------+-------------------+
+    | ap_CS_fsm_reg[21]       | REGISTER.SDR.FDRE |
+    | sum_27_reg_1381_reg[61] | REGISTER.SDR.FDRE |
+    +-------------------------+-------------------+
+
+    +-------------------------+-------------------+
+    | Path3 Cells             | Primitive Type    |
+    +-------------------------+-------------------+
+    | ap_CS_fsm_reg[27]       | REGISTER.SDR.FDRE |
+    | sum_30_reg_1425_reg[45] | REGISTER.SDR.FDRE |
+    +-------------------------+-------------------+
+
+    +-------------------------+-------------------+
+    | Path4 Cells             | Primitive Type    |
+    +-------------------------+-------------------+
+    | ap_CS_fsm_reg[27]       | REGISTER.SDR.FDRE |
+    | sum_30_reg_1425_reg[51] | REGISTER.SDR.FDRE |
+    +-------------------------+-------------------+
+
+    +-------------------------+-------------------+
+    | Path5 Cells             | Primitive Type    |
+    +-------------------------+-------------------+
+    | ap_CS_fsm_reg[21]       | REGISTER.SDR.FDRE |
+    | sum_27_reg_1381_reg[45] | REGISTER.SDR.FDRE |
+    +-------------------------+-------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+-----------------------------------------------------------------+
+| Report Type              | Report Location                                                 |
++--------------------------+-----------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/ellpack_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/ellpack_failfast_routed.rpt                 |
+| status                   | impl/verilog/report/ellpack_status_routed.rpt                   |
+| timing                   | impl/verilog/report/ellpack_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/ellpack_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/ellpack_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/ellpack_utilization_hierarchical_routed.rpt |
++--------------------------+-----------------------------------------------------------------+
+
+

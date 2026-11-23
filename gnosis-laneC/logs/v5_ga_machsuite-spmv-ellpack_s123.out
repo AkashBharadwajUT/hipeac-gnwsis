@@ -1,0 +1,28 @@
+nohup: ignoring input
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+GA: machsuite-spmv-ellpack top=ellpack src=spmv.c part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=3 seed=123 vitis=2022.2
+Work dir: /local/scratch/user/ga/machsuite-spmv-ellpack_xck26_10_s123_g24
+Finished !
+Either failed to terminate or already terminated !
+Finished !
+Either failed to terminate or already terminated !
+    2 |      40 |  0.00000E+00 |  0.00000E+00 |       1 |  0.00000E+00 |            f
+    3 |      40 |  0.00000E+00 |  0.00000E+00 |       1 |  0.00000E+00 |            f
+Actual DSE Execution Time = 406
+
+Database Analytics
+
+Database Path=./Databases/machsuite-spmv-ellpack_xck26_10_s123_g24.sqlite
+
+#synthesis total = 40
+
+Synthesis timeout percentage = 0.000000 (0)
+Synthesis failed percentage  = 0.000000 (0)
+Synthesis success total percentage = 100.000000 (40)
+- Synthesis feasible percentage = 100.000000 (40)
+- Synthesis non feasible percentage = 0.000000 (0)
+
+40 designs, 40 feasible, 1 on the Pareto front -> /local/scratch/user/ga/machsuite-spmv-ellpack_xck26_10_s123_g24/machsuite-spmv-ellpack_xck26_10_s123_g24.csv
+CSV: /local/scratch/user/ga/machsuite-spmv-ellpack_xck26_10_s123_g24/machsuite-spmv-ellpack_xck26_10_s123_g24.csv

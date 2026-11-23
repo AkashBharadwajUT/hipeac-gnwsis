@@ -1,0 +1,5 @@
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+GA: rodinia-kmeans-1-tiling top=workload src=kmeans.cpp part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=4 seed=42 vitis=2022.2
+Work dir: /local/scratch/user/ga/rodinia-kmeans-1-tiling_xck26_10_s42_g24

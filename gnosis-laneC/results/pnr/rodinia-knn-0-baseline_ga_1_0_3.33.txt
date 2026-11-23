@@ -1,0 +1,42 @@
+PNR rodinia-knn-0-baseline ga_1_0 fastest clk=3.33ns start 2026-11-22T21:09:20+01:00
+Kernel: rodinia-knn-0-baseline  top: workload  source: knn.cpp  row: ga_1_0
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+GA row [1 0] from /home/user/gnosis/results/rodinia-knn-0-baseline_xck26_10_s42_g24.csv (xck26-sfvc784-2LV-c, 10 ns), 24 feasible of 24
+  L1: L1:    for(int i = 0; i < NUM_PT_IN_SEARCHSPACE; ++i){       -> #pragma HLS pipeline II=1
+  L2: L2:        for(int j = 0; j < NUM_FEATURE; ++j){             -> #pragma HLS pipeline
+Work dir: /local/scratch/user/smoke_rodinia-knn-0-baseline_ga_1_0_2022.2_xck26_3.33
+Exit code: 0   Peak RAM: 1696 MB   Wall time: 0:39.76
+
+Ours:    latency=6.98371 ms (2097211 cycles x 3.33 ns)  util%={'BRAM': 0, 'DSP': 0, 'FF': 1, 'LUT': 2}
+GA row: latency=20.97187 ms  util%={'BRAM': 0, 'DSP': 0, 'FF': 0, 'LUT': 2}  synth=22 s (our GA, xck26-sfvc784-2LV-c)
+Ratio ours/dataset latency: 0.3330   exact resource match: False
+IMPL_EXIT 0  IMPL_WALL_S 316
+SLICE:            0
+LUT:           2115
+FF:            3440
+DSP:              7
+BRAM:             2
+URAM:             0
+LATCH:            0
+SRL:            280
+CLB:              0
+CP required:                     3.330
+CP achieved post-synthesis:      2.242
+Timing met
+SLICE:            0
+LUT:           1896
+FF:            3408
+DSP:              7
+BRAM:             2
+URAM:             0
+LATCH:            0
+SRL:            155
+CLB:            484
+CP required:                     3.330
+CP achieved post-synthesis:      2.242
+CP achieved post-implementation: 2.796
+Timing met
+# set_msg_config -id {[BD 41-1265]} -severity {CRITICAL WARNING} -new_severity {INFO}
+PNR_DONE 2026-11-22T21:15:15+01:00

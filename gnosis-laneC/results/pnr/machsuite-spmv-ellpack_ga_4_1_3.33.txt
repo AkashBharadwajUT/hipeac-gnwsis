@@ -1,0 +1,42 @@
+PNR machsuite-spmv-ellpack ga_4_1 p75 clk=3.33ns start 2026-11-22T23:44:45+01:00
+Kernel: machsuite-spmv-ellpack  top: ellpack  source: spmv.c  row: ga_4_1
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+GA row [4 1] from /home/user/gnosis/results/machsuite-spmv-ellpack_xck26_10_s42_g24.csv (xck26-sfvc784-2LV-c, 10 ns), 40 feasible of 40
+  L1: L1:    ellpack_1 : for (i=0; i<N; i++) {                     -> #pragma HLS unroll factor=8
+  L2: L2:        ellpack_2 : for (j=0; j<L; j++) {                 -> #pragma HLS pipeline II=1
+Work dir: /local/scratch/user/smoke_machsuite-spmv-ellpack_ga_4_1_2022.2_xck26_3.33
+Exit code: 0   Peak RAM: 1690 MB   Wall time: 0:42.19
+
+Ours:    latency=0.21518 ms (64620 cycles x 3.33 ns)  util%={'BRAM': 0, 'DSP': 0, 'FF': 2, 'LUT': 4}  [latency range: best 1043, worst 64620 cycles; worst used]
+GA row: latency=0.00340 ms  util%={'BRAM': 0, 'DSP': 0, 'FF': 1, 'LUT': 2}  synth=21 s (our GA, xck26-sfvc784-2LV-c)
+Ratio ours/dataset latency: 63.2896   exact resource match: False
+IMPL_EXIT 0  IMPL_WALL_S 327
+SLICE:            0
+LUT:           5510
+FF:            6673
+DSP:              0
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:            102
+CLB:              0
+CP required:                     3.330
+CP achieved post-synthesis:      1.666
+Timing met
+SLICE:            0
+LUT:           5406
+FF:            6655
+DSP:              0
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:             70
+CLB:           1115
+CP required:                     3.330
+CP achieved post-synthesis:      1.666
+CP achieved post-implementation: 2.764
+Timing met
+# set_msg_config -id {[BD 41-1265]} -severity {CRITICAL WARNING} -new_severity {INFO}
+PNR_DONE 2026-11-22T23:50:54+01:00

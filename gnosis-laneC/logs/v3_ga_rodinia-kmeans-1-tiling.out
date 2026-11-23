@@ -1,0 +1,29 @@
+nohup: ignoring input
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+Resuming: rodinia-kmeans-1-tiling_xck26_10_s42_g24.sqlite kept
+GA: rodinia-kmeans-1-tiling top=workload src=kmeans.cpp part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=20 seed=42 vitis=2022.2
+Work dir: /local/scratch/user/ga/rodinia-kmeans-1-tiling_xck26_10_s42_g24
+Either failed to terminate or already terminated !
+Finished !
+Either failed to terminate or already terminated !
+Finished !
+Either failed to terminate or already terminated !
+   24 |     960 |  0.00000E+00 |  0.00000E+00 |      40 |  0.015538302 |            f
+Actual DSE Execution Time = 50378
+
+Database Analytics
+
+Database Path=./Databases/rodinia-kmeans-1-tiling_xck26_10_s42_g24.sqlite
+
+#synthesis total = 949
+
+Synthesis timeout percentage = 15.595364 (148)
+Synthesis failed percentage  = 0.000000 (0)
+Synthesis success total percentage = 84.404636 (801)
+- Synthesis feasible percentage = 89.138577 (714)
+- Synthesis non feasible percentage = 10.861423 (87)
+
+949 designs, 701 feasible, 131 on the Pareto front -> /local/scratch/user/ga/rodinia-kmeans-1-tiling_xck26_10_s42_g24/rodinia-kmeans-1-tiling_xck26_10_s42_g24.csv
+CSV: /local/scratch/user/ga/rodinia-kmeans-1-tiling_xck26_10_s42_g24/rodinia-kmeans-1-tiling_xck26_10_s42_g24.csv

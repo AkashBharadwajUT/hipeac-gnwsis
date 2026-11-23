@@ -1,0 +1,8 @@
+nohup: ignoring input
+Ours:    latency=52.46996 ms (5246996 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 0, 'FF': 0, 'LUT': 1}
+Dataset: latency=52.44928 ms  util%={'BRAM': 0, 'DSP': 0, 'FF': 0, 'LUT': 0}  synth=33 s (Vitis 2021.1)
+Ratio ours/dataset latency: 1.0004   exact resource match: False
+Dataset row workload_30.cpp (xczu7ev-ffvc1156-2-e, 10 ns), 881 feasible of 911 rows
+Ours:    latency=10.56270 ms (1056270 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 0, 'FF': 29, 'LUT': 79}
+Dataset: latency=10.62920 ms  util%={'BRAM': 1, 'DSP': 0, 'FF': 11, 'LUT': 71}  synth=355 s (Vitis 2021.1)
+Ratio ours/dataset latency: 0.9937   exact resource match: False

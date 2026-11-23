@@ -1,0 +1,27 @@
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+GA: machsuite-stencil3d top=stencil3d src=stencil.c part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=4 seed=42 vitis=2022.2
+Work dir: /local/scratch/user/ga/machsuite-stencil3d_xck26_10_s42_g24
+
+Finished !
+Either failed to terminate or already terminated !
+Finished !
+Either failed to terminate or already terminated !
+   24 |     960 |  0.00000E+00 |  0.00000E+00 |      32 |  2.45194E-06 |            f
+Actual DSE Execution Time = 25860
+
+Database Analytics
+
+Database Path=./Databases/machsuite-stencil3d_xck26_10_s42_g24.sqlite
+
+#synthesis total = 890
+
+Synthesis timeout percentage = 0.112360 (1)
+Synthesis failed percentage  = 0.000000 (0)
+Synthesis success total percentage = 99.887640 (889)
+- Synthesis feasible percentage = 98.875141 (879)
+- Synthesis non feasible percentage = 1.124859 (10)
+
+890 designs, 879 feasible, 32 on the Pareto front -> /local/scratch/user/ga/machsuite-stencil3d_xck26_10_s42_g24/machsuite-stencil3d_xck26_10_s42_g24.csv
+CSV: /local/scratch/user/ga/machsuite-stencil3d_xck26_10_s42_g24/machsuite-stencil3d_xck26_10_s42_g24.csv

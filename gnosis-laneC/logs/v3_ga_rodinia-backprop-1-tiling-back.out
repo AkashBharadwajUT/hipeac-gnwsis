@@ -1,0 +1,7 @@
+nohup: ignoring input
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+Resuming: rodinia-backprop-1-tiling-back_xck26_10_s42_g24.sqlite kept
+GA: rodinia-backprop-1-tiling-back top=workload src=backprop_kernel.cpp part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=20 seed=42 vitis=2022.2
+Work dir: /local/scratch/user/ga/rodinia-backprop-1-tiling-back_xck26_10_s42_g24

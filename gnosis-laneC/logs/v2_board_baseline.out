@@ -1,0 +1,7 @@
+nohup: ignoring input
+Reusing HLS IP: /local/scratch/user/smoke_rodinia-knn-1-tiling_baseline_2022.2_xck26_10/smoke/solution1/impl/ip
+Loading xilinx/vivado/2022.2
+  Loading requirement: xilinx/.licence
+DONE rodinia_knn_1_tiling_baseline_100: WNS=4.202 ns at 100 MHz -> rodinia_knn_1_tiling_baseline_100.bit rodinia_knn_1_tiling_baseline_100.hwh
+-rw-r--r-- 1 user students m-emsys 7797814 Nov 21 00:19 /local/scratch/user/board/rodinia_knn_1_tiling_baseline_100.bit
+-rw-r--r-- 1 user students m-emsys  267346 Nov 21 00:14 /local/scratch/user/board/rodinia_knn_1_tiling_baseline_100.hwh

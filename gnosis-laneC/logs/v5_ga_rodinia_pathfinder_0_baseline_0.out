@@ -1,0 +1,28 @@
+nohup: ignoring input
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+pymoo 0.5.0
+GA: rodinia_pathfinder_0_baseline_0 top=workload src=pathfinder.cpp part=xck26-sfvc784-2LV-c clk=10ns gens=24 threads=6 seed=42 vitis=2022.2
+Work dir: /local/scratch/user/ga/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24
+Either failed to terminate or already terminated !
+   21 |     840 |  0.00000E+00 |  0.00000E+00 |      40 |  0.00000E+00 |            f
+Actual DSE Execution Time = 46422
+
+Database Analytics
+
+Database Path=./Databases/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24.sqlite
+
+#synthesis total = 761
+
+Synthesis timeout percentage = 1.314060 (10)
+Synthesis failed percentage  = 0.131406 (1)
+Synthesis success total percentage = 98.554534 (750)
+- Synthesis feasible percentage = 90.133333 (676)
+- Synthesis non feasible percentage = 9.866667 (74)rm: cannot remove 'GENETIC_DSE_*': No such file or directory
+rm: cannot remove 'kernel_*.cpp': No such file or directory
+rm: cannot remove 'script_*.tcl': No such file or directory
+rm: cannot remove 'vitis_hls_*.log': No such file or directory
+
+
+761 designs, 675 feasible, 203 on the Pareto front -> /local/scratch/user/ga/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24.csv
+CSV: /local/scratch/user/ga/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24/rodinia_pathfinder_0_baseline_0_xck26_10_s42_g24.csv

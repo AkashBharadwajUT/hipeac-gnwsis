@@ -1,0 +1,178 @@
+
+
+================================================================
+== Synthesis Summary Report of 'stencil'
+================================================================
++ General Information: 
+    * Date:           Sun Nov 22 20:37:48 2026
+    * Version:        2022.2.2 (Build 3779808 on Feb 17 2023)
+    * Project:        smoke
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |                Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |           |           |     |
+    |                & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |+ stencil                              |     -|  0.47|    82216|  8.222e+05|         -|    82217|     -|        no|     -|  24 (1%)|  490 (~0%)|  1892 (1%)|    -|
+    | o stencil_label1                      |     -|  7.30|    82215|  8.222e+05|      1305|        -|    63|        no|     -|        -|          -|          -|    -|
+    |  o stencil_label2                     |     -|  7.30|      651|  6.510e+03|        21|        -|    31|        no|     -|        -|          -|          -|    -|
+    |   + stencil_Pipeline_stencil_label3   |     -|  1.48|        8|     80.000|         -|        8|     -|        no|     -|  6 (~0%)|   83 (~0%)|  355 (~0%)|    -|
+    |    o stencil_label3                   |    II|  7.30|        6|     60.000|         3|        2|     3|       yes|     -|        -|          -|          -|    -|
+    |   + stencil_Pipeline_stencil_label31  |     -|  0.47|        8|     80.000|         -|        8|     -|        no|     -|  6 (~0%)|  121 (~0%)|  364 (~0%)|    -|
+    |    o stencil_label3                   |    II|  7.30|        6|     60.000|         3|        2|     3|       yes|     -|        -|          -|          -|    -|
+    |  o stencil_label2                     |     -|  7.30|      651|  6.510e+03|        21|        -|    31|        no|     -|        -|          -|          -|    -|
+    |   + stencil_Pipeline_stencil_label32  |     -|  1.48|        8|     80.000|         -|        8|     -|        no|     -|  6 (~0%)|   83 (~0%)|  355 (~0%)|    -|
+    |    o stencil_label3                   |    II|  7.30|        6|     60.000|         3|        2|     3|       yes|     -|        -|          -|          -|    -|
+    |   + stencil_Pipeline_stencil_label33  |     -|  0.47|        8|     80.000|         -|        8|     -|        no|     -|  6 (~0%)|  121 (~0%)|  364 (~0%)|    -|
+    |    o stencil_label3                   |    II|  7.30|        6|     60.000|         3|        2|     3|       yes|     -|        -|          -|          -|    -|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-----------------+----------+
+| Interface       | Bitwidth |
++-----------------+----------+
+| filter_address0 | 4        |
+| filter_address1 | 4        |
+| filter_q0       | 32       |
+| filter_q1       | 32       |
+| orig_address0   | 13       |
+| orig_address1   | 13       |
+| orig_q0         | 32       |
+| orig_q1         | 32       |
+| sol_address0    | 13       |
+| sol_d0          | 32       |
++-----------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| orig     | in        | int*     |
+| sol      | out       | int*     |
+| filter   | in        | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+----------+
+| Argument | HW Interface    | HW Type | HW Usage |
++----------+-----------------+---------+----------+
+| orig     | orig_address0   | port    | offset   |
+| orig     | orig_ce0        | port    |          |
+| orig     | orig_q0         | port    |          |
+| orig     | orig_address1   | port    | offset   |
+| orig     | orig_ce1        | port    |          |
+| orig     | orig_q1         | port    |          |
+| sol      | sol_address0    | port    | offset   |
+| sol      | sol_ce0         | port    |          |
+| sol      | sol_we0         | port    |          |
+| sol      | sol_d0          | port    |          |
+| filter   | filter_address0 | port    | offset   |
+| filter   | filter_ce0      | port    |          |
+| filter   | filter_q0       | port    |          |
+| filter   | filter_address1 | port    | offset   |
+| filter   | filter_ce1      | port    |          |
+| filter   | filter_q1       | port    |          |
++----------+-----------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------+-----+--------+------------+-----+--------+---------+
+| Name                                | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++-------------------------------------+-----+--------+------------+-----+--------+---------+
+| + stencil                           | 24  |        |            |     |        |         |
+|   add_ln9_fu_229_p2                 | -   |        | add_ln9    | add | fabric | 0       |
+|   add_ln9_1_fu_298_p2               | -   |        | add_ln9_1  | add | fabric | 0       |
+|   add_ln7_fu_304_p2                 | -   |        | add_ln7    | add | fabric | 0       |
+|  + stencil_Pipeline_stencil_label3  | 6   |        |            |     |        |         |
+|    add_ln12_fu_192_p2               | -   |        | add_ln12   | add | fabric | 0       |
+|    empty_21_fu_202_p2               | -   |        | empty_21   | add | fabric | 0       |
+|    sub_ln16_fu_241_p2               | -   |        | sub_ln16   | sub | fabric | 0       |
+|    mul_32s_32s_32_1_1_U2            | 3   |        | mul        | mul | auto   | 0       |
+|    add_ln16_fu_262_p2               | -   |        | add_ln16   | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U1            | 3   |        | mul_7      | mul | auto   | 0       |
+|    add_ln16_1_fu_294_p2             | -   |        | add_ln16_1 | add | fabric | 0       |
+|    add_ln16_2_fu_333_p2             | -   |        | add_ln16_2 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U1            | 3   |        | mul_8      | mul | auto   | 0       |
+|    add_ln17_fu_354_p2               | -   |        | add_ln17   | add | fabric | 0       |
+|  + stencil_Pipeline_stencil_label31 | 6   |        |            |     |        |         |
+|    add_ln12_fu_192_p2               | -   |        | add_ln12   | add | fabric | 0       |
+|    empty_20_fu_202_p2               | -   |        | empty_20   | add | fabric | 0       |
+|    sub_ln16_fu_241_p2               | -   |        | sub_ln16   | sub | fabric | 0       |
+|    mul_32s_32s_32_1_1_U10           | 3   |        | mul        | mul | auto   | 0       |
+|    add_ln16_3_fu_262_p2             | -   |        | add_ln16_3 | add | fabric | 0       |
+|    add_ln16_4_fu_293_p2             | -   |        | add_ln16_4 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U9            | 3   |        | mul_5      | mul | auto   | 0       |
+|    add_ln16_5_fu_314_p2             | -   |        | add_ln16_5 | add | fabric | 0       |
+|    add_ln16_fu_330_p2               | -   |        | add_ln16   | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U9            | 3   |        | mul_6      | mul | auto   | 0       |
+|    add_ln17_fu_368_p2               | -   |        | add_ln17   | add | fabric | 0       |
+|  + stencil_Pipeline_stencil_label32 | 6   |        |            |     |        |         |
+|    add_ln12_fu_192_p2               | -   |        | add_ln12   | add | fabric | 0       |
+|    empty_18_fu_202_p2               | -   |        | empty_18   | add | fabric | 0       |
+|    sub_ln16_fu_241_p2               | -   |        | sub_ln16   | sub | fabric | 0       |
+|    mul_32s_32s_32_1_1_U17           | 3   |        | mul        | mul | auto   | 0       |
+|    add_ln16_fu_262_p2               | -   |        | add_ln16   | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U16           | 3   |        | mul_3      | mul | auto   | 0       |
+|    add_ln16_4_fu_294_p2             | -   |        | add_ln16_4 | add | fabric | 0       |
+|    add_ln16_5_fu_333_p2             | -   |        | add_ln16_5 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U16           | 3   |        | mul_4      | mul | auto   | 0       |
+|    add_ln17_fu_354_p2               | -   |        | add_ln17   | add | fabric | 0       |
+|  + stencil_Pipeline_stencil_label33 | 6   |        |            |     |        |         |
+|    add_ln12_fu_192_p2               | -   |        | add_ln12   | add | fabric | 0       |
+|    empty_16_fu_202_p2               | -   |        | empty_16   | add | fabric | 0       |
+|    sub_ln16_fu_241_p2               | -   |        | sub_ln16   | sub | fabric | 0       |
+|    mul_32s_32s_32_1_1_U24           | 3   |        | mul        | mul | auto   | 0       |
+|    add_ln16_fu_262_p2               | -   |        | add_ln16   | add | fabric | 0       |
+|    add_ln16_1_fu_293_p2             | -   |        | add_ln16_1 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U23           | 3   |        | mul_1      | mul | auto   | 0       |
+|    add_ln16_2_fu_314_p2             | -   |        | add_ln16_2 | add | fabric | 0       |
+|    add_ln16_3_fu_330_p2             | -   |        | add_ln16_3 | add | fabric | 0       |
+|    mul_32s_32s_32_1_1_U23           | 3   |        | mul_2      | mul | auto   | 0       |
+|    add_ln17_fu_368_p2               | -   |        | add_ln17   | add | fabric | 0       |
++-------------------------------------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+----------+-------------------------+
+| Type     | Options  | Location                |
++----------+----------+-------------------------+
+| unroll   | factor=2 | stencil.c:8 in stencil  |
+| unroll   | factor=2 | stencil.c:10 in stencil |
+| pipeline | II=1     | stencil.c:13 in stencil |
+| pipeline |          | stencil.c:15 in stencil |
++----------+----------+-------------------------+
+
+

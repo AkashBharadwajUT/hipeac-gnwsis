@@ -1,0 +1,310 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Mon Nov 23 00:05:23 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  3.33 ns
+    * C-Synthesis target clock:    3.33 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              62879
+FF:               81873
+DSP:              3
+BRAM:             0
+URAM:             0
+SRL:              8438
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++------------+-------------+
+| Timing     | Period (ns) |
++------------+-------------+
+| Target     | 3.330       |
+| Post-Route | 2.612       |
++------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++------------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                           | LUT   | FF    | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++------------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                           | 62879 | 81873 | 3   |      |      |     |        |      |         |          |        |
+|   (inst)                                       | 223   | 6713  |     |      |      |     |        |      |         |          |        |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U449     | 669   | 937   | 3   |      |      |     |        |      |         |          |        |
+|     (dadddsub_64ns_64ns_64_13_full_dsp_1_U449) | 17    | 129   |     |      |      |     |        |      |         |          |        |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U451           | 3288  | 6164  |     |      |      |     |        |      |         |          |        |
+|     (ddiv_64ns_64ns_64_59_no_dsp_1_U451)       | 21    | 130   |     |      |      |     |        |      |         |          |        |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U450           | 2316  | 2555  |     |      |      |     |        |      |         |          |        |
+|     (dmul_64ns_64ns_64_11_no_dsp_1_U450)       | 22    | 128   |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j10_fu_2316      | 1743  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j10_fu_2316)  | 1727  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 16    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j11_fu_2335      | 1621  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j11_fu_2335)  | 1605  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 16    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j12_fu_2354      | 1835  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j12_fu_2354)  | 1821  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j13_fu_2373      | 2407  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j13_fu_2373)  | 2389  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 18    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j14_fu_2392      | 1551  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j14_fu_2392)  | 1537  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j15_fu_2411      | 1538  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j15_fu_2411)  | 1515  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 23    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j16_fu_2430      | 2041  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j16_fu_2430)  | 2027  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j17_fu_2449      | 1682  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j17_fu_2449)  | 1666  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 16    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j18_fu_2468      | 1754  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j18_fu_2468)  | 1736  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 18    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j19_fu_2487      | 1681  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j19_fu_2487)  | 1667  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j1_fu_2145       | 1817  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j1_fu_2145)   | 1801  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 16    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j20_fu_2506      | 1550  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j20_fu_2506)  | 1536  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j21_fu_2525      | 1753  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j21_fu_2525)  | 1736  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 17    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j22_fu_2544      | 2015  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j22_fu_2544)  | 1996  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 19    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j23_fu_2563      | 1484  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j23_fu_2563)  | 1471  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 13    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j24_fu_2582      | 1487  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j24_fu_2582)  | 1474  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 13    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j25_fu_2601      | 1741  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j25_fu_2601)  | 1727  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j26_fu_2620      | 2009  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j26_fu_2620)  | 1993  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 16    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j27_fu_2639      | 2141  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j27_fu_2639)  | 2126  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 15    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j28_fu_2658      | 1691  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j28_fu_2658)  | 1673  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 18    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j29_fu_2677      | 1642  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j29_fu_2677)  | 1622  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 20    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j2_fu_2164       | 1611  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j2_fu_2164)   | 1595  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 16    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j30_fu_2696      | 1679  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j30_fu_2696)  | 1664  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 15    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j31_fu_2715      | 1522  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j31_fu_2715)  | 1505  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 17    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j3_fu_2183       | 1877  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j3_fu_2183)   | 1863  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 14    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j4_fu_2202       | 1978  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j4_fu_2202)   | 1959  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 19    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j5_fu_2221       | 1497  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j5_fu_2221)   | 1482  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 15    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j6_fu_2240       | 1522  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j6_fu_2240)   | 1507  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 15    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j7_fu_2259       | 1944  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j7_fu_2259)   | 1926  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 18    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j8_fu_2278       | 1929  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j8_fu_2278)   | 1912  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 17    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j9_fu_2297       | 1959  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j9_fu_2297)   | 1946  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 13    | 2     |     |      |      |     |        |      |         |          |        |
+|   grp_md_kernel_Pipeline_loop_j_fu_2126        | 1682  | 2047  |     |      |      |     |        |      |         |          |        |
+|     (grp_md_kernel_Pipeline_loop_j_fu_2126)    | 1669  | 2045  |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U   | 13    | 2     |     |      |      |     |        |      |         |          |        |
++------------------------------------------------+-------+-------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 53.69% | OK     |
+| FD                                                        | 50%       | 34.95% | OK     |
+| LUTRAM+SRL                                                | 25%       | 14.65% | OK     |
+| CARRY8                                                    | 25%       | 4.84%  | OK     |
+| MUXF7                                                     | 15%       | 0.24%  | OK     |
+| LUT Combining                                             | 20%       | 2.01%  | OK     |
+| DSP                                                       | 80%       | 0.24%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.00%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 0.24%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 1023   | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 3.11   | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 64     | REVIEW |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+-------------------------------------------------------------+--------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                              | ENDPOINT PIN                                                 | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                             |                                                              |              |            |                |          DELAY |        DELAY |
++-------+-------+-------------------------------------------------------------+--------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 0.718 | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]/C | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[0]/D  |            9 |         88 |          2.609 |          0.768 |        1.841 |
+| Path2 | 0.718 | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]/C | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[10]/D |            9 |         88 |          2.609 |          0.768 |        1.841 |
+| Path3 | 0.718 | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]/C | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[11]/D |            9 |         88 |          2.609 |          0.768 |        1.841 |
+| Path4 | 0.718 | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]/C | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[12]/D |            9 |         88 |          2.609 |          0.768 |        1.841 |
+| Path5 | 0.718 | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]/C | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[13]/D |            9 |         88 |          2.609 |          0.768 |        1.841 |
++-------+-------+-------------------------------------------------------------+--------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +----------------------------------------------------------------+-------------------+
+    | Path1 Cells                                                    | Primitive Type    |
+    +----------------------------------------------------------------+-------------------+
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]      | REGISTER.SDR.FDRE |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_362__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din1_buf1[63]_i_152__0 | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_360__0 | CLB.LUT.LUT5      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[0]_i_104__0  | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[0]_i_50__0   | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j12_fu_2354/din0_buf1[0]_i_17__0   | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j9_fu_2297/din0_buf1[0]_i_6__0     | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1[0]_i_2__0     | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1_reg[0]_i_1    | CLB.MUXF.MUXF7    |
+    | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[0]      | REGISTER.SDR.FDRE |
+    +----------------------------------------------------------------+-------------------+
+
+    +----------------------------------------------------------------+-------------------+
+    | Path2 Cells                                                    | Primitive Type    |
+    +----------------------------------------------------------------+-------------------+
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]      | REGISTER.SDR.FDRE |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_362__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din1_buf1[63]_i_152__0 | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_360__0 | CLB.LUT.LUT5      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[10]_i_104__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[10]_i_50__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j12_fu_2354/din0_buf1[10]_i_17__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j9_fu_2297/din0_buf1[10]_i_6__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1[10]_i_2__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1_reg[10]_i_1   | CLB.MUXF.MUXF7    |
+    | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[10]     | REGISTER.SDR.FDRE |
+    +----------------------------------------------------------------+-------------------+
+
+    +----------------------------------------------------------------+-------------------+
+    | Path3 Cells                                                    | Primitive Type    |
+    +----------------------------------------------------------------+-------------------+
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]      | REGISTER.SDR.FDRE |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_362__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din1_buf1[63]_i_152__0 | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_360__0 | CLB.LUT.LUT5      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[11]_i_104__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[11]_i_50__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j12_fu_2354/din0_buf1[11]_i_17__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j9_fu_2297/din0_buf1[11]_i_6__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1[11]_i_2__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1_reg[11]_i_1   | CLB.MUXF.MUXF7    |
+    | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[11]     | REGISTER.SDR.FDRE |
+    +----------------------------------------------------------------+-------------------+
+
+    +----------------------------------------------------------------+-------------------+
+    | Path4 Cells                                                    | Primitive Type    |
+    +----------------------------------------------------------------+-------------------+
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]      | REGISTER.SDR.FDRE |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_362__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din1_buf1[63]_i_152__0 | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_360__0 | CLB.LUT.LUT5      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[12]_i_104__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[12]_i_50__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j12_fu_2354/din0_buf1[12]_i_17__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j9_fu_2297/din0_buf1[12]_i_6__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1[12]_i_2__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1_reg[12]_i_1   | CLB.MUXF.MUXF7    |
+    | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[12]     | REGISTER.SDR.FDRE |
+    +----------------------------------------------------------------+-------------------+
+
+    +----------------------------------------------------------------+-------------------+
+    | Path5 Cells                                                    | Primitive Type    |
+    +----------------------------------------------------------------+-------------------+
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/ap_CS_fsm_reg[11]      | REGISTER.SDR.FDRE |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_362__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din1_buf1[63]_i_152__0 | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[63]_i_360__0 | CLB.LUT.LUT5      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[13]_i_104__0 | CLB.LUT.LUT4      |
+    | grp_md_kernel_Pipeline_loop_j13_fu_2373/din0_buf1[13]_i_50__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j12_fu_2354/din0_buf1[13]_i_17__0  | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j9_fu_2297/din0_buf1[13]_i_6__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1[13]_i_2__0    | CLB.LUT.LUT6      |
+    | grp_md_kernel_Pipeline_loop_j8_fu_2278/din0_buf1_reg[13]_i_1   | CLB.MUXF.MUXF7    |
+    | dadddsub_64ns_64ns_64_13_full_dsp_1_U449/din0_buf1_reg[13]     | REGISTER.SDR.FDRE |
+    +----------------------------------------------------------------+-------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+------------------------------------------------------------------+
+| Report Type              | Report Location                                                  |
++--------------------------+------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/md_kernel_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/md_kernel_failfast_synth.rpt                 |
+| timing                   | impl/verilog/report/md_kernel_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/md_kernel_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/md_kernel_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/md_kernel_utilization_hierarchical_synth.rpt |
++--------------------------+------------------------------------------------------------------+
+
+

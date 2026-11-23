@@ -1,0 +1,11 @@
+kernel,ga_designs,paper_per_scenario,feasible,variable_latency,ga_believed_best_ms,true_best_worst_case_ms
+MD KNN,48,48,47,0,0.02465,0.02465
+SPMV,40,40,40,20,0.00172,0.02528
+Stencil2D,250,240,224,120,0.0017,0.12105
+Stencil3D,890,839,879,837,0.01714,0.22222
+KNN (B),24,24,24,0,20.97187,20.97187
+KNN (T),919,751,909,0,27.52524,27.52524
+Backprop (T),439,857,0,,,
+K-means (T),949,950,701,304,13.12393,149.61424
+Backprop (B),40,,22,0,10.49289,10.49289
+Pathfinder (B),761,,675,675,0.12331,31.65415

@@ -1,0 +1,5 @@
+nohup: ignoring input
+rodinia-kmeans-1-tiling: 701 feasible GA designs to re-score, 12 at a time
+rodinia-kmeans-1-tiling: 643/701 re-scored, 304 with variable latency
+  GA's believed best : ga_0_6_0_6_0_2_4_0_7_8_13_4  13.12393 ms (best case) -> worst case 170.58933 ms
+  true best (worst-case latency): ga_0_3_0_0_0_1_4_0_10_9_5_5  149.61424 ms

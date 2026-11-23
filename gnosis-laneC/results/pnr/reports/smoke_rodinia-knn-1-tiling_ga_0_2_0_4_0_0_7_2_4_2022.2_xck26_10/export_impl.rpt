@@ -1,0 +1,252 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Sun Nov 22 20:54:07 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       none
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              1984
+FF:               3169
+DSP:              5
+BRAM:             6
+URAM:             0
+SRL:              129
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 5.046       |
+| Post-Route     | 5.804       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++------------------------------------------------+------+------+-----+------+------+-----+--------+--------+---------+---------------------+------------+
+| Name                                           | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl   | Latency | Variable            | Source     |
++------------------------------------------------+------+------+-----+------+------+-----+--------+--------+---------+---------------------+------------+
+| inst                                           | 1984 | 3169 | 5   | 6    |      |     |        |        |         |                     |            |
+|   (inst)                                       | 4    | 416  |     |      |      |     |        |        |         |                     |            |
+|   control_s_axi_U                              | 223  | 247  |     |      |      |     |        |        |         |                     |            |
+|   gmem_m_axi_U                                 | 990  | 1684 |     | 2    |      |     |        |        |         |                     |            |
+|   grp_compute_dist_fu_156                      | 478  | 589  | 5   |      |      |     |        |        |         |                     |            |
+|     (grp_compute_dist_fu_156)                  | 28   | 34   |     |      |      |     |        |        |         |                     |            |
+|     faddfsub_32ns_32ns_32_4_full_dsp_1_U33     | 201  | 200  | 2   |      |      |     |        |        |         |                     |            |
+|       bind_op add                              |      |      |     |      |      |     |        | fabric | 0       | add_ln16            | knn.cpp:16 |
+|     fmul_32ns_32ns_32_3_max_dsp_1_U34          | 50   | 62   | 3   |      |      |     |        |        |         |                     |            |
+|       (fmul_32ns_32ns_32_3_max_dsp_1_U34)      |      | 31   |     |      |      |     |        |        |         |                     |            |
+|     grp_compute_dist_Pipeline_L31_fu_115       | 114  | 147  |     |      |      |     |        |        |         |                     |            |
+|       (grp_compute_dist_Pipeline_L31_fu_115)   | 94   | 145  |     |      |      |     |        |        |         |                     |            |
+|     grp_compute_dist_Pipeline_L3_fu_102        | 85   | 146  |     |      |      |     |        |        |         |                     |            |
+|       (grp_compute_dist_Pipeline_L3_fu_102)    | 78   | 144  |     |      |      |     |        |        |         |                     |            |
+|   grp_load_1_fu_146                            | 143  | 142  |     |      |      |     |        |        |         |                     |            |
+|     (grp_load_1_fu_146)                        | 103  | 73   |     |      |      |     |        |        |         |                     |            |
+|     grp_load_1_Pipeline_LOAD_TILE_fu_65        | 40   | 69   |     |      |      |     |        |        |         |                     |            |
+|       (grp_load_1_Pipeline_LOAD_TILE_fu_65)    | 10   | 67   |     |      |      |     |        |        |         |                     |            |
+|       flow_control_loop_pipe_sequential_init_U | 31   | 2    |     |      |      |     |        |        |         |                     |            |
+|   grp_store_1_fu_166                           | 111  | 91   |     |      |      |     |        |        |         |                     |            |
+|   local_distance_1_U                           | 2    |      |     | 1    |      |     |        |        |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto   | 1       | local_distance_1    | knn.cpp:54 |
+|   local_distance_U                             |      |      |     | 1    |      |     |        |        |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto   | 1       | local_distance      | knn.cpp:54 |
+|   local_searchSpace_1_U                        | 36   |      |     | 1    |      |     |        |        |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto   | 1       | local_searchSpace_1 | knn.cpp:52 |
+|   local_searchSpace_U                          |      |      |     | 1    |      |     |        |        |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto   | 1       | local_searchSpace   | knn.cpp:52 |
++------------------------------------------------+------+------+-----+------+------+-----+--------+--------+---------+---------------------+------------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 1.69%  | OK     |
+| FD                                                        | 50%       | 1.35%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.22%  | OK     |
+| CARRY8                                                    | 25%       | 0.60%  | OK     |
+| MUXF7                                                     | 15%       | 0.11%  | OK     |
+| DSP                                                       | 80%       | 0.40%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 2.08%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 1.24%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 118    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                                                                | ENDPOINT PIN                                                      | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                                                               |                                                                   |              |            |                |          DELAY |        DELAY |
++-------+-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 4.196 | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]/C | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]/D |           11 |         22 |          5.801 |          4.028 |        1.773 |
+| Path2 | 4.414 | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]/C | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.exp_op_reg[5]/D   |           12 |          8 |          5.585 |          4.304 |        1.281 |
+| Path3 | 4.435 | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]/C | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.exp_op_reg[6]/D   |           12 |          8 |          5.561 |          4.214 |        1.347 |
+| Path4 | 4.487 | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]/C | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[21]/D |           11 |          4 |          5.511 |          4.166 |        1.345 |
+| Path5 | 4.491 | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]/C | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.exp_op_reg[3]/D   |           12 |          8 |          5.507 |          4.302 |        1.205 |
++-------+-------+-------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                               | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]                                               | REGISTER.SDR.FDRE      |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[21]_i_3                   | CLB.LUT.LUT6           |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[22]_i_2                   | CLB.LUT.LUT6           |
+    | i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.mant_op[22]_i_1                                          | CLB.LUT.LUT6           |
+    | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[22]                                                           | REGISTER.SDR.FDRE      |
+    +---------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                                           | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.exp_op[7]_i_3                                 | CLB.LUT.LUT4           |
+    | i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.exp_op[5]_i_1                                                        | CLB.LUT.LUT5           |
+    | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.exp_op_reg[5]                                                                         | REGISTER.SDR.FDRE      |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                                           | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.exp_op[7]_i_3                                 | CLB.LUT.LUT4           |
+    | i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.exp_op[6]_i_1                                                        | CLB.LUT.LUT5           |
+    | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.exp_op_reg[6]                                                                         | REGISTER.SDR.FDRE      |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                                           | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.mant_op[21]_i_2                               | CLB.LUT.LUT6           |
+    | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.mant_op_reg[21]                                                                       | REGISTER.SDR.FDRE      |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                                           | Primitive Type         |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | grp_compute_dist_fu_156/fmul_32ns_32ns_32_3_max_dsp_1_U34/din0_buf1_reg[14]                                                           | REGISTER.SDR.FDRE      |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_A_B_DATA_INST                | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_PREADD_DATA_INST             | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_MULTIPLIER_INST              | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_M_DATA_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP1/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_ALU_INST                     | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST                  | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_ALU_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.R_AND_R/LAT_OPT.FULL.R_AND_R/DSP48E1_SGL_EXP_IP.OLD_ADD.ADD/i_no_versal_es1_workaround.DSP/DSP_OUTPUT_INST | ARITHMETIC.DSP.DSP48E2 |
+    | i_synth/MULT.OP/i_non_prim.MULT/DSP48E1_SPD_SGL_VARIANT.FIX_MULT/DSP2/RESULT_REG.NORMAL.exp_op[7]_i_3                                 | CLB.LUT.LUT4           |
+    | i_synth/MULT.OP/i_non_prim.EXP/EXP_ADD.C_CHAIN/RESULT_REG.NORMAL.exp_op[3]_i_1                                                        | CLB.LUT.LUT5           |
+    | i_synth/MULT.OP/i_non_prim.OP/RESULT_REG.NORMAL.exp_op_reg[3]                                                                         | REGISTER.SDR.FDRE      |
+    +---------------------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+------------------------------------------------------------------+
+| Report Type              | Report Location                                                  |
++--------------------------+------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/workload_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/workload_failfast_routed.rpt                 |
+| status                   | impl/verilog/report/workload_status_routed.rpt                   |
+| timing                   | impl/verilog/report/workload_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/workload_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/workload_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/workload_utilization_hierarchical_routed.rpt |
++--------------------------+------------------------------------------------------------------+
+
+

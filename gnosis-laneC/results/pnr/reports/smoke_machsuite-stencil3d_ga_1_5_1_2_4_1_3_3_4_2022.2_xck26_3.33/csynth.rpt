@@ -1,0 +1,309 @@
+
+
+================================================================
+== Synthesis Summary Report of 'stencil3d'
+================================================================
++ General Information: 
+    * Date:           Mon Nov 23 00:04:56 2026
+    * Version:        2022.2.2 (Build 3779808 on Feb 17 2023)
+    * Project:        smoke
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |                 Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |           |           |     |
+    |                 & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |+ stencil3d                             |     -|  0.06|    66555|  2.216e+05|         -|    66556|     -|        no|     -|  30 (2%)|  5133 (2%)|  6632 (5%)|    -|
+    | + stencil3d_Pipeline_height_bound_col  |     -|  1.19|      547|  1.822e+03|         -|      547|     -|        no|     -|        -|  320 (~0%)|  670 (~0%)|    -|
+    |  o height_bound_col                    |    II|  2.43|      545|  1.815e+03|        19|       17|    32|       yes|     -|        -|          -|          -|    -|
+    | + stencil3d_Pipeline_col_bound_height  |     -|  1.19|      483|  1.608e+03|         -|      483|     -|        no|     -|        -|  254 (~0%)|  916 (~0%)|    -|
+    |  o col_bound_height                    |    II|  2.43|      481|  1.602e+03|        18|       16|    30|       yes|     -|        -|          -|          -|    -|
+    | o row_bound_height                     |     -|  2.43|     1123|  3.740e+03|       140|        -|     8|        no|     -|        -|          -|          -|    -|
+    |  + stencil3d_Pipeline_row_bound_col    |     -|  1.19|       33|    109.890|         -|       33|     -|        no|     -|        -|  114 (~0%)|   73 (~0%)|    -|
+    |   o row_bound_col                      |     -|  2.43|       31|    103.230|         3|        1|    30|       yes|     -|        -|          -|          -|    -|
+    |  + stencil3d_Pipeline_row_bound_col1   |     -|  0.41|       33|    109.890|         -|       33|     -|        no|     -|        -|  114 (~0%)|   90 (~0%)|    -|
+    |   o row_bound_col                      |     -|  2.43|       31|    103.230|         3|        1|    30|       yes|     -|        -|          -|          -|    -|
+    |  + stencil3d_Pipeline_row_bound_col2   |     -|  0.41|       33|    109.890|         -|       33|     -|        no|     -|        -|  114 (~0%)|   90 (~0%)|    -|
+    |   o row_bound_col                      |     -|  2.43|       31|    103.230|         3|        1|    30|       yes|     -|        -|          -|          -|    -|
+    |  + stencil3d_Pipeline_row_bound_col3   |     -|  0.41|       33|    109.890|         -|       33|     -|        no|     -|        -|  114 (~0%)|   90 (~0%)|    -|
+    |   o row_bound_col                      |     -|  2.43|       31|    103.230|         3|        1|    30|       yes|     -|        -|          -|          -|    -|
+    | o loop_height                          |     -|  2.43|    64395|  2.144e+05|      4293|        -|    15|        no|     -|        -|          -|          -|    -|
+    |  o loop_col                            |     -|  2.43|     2145|  7.143e+03|       143|        -|    15|        no|     -|        -|          -|          -|    -|
+    |   o loop_row                           |     -|  2.43|       70|    233.100|        20|        -|     3|        no|     -|        -|          -|          -|    -|
+    |   o loop_row                           |     -|  2.43|       70|    233.100|        20|        -|     3|        no|     -|        -|          -|          -|    -|
+    |  o loop_col                            |     -|  2.43|     2145|  7.143e+03|       143|        -|    15|        no|     -|        -|          -|          -|    -|
+    |   o loop_row                           |     -|  2.43|       70|    233.100|        20|        -|     3|        no|     -|        -|          -|          -|    -|
+    |   o loop_row                           |     -|  2.43|       70|    233.100|        20|        -|     3|        no|     -|        -|          -|          -|    -|
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++---------------+----------+
+| Interface     | Bitwidth |
++---------------+----------+
+| C_address0    | 1        |
+| C_address1    | 1        |
+| C_q0          | 32       |
+| C_q1          | 32       |
+| orig_address0 | 14       |
+| orig_address1 | 14       |
+| orig_q0       | 32       |
+| orig_q1       | 32       |
+| sol_address0  | 14       |
+| sol_address1  | 14       |
+| sol_d0        | 32       |
+| sol_d1        | 32       |
++---------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| C        | in        | int*     |
+| orig     | in        | int*     |
+| sol      | out       | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+---------+----------+
+| Argument | HW Interface  | HW Type | HW Usage |
++----------+---------------+---------+----------+
+| C        | C_address0    | port    | offset   |
+| C        | C_ce0         | port    |          |
+| C        | C_q0          | port    |          |
+| C        | C_address1    | port    | offset   |
+| C        | C_ce1         | port    |          |
+| C        | C_q1          | port    |          |
+| orig     | orig_address0 | port    | offset   |
+| orig     | orig_ce0      | port    |          |
+| orig     | orig_q0       | port    |          |
+| orig     | orig_address1 | port    | offset   |
+| orig     | orig_ce1      | port    |          |
+| orig     | orig_q1       | port    |          |
+| sol      | sol_address0  | port    | offset   |
+| sol      | sol_ce0       | port    |          |
+| sol      | sol_we0       | port    |          |
+| sol      | sol_d0        | port    |          |
+| sol      | sol_address1  | port    | offset   |
+| sol      | sol_ce1       | port    |          |
+| sol      | sol_we1       | port    |          |
+| sol      | sol_d1        | port    |          |
++----------+---------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------+-----+--------+--------------------+-----+--------+---------+
+| Name                                   | DSP | Pragma | Variable           | Op  | Impl   | Latency |
++----------------------------------------+-----+--------+--------------------+-----+--------+---------+
+| + stencil3d                            | 30  |        |                    |     |        |         |
+|   add_ln31_fu_1535_p2                  | -   |        | add_ln31           | add | fabric | 0       |
+|   add_ln31_1_fu_1546_p2                | -   |        | add_ln31_1         | add | fabric | 0       |
+|   add_ln49_1_fu_1668_p2                | -   |        | add_ln49_1         | add | fabric | 0       |
+|   add_ln50_1_fu_1685_p2                | -   |        | add_ln50_1         | add | fabric | 0       |
+|   empty_19_fu_1698_p2                  | -   |        | empty_19           | add | fabric | 0       |
+|   add_ln52_1_fu_1711_p2                | -   |        | add_ln52_1         | add | fabric | 0       |
+|   add_ln53_fu_1826_p2                  | -   |        | add_ln53           | add | fabric | 0       |
+|   add_ln54_fu_1836_p2                  | -   |        | add_ln54           | add | fabric | 0       |
+|   grp_fu_1226_p2                       | -   |        | add_ln53_1         | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U17               | 3   |        | mul0               | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U21               | 3   |        | mul1               | mul | auto   | 1       |
+|   grp_fu_1473_p2                       | -   |        | add_ln57           | add | fabric | 0       |
+|   add_ln49_fu_1856_p2                  | -   |        | add_ln49           | add | fabric | 0       |
+|   add_ln53_3_fu_1908_p2                | -   |        | add_ln53_3         | add | fabric | 0       |
+|   add_ln53_10_fu_1928_p2               | -   |        | add_ln53_10        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U18               | 3   |        | mul0_1             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U26               | 3   |        | mul1_1             | mul | auto   | 1       |
+|   add_ln57_1_fu_1958_p2                | -   |        | add_ln57_1         | add | fabric | 0       |
+|   add_ln53_7_fu_1991_p2                | -   |        | add_ln53_7         | add | fabric | 0       |
+|   grp_fu_1254_p2                       | -   |        | add_ln53_20        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U19               | 3   |        | mul0_2             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U22               | 3   |        | mul1_2             | mul | auto   | 1       |
+|   grp_fu_1480_p2                       | -   |        | add_ln57_2         | add | fabric | 0       |
+|   add_ln49_3_fu_1995_p2                | -   |        | add_ln49_3         | add | fabric | 0       |
+|   add_ln49_5_fu_2005_p2                | -   |        | add_ln49_5         | add | fabric | 0       |
+|   add_ln50_3_fu_2010_p2                | -   |        | add_ln50_3         | add | fabric | 0       |
+|   add_ln51_1_fu_2015_p2                | -   |        | add_ln51_1         | add | fabric | 0       |
+|   add_ln52_3_fu_2020_p2                | -   |        | add_ln52_3         | add | fabric | 0       |
+|   add_ln53_9_fu_2025_p2                | -   |        | add_ln53_9         | add | fabric | 0       |
+|   add_ln53_11_fu_2031_p2               | -   |        | add_ln53_11        | add | fabric | 0       |
+|   grp_fu_1265_p2                       | -   |        | add_ln53_29        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U20               | 3   |        | mul0_3             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U23               | 3   |        | mul1_3             | mul | auto   | 1       |
+|   grp_fu_1487_p2                       | -   |        | add_ln57_3         | add | fabric | 0       |
+|   add_ln49_2_fu_2035_p2                | -   |        | add_ln49_2         | add | fabric | 0       |
+|   add_ln50_fu_2048_p2                  | -   |        | add_ln50           | add | fabric | 0       |
+|   indvars_iv_next214_fu_2061_p2        | -   |        | indvars_iv_next214 | add | fabric | 0       |
+|   add_ln51_fu_2067_p2                  | -   |        | add_ln51           | add | fabric | 0       |
+|   add_ln53_13_fu_2226_p2               | -   |        | add_ln53_13        | add | fabric | 0       |
+|   add_ln54_4_fu_2236_p2                | -   |        | add_ln54_4         | add | fabric | 0       |
+|   grp_fu_1226_p2                       | -   |        | add_ln53_53        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U17               | 3   |        | mul0_6             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U21               | 3   |        | mul1_6             | mul | auto   | 1       |
+|   grp_fu_1473_p2                       | -   |        | add_ln57_4         | add | fabric | 0       |
+|   add_ln49_10_fu_2254_p2               | -   |        | add_ln49_10        | add | fabric | 0       |
+|   add_ln53_15_fu_2305_p2               | -   |        | add_ln53_15        | add | fabric | 0       |
+|   grp_fu_1282_p2                       | -   |        | add_ln53_58        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U18               | 3   |        | mul0_7             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U24               | 3   |        | mul1_7             | mul | auto   | 1       |
+|   grp_fu_1494_p2                       | -   |        | add_ln57_5         | add | fabric | 0       |
+|   add_ln53_25_fu_2354_p2               | -   |        | add_ln53_25        | add | fabric | 0       |
+|   grp_fu_1254_p2                       | -   |        | add_ln53_73        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U19               | 3   |        | mul0_10            | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U22               | 3   |        | mul1_10            | mul | auto   | 1       |
+|   grp_fu_1480_p2                       | -   |        | add_ln57_8         | add | fabric | 0       |
+|   add_ln49_16_fu_2358_p2               | -   |        | add_ln49_16        | add | fabric | 0       |
+|   add_ln49_17_fu_2368_p2               | -   |        | add_ln49_17        | add | fabric | 0       |
+|   add_ln50_11_fu_2373_p2               | -   |        | add_ln50_11        | add | fabric | 0       |
+|   add_ln51_12_fu_2378_p2               | -   |        | add_ln51_12        | add | fabric | 0       |
+|   add_ln52_11_fu_2383_p2               | -   |        | add_ln52_11        | add | fabric | 0       |
+|   add_ln53_27_fu_2389_p2               | -   |        | add_ln53_27        | add | fabric | 0       |
+|   add_ln53_32_fu_2395_p2               | -   |        | add_ln53_32        | add | fabric | 0       |
+|   grp_fu_1265_p2                       | -   |        | add_ln53_78        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U20               | 3   |        | mul0_11            | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U23               | 3   |        | mul1_11            | mul | auto   | 1       |
+|   grp_fu_1487_p2                       | -   |        | add_ln57_9         | add | fabric | 0       |
+|   add_ln44_fu_2399_p2                  | -   |        | add_ln44           | add | fabric | 0       |
+|   add_ln44_1_fu_2405_p2                | -   |        | add_ln44_1         | add | fabric | 0       |
+|   indvars_iv_next310_fu_1744_p2        | -   |        | indvars_iv_next310 | add | fabric | 0       |
+|   add_ln51_6_fu_1754_p2                | -   |        | add_ln51_6         | add | fabric | 0       |
+|   empty_23_fu_2475_p2                  | -   |        | empty_23           | add | fabric | 0       |
+|   empty_24_fu_2517_p2                  | -   |        | empty_24           | add | fabric | 0       |
+|   add_ln52_fu_2531_p2                  | -   |        | add_ln52           | add | fabric | 0       |
+|   add_ln53_19_fu_2674_p2               | -   |        | add_ln53_19        | add | fabric | 0       |
+|   add_ln54_2_fu_2684_p2                | -   |        | add_ln54_2         | add | fabric | 0       |
+|   grp_fu_1226_p2                       | -   |        | add_ln53_38        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U17               | 3   |        | mul0_4             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U21               | 3   |        | mul1_4             | mul | auto   | 1       |
+|   grp_fu_1473_p2                       | -   |        | add_ln57_6         | add | fabric | 0       |
+|   add_ln49_6_fu_2702_p2                | -   |        | add_ln49_6         | add | fabric | 0       |
+|   add_ln53_21_fu_2757_p2               | -   |        | add_ln53_21        | add | fabric | 0       |
+|   grp_fu_1282_p2                       | -   |        | add_ln53_47        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U18               | 3   |        | mul0_5             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U24               | 3   |        | mul1_5             | mul | auto   | 1       |
+|   grp_fu_1494_p2                       | -   |        | add_ln57_7         | add | fabric | 0       |
+|   add_ln53_31_fu_2810_p2               | -   |        | add_ln53_31        | add | fabric | 0       |
+|   grp_fu_1254_p2                       | -   |        | add_ln53_63        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U19               | 3   |        | mul0_8             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U22               | 3   |        | mul1_8             | mul | auto   | 1       |
+|   grp_fu_1480_p2                       | -   |        | add_ln57_10        | add | fabric | 0       |
+|   add_ln49_13_fu_2814_p2               | -   |        | add_ln49_13        | add | fabric | 0       |
+|   add_ln49_14_fu_2824_p2               | -   |        | add_ln49_14        | add | fabric | 0       |
+|   add_ln50_7_fu_2829_p2                | -   |        | add_ln50_7         | add | fabric | 0       |
+|   add_ln51_10_fu_2834_p2               | -   |        | add_ln51_10        | add | fabric | 0       |
+|   add_ln52_10_fu_2839_p2               | -   |        | add_ln52_10        | add | fabric | 0       |
+|   add_ln53_33_fu_2844_p2               | -   |        | add_ln53_33        | add | fabric | 0       |
+|   add_ln53_41_fu_2850_p2               | -   |        | add_ln53_41        | add | fabric | 0       |
+|   grp_fu_1288_p2                       | -   |        | add_ln53_68        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U20               | 3   |        | mul0_9             | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U25               | 3   |        | mul1_9             | mul | auto   | 1       |
+|   grp_fu_1501_p2                       | -   |        | add_ln57_11        | add | fabric | 0       |
+|   empty_26_fu_2854_p2                  | -   |        | empty_26           | add | fabric | 0       |
+|   indvars_iv_next290_fu_2878_p2        | -   |        | indvars_iv_next290 | add | fabric | 0       |
+|   add_ln51_7_fu_2884_p2                | -   |        | add_ln51_7         | add | fabric | 0       |
+|   add_ln53_37_fu_3044_p2               | -   |        | add_ln53_37        | add | fabric | 0       |
+|   add_ln54_6_fu_3054_p2                | -   |        | add_ln54_6         | add | fabric | 0       |
+|   grp_fu_1226_p2                       | -   |        | add_ln53_83        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U17               | 3   |        | mul0_12            | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U21               | 3   |        | mul1_12            | mul | auto   | 1       |
+|   grp_fu_1473_p2                       | -   |        | add_ln57_12        | add | fabric | 0       |
+|   add_ln49_19_fu_3072_p2               | -   |        | add_ln49_19        | add | fabric | 0       |
+|   add_ln53_39_fu_3125_p2               | -   |        | add_ln53_39        | add | fabric | 0       |
+|   grp_fu_1282_p2                       | -   |        | add_ln53_88        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U18               | 3   |        | mul0_13            | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U24               | 3   |        | mul1_13            | mul | auto   | 1       |
+|   grp_fu_1494_p2                       | -   |        | add_ln57_13        | add | fabric | 0       |
+|   add_ln53_43_fu_3176_p2               | -   |        | add_ln53_43        | add | fabric | 0       |
+|   grp_fu_1254_p2                       | -   |        | add_ln53_93        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U19               | 3   |        | mul0_14            | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U22               | 3   |        | mul1_14            | mul | auto   | 1       |
+|   grp_fu_1480_p2                       | -   |        | add_ln57_14        | add | fabric | 0       |
+|   add_ln49_22_fu_3180_p2               | -   |        | add_ln49_22        | add | fabric | 0       |
+|   add_ln49_23_fu_3190_p2               | -   |        | add_ln49_23        | add | fabric | 0       |
+|   add_ln50_15_fu_3195_p2               | -   |        | add_ln50_15        | add | fabric | 0       |
+|   add_ln51_16_fu_3200_p2               | -   |        | add_ln51_16        | add | fabric | 0       |
+|   add_ln52_15_fu_3205_p2               | -   |        | add_ln52_15        | add | fabric | 0       |
+|   add_ln53_45_fu_3211_p2               | -   |        | add_ln53_45        | add | fabric | 0       |
+|   add_ln53_50_fu_3217_p2               | -   |        | add_ln53_50        | add | fabric | 0       |
+|   grp_fu_1288_p2                       | -   |        | add_ln53_98        | add | fabric | 0       |
+|   mul_32s_32s_32_2_1_U20               | 3   |        | mul0_15            | mul | auto   | 1       |
+|   mul_32s_32s_32_2_1_U25               | 3   |        | mul1_15            | mul | auto   | 1       |
+|   grp_fu_1501_p2                       | -   |        | add_ln57_15        | add | fabric | 0       |
+|   add_ln44_2_fu_3221_p2                | -   |        | add_ln44_2         | add | fabric | 0       |
+|   add_ln44_3_fu_3227_p2                | -   |        | add_ln44_3         | add | fabric | 0       |
+|   add_ln42_fu_2562_p2                  | -   |        | add_ln42           | add | fabric | 0       |
+|   add_ln42_1_fu_2567_p2                | -   |        | add_ln42_1         | add | fabric | 0       |
+|   add_ln42_2_fu_2572_p2                | -   |        | add_ln42_2         | add | fabric | 0       |
+|   add_ln42_3_fu_2577_p2                | -   |        | add_ln42_3         | add | fabric | 0       |
+|  + stencil3d_Pipeline_height_bound_col | 0   |        |                    |     |        |         |
+|    add_ln15_fu_644_p2                  | -   |        | add_ln15           | add | fabric | 0       |
+|  + stencil3d_Pipeline_col_bound_height | 0   |        |                    |     |        |         |
+|    add_ln23_fu_680_p2                  | -   |        | add_ln23           | add | fabric | 0       |
+|  + stencil3d_Pipeline_row_bound_col    | 0   |        |                    |     |        |         |
+|    add_ln33_fu_142_p2                  | -   |        | add_ln33           | add | fabric | 0       |
+|  + stencil3d_Pipeline_row_bound_col1   | 0   |        |                    |     |        |         |
+|    add_ln35_fu_132_p2                  | -   |        | add_ln35           | add | fabric | 0       |
+|    add_ln33_fu_162_p2                  | -   |        | add_ln33           | add | fabric | 0       |
+|  + stencil3d_Pipeline_row_bound_col2   | 0   |        |                    |     |        |         |
+|    add_ln35_fu_132_p2                  | -   |        | add_ln35           | add | fabric | 0       |
+|    add_ln33_fu_162_p2                  | -   |        | add_ln33           | add | fabric | 0       |
+|  + stencil3d_Pipeline_row_bound_col3   | 0   |        |                    |     |        |         |
+|    add_ln35_fu_136_p2                  | -   |        | add_ln35           | add | fabric | 0       |
+|    add_ln33_fu_166_p2                  | -   |        | add_ln33           | add | fabric | 0       |
++----------------------------------------+-----+--------+--------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+----------+---------------------------+
+| Type     | Options  | Location                  |
++----------+----------+---------------------------+
+| pipeline | II=1     | stencil.c:16 in stencil3d |
+| unroll   | factor=8 | stencil.c:18 in stencil3d |
+| pipeline | II=1     | stencil.c:24 in stencil3d |
+| unroll   |          | stencil.c:26 in stencil3d |
+| unroll   | factor=4 | stencil.c:32 in stencil3d |
+| pipeline | II=1     | stencil.c:34 in stencil3d |
+| unroll   | factor=2 | stencil.c:43 in stencil3d |
+| unroll   | factor=2 | stencil.c:45 in stencil3d |
+| unroll   | factor=4 | stencil.c:47 in stencil3d |
++----------+----------+---------------------------+
+
+

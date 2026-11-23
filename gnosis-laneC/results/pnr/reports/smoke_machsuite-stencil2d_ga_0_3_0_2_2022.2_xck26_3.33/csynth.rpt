@@ -1,0 +1,986 @@
+
+
+================================================================
+== Synthesis Summary Report of 'stencil'
+================================================================
++ General Information: 
+    * Date:           Sun Nov 22 21:01:47 2026
+    * Version:        2022.2.2 (Build 3779808 on Feb 17 2023)
+    * Project:        smoke
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+------+----------+------------+-------------+-----+
+    |               Modules              |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |      |          |            |             |     |
+    |               & Loops              |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF     |     LUT     | URAM|
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+------+----------+------------+-------------+-----+
+    |+ stencil                           |  Timing|  -0.54|    12110|  4.033e+04|         -|    12111|     -|        no|     -|  108 (8%)|  20726 (8%)|  23384 (19%)|    -|
+    | + stencil_Pipeline_stencil_label1  |  Timing|  -0.54|    12104|  4.031e+04|         -|    12104|     -|        no|     -|  108 (8%)|  20430 (8%)|  23284 (19%)|    -|
+    |  o stencil_label1                  |      II|   2.43|    12102|  4.030e+04|       103|       96|   126|       yes|     -|         -|           -|            -|    -|
+    +------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+------+----------+------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-----------------+----------+
+| Interface       | Bitwidth |
++-----------------+----------+
+| filter_address0 | 4        |
+| filter_address1 | 4        |
+| filter_q0       | 32       |
+| filter_q1       | 32       |
+| orig_address0   | 13       |
+| orig_address1   | 13       |
+| orig_q0         | 32       |
+| orig_q1         | 32       |
+| sol_address0    | 13       |
+| sol_address1    | 13       |
+| sol_d0          | 32       |
+| sol_d1          | 32       |
++-----------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| orig     | in        | int*     |
+| sol      | out       | int*     |
+| filter   | in        | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-----------------+---------+----------+
+| Argument | HW Interface    | HW Type | HW Usage |
++----------+-----------------+---------+----------+
+| orig     | orig_address0   | port    | offset   |
+| orig     | orig_ce0        | port    |          |
+| orig     | orig_q0         | port    |          |
+| orig     | orig_address1   | port    | offset   |
+| orig     | orig_ce1        | port    |          |
+| orig     | orig_q1         | port    |          |
+| sol      | sol_address0    | port    | offset   |
+| sol      | sol_ce0         | port    |          |
+| sol      | sol_we0         | port    |          |
+| sol      | sol_d0          | port    |          |
+| sol      | sol_address1    | port    | offset   |
+| sol      | sol_ce1         | port    |          |
+| sol      | sol_we1         | port    |          |
+| sol      | sol_d1          | port    |          |
+| filter   | filter_address0 | port    | offset   |
+| filter   | filter_ce0      | port    |          |
+| filter   | filter_q0       | port    |          |
+| filter   | filter_address1 | port    | offset   |
+| filter   | filter_ce1      | port    |          |
+| filter   | filter_q1       | port    |          |
++----------+-----------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------+-----+--------+-----------------+-----+--------+---------+
+| Name                               | DSP | Pragma | Variable        | Op  | Impl   | Latency |
++------------------------------------+-----+--------+-----------------+-----+--------+---------+
+| + stencil                          | 108 |        |                 |     |        |         |
+|  + stencil_Pipeline_stencil_label1 | 108 |        |                 |     |        |         |
+|    indvars_iv_next_fu_2906_p2      | -   |        | indvars_iv_next | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_558         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul             | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_2           | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_3           | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_4           | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_5           | mul | auto   | 1       |
+|    add_ln16_fu_2966_p2             | -   |        | add_ln16        | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_6           | mul | auto   | 1       |
+|    add_ln16_1_fu_2987_p2           | -   |        | add_ln16_1      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_7           | mul | auto   | 1       |
+|    add_ln16_2_fu_3008_p2           | -   |        | add_ln16_2      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_8           | mul | auto   | 1       |
+|    add_ln17_fu_3028_p2             | -   |        | add_ln17        | add | fabric | 0       |
+|    add_ln17_1_fu_3061_p2           | -   |        | add_ln17_1      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_559         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_10          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_11          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_12          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_13          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_14          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_15          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_16          | mul | auto   | 1       |
+|    add_ln16_3_fu_3088_p2           | -   |        | add_ln16_3      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_17          | mul | auto   | 1       |
+|    add_ln17_8_fu_3108_p2           | -   |        | add_ln17_8      | add | fabric | 0       |
+|    add_ln17_9_fu_3114_p2           | -   |        | add_ln17_9      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_560         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_19          | mul | auto   | 1       |
+|    add_ln16_4_fu_3120_p2           | -   |        | add_ln16_4      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_20          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_21          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_22          | mul | auto   | 1       |
+|    add_ln16_5_fu_5706_p2           | -   |        | add_ln16_5      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_23          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_24          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_25          | mul | auto   | 1       |
+|    add_ln16_6_fu_3140_p2           | -   |        | add_ln16_6      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_26          | mul | auto   | 1       |
+|    grp_fu_2834_p2                  | -   |        | add_ln17_16     | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_17     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_561         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_28          | mul | auto   | 1       |
+|    add_ln16_7_fu_3160_p2           | -   |        | add_ln16_7      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_29          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_30          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_31          | mul | auto   | 1       |
+|    add_ln16_8_fu_5726_p2           | -   |        | add_ln16_8      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_32          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_33          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_34          | mul | auto   | 1       |
+|    add_ln16_9_fu_3180_p2           | -   |        | add_ln16_9      | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_35          | mul | auto   | 1       |
+|    add_ln17_24_fu_3307_p2          | -   |        | add_ln17_24     | add | fabric | 0       |
+|    add_ln17_25_fu_3353_p2          | -   |        | add_ln17_25     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_562         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_37          | mul | auto   | 1       |
+|    add_ln16_10_fu_3200_p2          | -   |        | add_ln16_10     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_38          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_39          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_40          | mul | auto   | 1       |
+|    add_ln16_11_fu_5746_p2          | -   |        | add_ln16_11     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_41          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_42          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_43          | mul | auto   | 1       |
+|    add_ln16_12_fu_3253_p2          | -   |        | add_ln16_12     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_44          | mul | auto   | 1       |
+|    add_ln17_32_fu_5941_p2          | -   |        | add_ln17_32     | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_33     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_563         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_46          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_47          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_48          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_49          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_50          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_51          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_52          | mul | auto   | 1       |
+|    add_ln16_13_fu_3358_p2          | -   |        | add_ln16_13     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_53          | mul | auto   | 1       |
+|    grp_fu_2834_p2                  | -   |        | add_ln17_40     | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_41     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_564         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_55          | mul | auto   | 1       |
+|    add_ln16_14_fu_3378_p2          | -   |        | add_ln16_14     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_56          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_57          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_58          | mul | auto   | 1       |
+|    add_ln16_15_fu_5765_p2          | -   |        | add_ln16_15     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_59          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_60          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_61          | mul | auto   | 1       |
+|    add_ln16_16_fu_3398_p2          | -   |        | add_ln16_16     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_62          | mul | auto   | 1       |
+|    add_ln17_48_fu_6049_p2          | -   |        | add_ln17_48     | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_49     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_565         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_64          | mul | auto   | 1       |
+|    add_ln16_17_fu_3418_p2          | -   |        | add_ln16_17     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_65          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_66          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_67          | mul | auto   | 1       |
+|    add_ln16_18_fu_5785_p2          | -   |        | add_ln16_18     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_68          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_69          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_70          | mul | auto   | 1       |
+|    add_ln16_19_fu_3438_p2          | -   |        | add_ln16_19     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_71          | mul | auto   | 1       |
+|    add_ln17_56_fu_3478_p2          | -   |        | add_ln17_56     | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_57     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_566         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_73          | mul | auto   | 1       |
+|    add_ln16_20_fu_3458_p2          | -   |        | add_ln16_20     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_74          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_75          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_76          | mul | auto   | 1       |
+|    add_ln16_21_fu_5805_p2          | -   |        | add_ln16_21     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_77          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_78          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_79          | mul | auto   | 1       |
+|    add_ln16_22_fu_3484_p2          | -   |        | add_ln16_22     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_80          | mul | auto   | 1       |
+|    add_ln17_64_fu_6088_p2          | -   |        | add_ln17_64     | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_65     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_567         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_82          | mul | auto   | 1       |
+|    add_ln16_23_fu_3504_p2          | -   |        | add_ln16_23     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_83          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_84          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_85          | mul | auto   | 1       |
+|    add_ln16_24_fu_5825_p2          | -   |        | add_ln16_24     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_86          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_87          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_88          | mul | auto   | 1       |
+|    add_ln16_25_fu_3536_p2          | -   |        | add_ln16_25     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_89          | mul | auto   | 1       |
+|    add_ln17_72_fu_6216_p2          | -   |        | add_ln17_72     | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_73     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_568         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_91          | mul | auto   | 1       |
+|    add_ln16_26_fu_3556_p2          | -   |        | add_ln16_26     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_92          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_93          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_94          | mul | auto   | 1       |
+|    add_ln16_27_fu_5845_p2          | -   |        | add_ln16_27     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_95          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_96          | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_97          | mul | auto   | 1       |
+|    add_ln16_28_fu_3576_p2          | -   |        | add_ln16_28     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_98          | mul | auto   | 1       |
+|    add_ln17_80_fu_6221_p2          | -   |        | add_ln17_80     | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_81     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_569         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_100         | mul | auto   | 1       |
+|    add_ln16_29_fu_3596_p2          | -   |        | add_ln16_29     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_101         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_102         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_103         | mul | auto   | 1       |
+|    add_ln16_30_fu_5947_p2          | -   |        | add_ln16_30     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_104         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_105         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_106         | mul | auto   | 1       |
+|    add_ln16_31_fu_3631_p2          | -   |        | add_ln16_31     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_107         | mul | auto   | 1       |
+|    add_ln17_88_fu_6348_p2          | -   |        | add_ln17_88     | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_89     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_570         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_109         | mul | auto   | 1       |
+|    add_ln16_32_fu_3616_p2          | -   |        | add_ln16_32     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_110         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_111         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_112         | mul | auto   | 1       |
+|    add_ln16_33_fu_5967_p2          | -   |        | add_ln16_33     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_113         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_114         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_115         | mul | auto   | 1       |
+|    add_ln16_34_fu_3655_p2          | -   |        | add_ln16_34     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_116         | mul | auto   | 1       |
+|    add_ln17_96_fu_6353_p2          | -   |        | add_ln17_96     | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_97     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_571         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_118         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_119         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_120         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_121         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_122         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_123         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_124         | mul | auto   | 1       |
+|    add_ln16_35_fu_3715_p2          | -   |        | add_ln16_35     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_125         | mul | auto   | 1       |
+|    add_ln17_104_fu_6480_p2         | -   |        | add_ln17_104    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_105    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_572         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_127         | mul | auto   | 1       |
+|    add_ln16_36_fu_3735_p2          | -   |        | add_ln16_36     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_128         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_129         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_130         | mul | auto   | 1       |
+|    add_ln16_37_fu_6094_p2          | -   |        | add_ln16_37     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_131         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_132         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_133         | mul | auto   | 1       |
+|    add_ln16_38_fu_3755_p2          | -   |        | add_ln16_38     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_134         | mul | auto   | 1       |
+|    add_ln17_112_fu_6506_p2         | -   |        | add_ln17_112    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_113    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_573         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_136         | mul | auto   | 1       |
+|    add_ln16_39_fu_3775_p2          | -   |        | add_ln16_39     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_137         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_138         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_139         | mul | auto   | 1       |
+|    add_ln16_40_fu_6114_p2          | -   |        | add_ln16_40     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_140         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_141         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_142         | mul | auto   | 1       |
+|    add_ln16_41_fu_3795_p2          | -   |        | add_ln16_41     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_143         | mul | auto   | 1       |
+|    add_ln17_120_fu_3867_p2         | -   |        | add_ln17_120    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_121    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_574         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_145         | mul | auto   | 1       |
+|    add_ln16_42_fu_3815_p2          | -   |        | add_ln16_42     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_146         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_147         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_148         | mul | auto   | 1       |
+|    add_ln16_43_fu_6226_p2          | -   |        | add_ln16_43     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_149         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_150         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_151         | mul | auto   | 1       |
+|    add_ln16_44_fu_3835_p2          | -   |        | add_ln16_44     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_152         | mul | auto   | 1       |
+|    add_ln17_128_fu_6635_p2         | -   |        | add_ln17_128    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_129    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_575         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_154         | mul | auto   | 1       |
+|    add_ln16_45_fu_3873_p2          | -   |        | add_ln16_45     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_155         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_156         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_157         | mul | auto   | 1       |
+|    add_ln16_46_fu_6246_p2          | -   |        | add_ln16_46     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_158         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_159         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_160         | mul | auto   | 1       |
+|    add_ln16_47_fu_3893_p2          | -   |        | add_ln16_47     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_161         | mul | auto   | 1       |
+|    add_ln17_136_fu_6641_p2         | -   |        | add_ln17_136    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_137    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_576         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_163         | mul | auto   | 1       |
+|    add_ln16_48_fu_3913_p2          | -   |        | add_ln16_48     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_164         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_165         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_166         | mul | auto   | 1       |
+|    add_ln16_49_fu_6358_p2          | -   |        | add_ln16_49     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_167         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_168         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_169         | mul | auto   | 1       |
+|    add_ln16_50_fu_3933_p2          | -   |        | add_ln16_50     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_170         | mul | auto   | 1       |
+|    add_ln17_144_fu_6768_p2         | -   |        | add_ln17_144    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_145    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_577         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_172         | mul | auto   | 1       |
+|    add_ln16_51_fu_3953_p2          | -   |        | add_ln16_51     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_173         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_174         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_175         | mul | auto   | 1       |
+|    add_ln16_52_fu_6378_p2          | -   |        | add_ln16_52     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_176         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_177         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_178         | mul | auto   | 1       |
+|    add_ln16_53_fu_3973_p2          | -   |        | add_ln16_53     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_179         | mul | auto   | 1       |
+|    add_ln17_152_fu_6773_p2         | -   |        | add_ln17_152    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_153    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_578         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_181         | mul | auto   | 1       |
+|    add_ln16_54_fu_3993_p2          | -   |        | add_ln16_54     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_182         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_183         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_184         | mul | auto   | 1       |
+|    add_ln16_55_fu_6511_p2          | -   |        | add_ln16_55     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_185         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_186         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_187         | mul | auto   | 1       |
+|    add_ln16_56_fu_4013_p2          | -   |        | add_ln16_56     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_188         | mul | auto   | 1       |
+|    add_ln17_160_fu_6900_p2         | -   |        | add_ln17_160    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_161    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_579         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_190         | mul | auto   | 1       |
+|    add_ln16_57_fu_4033_p2          | -   |        | add_ln16_57     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_191         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_192         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_193         | mul | auto   | 1       |
+|    add_ln16_58_fu_6531_p2          | -   |        | add_ln16_58     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_194         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_195         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_196         | mul | auto   | 1       |
+|    add_ln16_59_fu_4053_p2          | -   |        | add_ln16_59     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_197         | mul | auto   | 1       |
+|    add_ln17_168_fu_6905_p2         | -   |        | add_ln17_168    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_169    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_580         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_199         | mul | auto   | 1       |
+|    add_ln16_60_fu_4073_p2          | -   |        | add_ln16_60     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_200         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_201         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_202         | mul | auto   | 1       |
+|    add_ln16_61_fu_6646_p2          | -   |        | add_ln16_61     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_203         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_204         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_205         | mul | auto   | 1       |
+|    add_ln16_62_fu_4093_p2          | -   |        | add_ln16_62     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_206         | mul | auto   | 1       |
+|    add_ln17_176_fu_7047_p2         | -   |        | add_ln17_176    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_177    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_581         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_208         | mul | auto   | 1       |
+|    add_ln16_63_fu_4113_p2          | -   |        | add_ln16_63     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_209         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_210         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_211         | mul | auto   | 1       |
+|    add_ln16_64_fu_6666_p2          | -   |        | add_ln16_64     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_212         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_213         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_214         | mul | auto   | 1       |
+|    add_ln16_65_fu_4133_p2          | -   |        | add_ln16_65     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_215         | mul | auto   | 1       |
+|    add_ln17_184_fu_7052_p2         | -   |        | add_ln17_184    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_185    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_582         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_217         | mul | auto   | 1       |
+|    add_ln16_66_fu_4153_p2          | -   |        | add_ln16_66     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_218         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_219         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_220         | mul | auto   | 1       |
+|    add_ln16_67_fu_6778_p2          | -   |        | add_ln16_67     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_221         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_222         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_223         | mul | auto   | 1       |
+|    add_ln16_68_fu_4173_p2          | -   |        | add_ln16_68     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_224         | mul | auto   | 1       |
+|    add_ln17_192_fu_7163_p2         | -   |        | add_ln17_192    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_193    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_583         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_226         | mul | auto   | 1       |
+|    add_ln16_69_fu_4193_p2          | -   |        | add_ln16_69     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_227         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_228         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_229         | mul | auto   | 1       |
+|    add_ln16_70_fu_6798_p2          | -   |        | add_ln16_70     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_230         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_231         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_232         | mul | auto   | 1       |
+|    add_ln16_71_fu_4213_p2          | -   |        | add_ln16_71     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_233         | mul | auto   | 1       |
+|    add_ln17_200_fu_7168_p2         | -   |        | add_ln17_200    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_201    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_584         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_235         | mul | auto   | 1       |
+|    add_ln16_72_fu_4233_p2          | -   |        | add_ln16_72     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_236         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_237         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_238         | mul | auto   | 1       |
+|    add_ln16_73_fu_6910_p2          | -   |        | add_ln16_73     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_239         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_240         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_241         | mul | auto   | 1       |
+|    add_ln16_74_fu_4253_p2          | -   |        | add_ln16_74     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_242         | mul | auto   | 1       |
+|    add_ln17_208_fu_7295_p2         | -   |        | add_ln17_208    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_209    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_585         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_244         | mul | auto   | 1       |
+|    add_ln16_75_fu_4273_p2          | -   |        | add_ln16_75     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_245         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_246         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_247         | mul | auto   | 1       |
+|    add_ln16_76_fu_6930_p2          | -   |        | add_ln16_76     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_248         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_249         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_250         | mul | auto   | 1       |
+|    add_ln16_77_fu_4293_p2          | -   |        | add_ln16_77     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U25          | 3   |        | mul_251         | mul | auto   | 1       |
+|    add_ln17_216_fu_7300_p2         | -   |        | add_ln17_216    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_217    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_586         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_253         | mul | auto   | 1       |
+|    add_ln16_78_fu_4313_p2          | -   |        | add_ln16_78     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U4           | 3   |        | mul_254         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_255         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_256         | mul | auto   | 1       |
+|    add_ln16_79_fu_6950_p2          | -   |        | add_ln16_79     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_257         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_258         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U27          | 3   |        | mul_259         | mul | auto   | 1       |
+|    add_ln16_80_fu_4332_p2          | -   |        | add_ln16_80     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_260         | mul | auto   | 1       |
+|    add_ln17_224_fu_7427_p2         | -   |        | add_ln17_224    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_225    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_587         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U6           | 3   |        | mul_262         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U24          | 3   |        | mul_263         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_264         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_265         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_266         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U28          | 3   |        | mul_267         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U14          | 3   |        | mul_268         | mul | auto   | 1       |
+|    add_ln16_81_fu_4392_p2          | -   |        | add_ln16_81     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_269         | mul | auto   | 1       |
+|    add_ln17_232_fu_7432_p2         | -   |        | add_ln17_232    | add | fabric | 0       |
+|    grp_fu_2846_p2                  | -   |        | add_ln17_233    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U7           | 3   |        | mul_588         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U26          | 3   |        | mul_271         | mul | auto   | 1       |
+|    add_ln16_82_fu_4412_p2          | -   |        | add_ln16_82     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_272         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_273         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_274         | mul | auto   | 1       |
+|    add_ln16_83_fu_7061_p2          | -   |        | add_ln16_83     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_275         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U15          | 3   |        | mul_276         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_277         | mul | auto   | 1       |
+|    add_ln16_84_fu_4432_p2          | -   |        | add_ln16_84     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_278         | mul | auto   | 1       |
+|    add_ln17_240_fu_7548_p2         | -   |        | add_ln17_240    | add | fabric | 0       |
+|    grp_fu_2852_p2                  | -   |        | add_ln17_241    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U1           | 3   |        | mul_589         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_280         | mul | auto   | 1       |
+|    add_ln16_85_fu_4452_p2          | -   |        | add_ln16_85     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_281         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_282         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_283         | mul | auto   | 1       |
+|    add_ln16_86_fu_7173_p2          | -   |        | add_ln16_86     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_284         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_285         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_286         | mul | auto   | 1       |
+|    add_ln16_87_fu_4472_p2          | -   |        | add_ln16_87     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_287         | mul | auto   | 1       |
+|    add_ln17_248_fu_4512_p2         | -   |        | add_ln17_248    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_249    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_590         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_289         | mul | auto   | 1       |
+|    add_ln16_88_fu_4492_p2          | -   |        | add_ln16_88     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_290         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_291         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_292         | mul | auto   | 1       |
+|    add_ln16_89_fu_7193_p2          | -   |        | add_ln16_89     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_293         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_294         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_295         | mul | auto   | 1       |
+|    add_ln16_90_fu_4517_p2          | -   |        | add_ln16_90     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_296         | mul | auto   | 1       |
+|    add_ln17_256_fu_7586_p2         | -   |        | add_ln17_256    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_257    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_591         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_298         | mul | auto   | 1       |
+|    add_ln16_91_fu_4537_p2          | -   |        | add_ln16_91     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_299         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_300         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_301         | mul | auto   | 1       |
+|    add_ln16_92_fu_7305_p2          | -   |        | add_ln16_92     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_302         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_303         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_304         | mul | auto   | 1       |
+|    add_ln16_93_fu_4568_p2          | -   |        | add_ln16_93     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_305         | mul | auto   | 1       |
+|    add_ln17_264_fu_7715_p2         | -   |        | add_ln17_264    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_265    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_592         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_307         | mul | auto   | 1       |
+|    add_ln16_94_fu_4588_p2          | -   |        | add_ln16_94     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_308         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_309         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_310         | mul | auto   | 1       |
+|    add_ln16_95_fu_7325_p2          | -   |        | add_ln16_95     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_311         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_312         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_313         | mul | auto   | 1       |
+|    add_ln16_96_fu_4608_p2          | -   |        | add_ln16_96     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_314         | mul | auto   | 1       |
+|    add_ln17_272_fu_7720_p2         | -   |        | add_ln17_272    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_273    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_593         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_316         | mul | auto   | 1       |
+|    add_ln16_97_fu_4628_p2          | -   |        | add_ln16_97     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_317         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_318         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_319         | mul | auto   | 1       |
+|    add_ln16_98_fu_7437_p2          | -   |        | add_ln16_98     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_320         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_321         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_322         | mul | auto   | 1       |
+|    add_ln16_99_fu_4648_p2          | -   |        | add_ln16_99     | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_323         | mul | auto   | 1       |
+|    add_ln17_280_fu_7847_p2         | -   |        | add_ln17_280    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_281    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_594         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_325         | mul | auto   | 1       |
+|    add_ln16_100_fu_4668_p2         | -   |        | add_ln16_100    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_326         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_327         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_328         | mul | auto   | 1       |
+|    add_ln16_101_fu_7457_p2         | -   |        | add_ln16_101    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_329         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_330         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_331         | mul | auto   | 1       |
+|    add_ln16_102_fu_4688_p2         | -   |        | add_ln16_102    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_332         | mul | auto   | 1       |
+|    add_ln17_288_fu_7852_p2         | -   |        | add_ln17_288    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_289    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_595         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_334         | mul | auto   | 1       |
+|    add_ln16_103_fu_4708_p2         | -   |        | add_ln16_103    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_335         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_336         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_337         | mul | auto   | 1       |
+|    add_ln16_104_fu_7592_p2         | -   |        | add_ln16_104    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_338         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_339         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_340         | mul | auto   | 1       |
+|    add_ln16_105_fu_4728_p2         | -   |        | add_ln16_105    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_341         | mul | auto   | 1       |
+|    add_ln17_296_fu_7979_p2         | -   |        | add_ln17_296    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_297    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_596         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_343         | mul | auto   | 1       |
+|    add_ln16_106_fu_4748_p2         | -   |        | add_ln16_106    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_344         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_345         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_346         | mul | auto   | 1       |
+|    add_ln16_107_fu_7612_p2         | -   |        | add_ln16_107    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_347         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_348         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_349         | mul | auto   | 1       |
+|    add_ln16_108_fu_4768_p2         | -   |        | add_ln16_108    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_350         | mul | auto   | 1       |
+|    add_ln17_304_fu_7984_p2         | -   |        | add_ln17_304    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_305    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_597         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_352         | mul | auto   | 1       |
+|    add_ln16_109_fu_4788_p2         | -   |        | add_ln16_109    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_353         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_354         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_355         | mul | auto   | 1       |
+|    add_ln16_110_fu_7725_p2         | -   |        | add_ln16_110    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_356         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_357         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_358         | mul | auto   | 1       |
+|    add_ln16_111_fu_4808_p2         | -   |        | add_ln16_111    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_359         | mul | auto   | 1       |
+|    add_ln17_312_fu_8111_p2         | -   |        | add_ln17_312    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_313    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_598         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_361         | mul | auto   | 1       |
+|    add_ln16_112_fu_4828_p2         | -   |        | add_ln16_112    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_362         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_363         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_364         | mul | auto   | 1       |
+|    add_ln16_113_fu_7745_p2         | -   |        | add_ln16_113    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_365         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_366         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_367         | mul | auto   | 1       |
+|    add_ln16_114_fu_4848_p2         | -   |        | add_ln16_114    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_368         | mul | auto   | 1       |
+|    add_ln17_320_fu_8116_p2         | -   |        | add_ln17_320    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_321    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_599         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_370         | mul | auto   | 1       |
+|    add_ln16_115_fu_4868_p2         | -   |        | add_ln16_115    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_371         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_372         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_373         | mul | auto   | 1       |
+|    add_ln16_116_fu_7857_p2         | -   |        | add_ln16_116    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_374         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_375         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_376         | mul | auto   | 1       |
+|    add_ln16_117_fu_4888_p2         | -   |        | add_ln16_117    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_377         | mul | auto   | 1       |
+|    add_ln17_328_fu_8243_p2         | -   |        | add_ln17_328    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_329    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_600         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_379         | mul | auto   | 1       |
+|    add_ln16_118_fu_4908_p2         | -   |        | add_ln16_118    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_380         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_381         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_382         | mul | auto   | 1       |
+|    add_ln16_119_fu_7877_p2         | -   |        | add_ln16_119    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_383         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_384         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_385         | mul | auto   | 1       |
+|    add_ln16_120_fu_4928_p2         | -   |        | add_ln16_120    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_386         | mul | auto   | 1       |
+|    add_ln17_336_fu_8248_p2         | -   |        | add_ln17_336    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_337    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_601         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_388         | mul | auto   | 1       |
+|    add_ln16_121_fu_4948_p2         | -   |        | add_ln16_121    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_389         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_390         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_391         | mul | auto   | 1       |
+|    add_ln16_122_fu_7989_p2         | -   |        | add_ln16_122    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_392         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_393         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_394         | mul | auto   | 1       |
+|    add_ln16_123_fu_4968_p2         | -   |        | add_ln16_123    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_395         | mul | auto   | 1       |
+|    add_ln17_344_fu_8375_p2         | -   |        | add_ln17_344    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_345    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_602         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_397         | mul | auto   | 1       |
+|    add_ln16_124_fu_4988_p2         | -   |        | add_ln16_124    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_398         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_399         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_400         | mul | auto   | 1       |
+|    add_ln16_125_fu_8009_p2         | -   |        | add_ln16_125    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_401         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_402         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_403         | mul | auto   | 1       |
+|    add_ln16_126_fu_5008_p2         | -   |        | add_ln16_126    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_404         | mul | auto   | 1       |
+|    add_ln17_352_fu_8380_p2         | -   |        | add_ln17_352    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_353    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_603         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_406         | mul | auto   | 1       |
+|    add_ln16_127_fu_5028_p2         | -   |        | add_ln16_127    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_407         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_408         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_409         | mul | auto   | 1       |
+|    add_ln16_128_fu_8121_p2         | -   |        | add_ln16_128    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_410         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_411         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_412         | mul | auto   | 1       |
+|    add_ln16_129_fu_5048_p2         | -   |        | add_ln16_129    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_413         | mul | auto   | 1       |
+|    add_ln17_360_fu_8507_p2         | -   |        | add_ln17_360    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_361    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_604         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_415         | mul | auto   | 1       |
+|    add_ln16_130_fu_5068_p2         | -   |        | add_ln16_130    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_416         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_417         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_418         | mul | auto   | 1       |
+|    add_ln16_131_fu_8141_p2         | -   |        | add_ln16_131    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_419         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_420         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_421         | mul | auto   | 1       |
+|    add_ln16_132_fu_5088_p2         | -   |        | add_ln16_132    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_422         | mul | auto   | 1       |
+|    add_ln17_368_fu_8512_p2         | -   |        | add_ln17_368    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_369    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_605         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_424         | mul | auto   | 1       |
+|    add_ln16_133_fu_5108_p2         | -   |        | add_ln16_133    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_425         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_426         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_427         | mul | auto   | 1       |
+|    add_ln16_134_fu_8253_p2         | -   |        | add_ln16_134    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_428         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_429         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_430         | mul | auto   | 1       |
+|    add_ln16_135_fu_5128_p2         | -   |        | add_ln16_135    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_431         | mul | auto   | 1       |
+|    add_ln17_376_fu_8639_p2         | -   |        | add_ln17_376    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_377    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_606         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_433         | mul | auto   | 1       |
+|    add_ln16_136_fu_5148_p2         | -   |        | add_ln16_136    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_434         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_435         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_436         | mul | auto   | 1       |
+|    add_ln16_137_fu_8273_p2         | -   |        | add_ln16_137    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_437         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_438         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_439         | mul | auto   | 1       |
+|    add_ln16_138_fu_5168_p2         | -   |        | add_ln16_138    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_440         | mul | auto   | 1       |
+|    add_ln17_384_fu_8644_p2         | -   |        | add_ln17_384    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_385    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_607         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_442         | mul | auto   | 1       |
+|    add_ln16_139_fu_5188_p2         | -   |        | add_ln16_139    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_443         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_444         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_445         | mul | auto   | 1       |
+|    add_ln16_140_fu_8385_p2         | -   |        | add_ln16_140    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_446         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_447         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_448         | mul | auto   | 1       |
+|    add_ln16_141_fu_5208_p2         | -   |        | add_ln16_141    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_449         | mul | auto   | 1       |
+|    add_ln17_392_fu_8771_p2         | -   |        | add_ln17_392    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_393    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_608         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_451         | mul | auto   | 1       |
+|    add_ln16_142_fu_5228_p2         | -   |        | add_ln16_142    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_452         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_453         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_454         | mul | auto   | 1       |
+|    add_ln16_143_fu_8405_p2         | -   |        | add_ln16_143    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_455         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_456         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_457         | mul | auto   | 1       |
+|    add_ln16_144_fu_5248_p2         | -   |        | add_ln16_144    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_458         | mul | auto   | 1       |
+|    add_ln17_400_fu_8776_p2         | -   |        | add_ln17_400    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_401    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_609         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_460         | mul | auto   | 1       |
+|    add_ln16_145_fu_5268_p2         | -   |        | add_ln16_145    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_461         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_462         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_463         | mul | auto   | 1       |
+|    add_ln16_146_fu_8517_p2         | -   |        | add_ln16_146    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_464         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_465         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_466         | mul | auto   | 1       |
+|    add_ln16_147_fu_5288_p2         | -   |        | add_ln16_147    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_467         | mul | auto   | 1       |
+|    add_ln17_408_fu_8903_p2         | -   |        | add_ln17_408    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_409    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_610         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_469         | mul | auto   | 1       |
+|    add_ln16_148_fu_5308_p2         | -   |        | add_ln16_148    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_470         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_471         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_472         | mul | auto   | 1       |
+|    add_ln16_149_fu_8537_p2         | -   |        | add_ln16_149    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_473         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_474         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_475         | mul | auto   | 1       |
+|    add_ln16_150_fu_5328_p2         | -   |        | add_ln16_150    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_476         | mul | auto   | 1       |
+|    add_ln17_416_fu_8908_p2         | -   |        | add_ln17_416    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_417    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_611         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_478         | mul | auto   | 1       |
+|    add_ln16_151_fu_5348_p2         | -   |        | add_ln16_151    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_479         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_480         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_481         | mul | auto   | 1       |
+|    add_ln16_152_fu_8649_p2         | -   |        | add_ln16_152    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_482         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_483         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_484         | mul | auto   | 1       |
+|    add_ln16_153_fu_5368_p2         | -   |        | add_ln16_153    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_485         | mul | auto   | 1       |
+|    add_ln17_424_fu_9035_p2         | -   |        | add_ln17_424    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_425    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_612         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_487         | mul | auto   | 1       |
+|    add_ln16_154_fu_5388_p2         | -   |        | add_ln16_154    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_488         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_489         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_490         | mul | auto   | 1       |
+|    add_ln16_155_fu_8669_p2         | -   |        | add_ln16_155    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_491         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_492         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_493         | mul | auto   | 1       |
+|    add_ln16_156_fu_5408_p2         | -   |        | add_ln16_156    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_494         | mul | auto   | 1       |
+|    add_ln17_432_fu_9040_p2         | -   |        | add_ln17_432    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_433    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_613         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_496         | mul | auto   | 1       |
+|    add_ln16_157_fu_5428_p2         | -   |        | add_ln16_157    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_497         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_498         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_499         | mul | auto   | 1       |
+|    add_ln16_158_fu_8781_p2         | -   |        | add_ln16_158    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_500         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_501         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_502         | mul | auto   | 1       |
+|    add_ln16_159_fu_5448_p2         | -   |        | add_ln16_159    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_503         | mul | auto   | 1       |
+|    add_ln17_440_fu_9167_p2         | -   |        | add_ln17_440    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_441    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_614         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_505         | mul | auto   | 1       |
+|    add_ln16_160_fu_5468_p2         | -   |        | add_ln16_160    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_506         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_507         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_508         | mul | auto   | 1       |
+|    add_ln16_161_fu_8801_p2         | -   |        | add_ln16_161    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_509         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_510         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_511         | mul | auto   | 1       |
+|    add_ln16_162_fu_5488_p2         | -   |        | add_ln16_162    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_512         | mul | auto   | 1       |
+|    add_ln17_448_fu_9172_p2         | -   |        | add_ln17_448    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_449    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_615         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_514         | mul | auto   | 1       |
+|    add_ln16_163_fu_5508_p2         | -   |        | add_ln16_163    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_515         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_516         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_517         | mul | auto   | 1       |
+|    add_ln16_164_fu_8913_p2         | -   |        | add_ln16_164    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U36          | 3   |        | mul_518         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_519         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_520         | mul | auto   | 1       |
+|    add_ln16_165_fu_5528_p2         | -   |        | add_ln16_165    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_521         | mul | auto   | 1       |
+|    add_ln17_456_fu_9259_p2         | -   |        | add_ln17_456    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_457    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_616         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_523         | mul | auto   | 1       |
+|    add_ln16_166_fu_5548_p2         | -   |        | add_ln16_166    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_524         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U5           | 3   |        | mul_525         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U8           | 3   |        | mul_526         | mul | auto   | 1       |
+|    add_ln16_167_fu_8933_p2         | -   |        | add_ln16_167    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U9           | 3   |        | mul_527         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_528         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_529         | mul | auto   | 1       |
+|    add_ln16_168_fu_5568_p2         | -   |        | add_ln16_168    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_530         | mul | auto   | 1       |
+|    add_ln17_464_fu_9264_p2         | -   |        | add_ln17_464    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_465    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_617         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_532         | mul | auto   | 1       |
+|    add_ln16_169_fu_5588_p2         | -   |        | add_ln16_169    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_533         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U10          | 3   |        | mul_534         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U11          | 3   |        | mul_535         | mul | auto   | 1       |
+|    add_ln16_170_fu_9045_p2         | -   |        | add_ln16_170    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_536         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_537         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_538         | mul | auto   | 1       |
+|    add_ln16_171_fu_5623_p2         | -   |        | add_ln16_171    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U31          | 3   |        | mul_539         | mul | auto   | 1       |
+|    add_ln17_472_fu_9351_p2         | -   |        | add_ln17_472    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_473    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U35          | 3   |        | mul_618         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U2           | 3   |        | mul_541         | mul | auto   | 1       |
+|    add_ln16_172_fu_5608_p2         | -   |        | add_ln16_172    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U32          | 3   |        | mul_542         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U12          | 3   |        | mul_543         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U22          | 3   |        | mul_544         | mul | auto   | 1       |
+|    add_ln16_173_fu_9065_p2         | -   |        | add_ln16_173    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U29          | 3   |        | mul_545         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U19          | 3   |        | mul_546         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U33          | 3   |        | mul_547         | mul | auto   | 1       |
+|    add_ln16_174_fu_5647_p2         | -   |        | add_ln16_174    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U16          | 3   |        | mul_548         | mul | auto   | 1       |
+|    add_ln17_480_fu_9356_p2         | -   |        | add_ln17_480    | add | fabric | 0       |
+|    grp_fu_2840_p2                  | -   |        | add_ln17_481    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U3           | 3   |        | mul_619         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U34          | 3   |        | mul_550         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U17          | 3   |        | mul_551         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U23          | 3   |        | mul_552         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U30          | 3   |        | mul_553         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U20          | 3   |        | mul_554         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U13          | 3   |        | mul_555         | mul | auto   | 1       |
+|    mul_32s_32s_32_2_1_U18          | 3   |        | mul_556         | mul | auto   | 1       |
+|    add_ln16_175_fu_5677_p2         | -   |        | add_ln16_175    | add | fabric | 0       |
+|    mul_32s_32s_32_2_1_U21          | 3   |        | mul_557         | mul | auto   | 1       |
+|    add_ln17_488_fu_9443_p2         | -   |        | add_ln17_488    | add | fabric | 0       |
+|    grp_fu_2858_p2                  | -   |        | add_ln17_489    | add | fabric | 0       |
++------------------------------------+-----+--------+-----------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+----------+-------------------------+
+| Type     | Options  | Location                |
++----------+----------+-------------------------+
+| pipeline |          | stencil.c:8 in stencil  |
+| unroll   | factor=2 | stencil.c:10 in stencil |
+| pipeline |          | stencil.c:13 in stencil |
+| unroll   |          | stencil.c:15 in stencil |
++----------+----------+-------------------------+
+
+

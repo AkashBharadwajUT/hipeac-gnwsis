@@ -1,0 +1,25 @@
+app,part,clock_ns,tool_version,index_vector,latency_ms,BRAM_pct,DSP_pct,FF_pct,LUT_pct,URAM_pct,synth_time_s,feasible,L1,L2,pareto
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 1,356.51585,0.0,0.0,1.0,4.0,0.0,22,True,unroll factor=4,pipeline II=1,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 1,356.51585,0.0,0.0,4.0,10.0,0.0,28,True,unroll factor=16,pipeline II=1,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 0,356.51585,0.0,0.0,4.0,10.0,0.0,29,True,unroll factor=16,pipeline,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 2,104.85775,0.0,0.0,0.0,2.0,0.0,20,True,unroll factor=2,unroll,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 1,20.97187,0.0,0.0,0.0,2.0,0.0,19,True,pipeline II=1,pipeline II=1,True
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 2,29.49135,0.0,0.0,1.0,4.0,0.0,26,True,unroll factor=64,unroll,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 0,356.51585,0.0,0.0,1.0,4.0,0.0,21,True,unroll factor=4,pipeline,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 0,20.97187,0.0,0.0,0.0,2.0,0.0,19,True,pipeline II=1,pipeline,True
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,5 2,36.70031,0.0,0.0,1.0,3.0,0.0,20,True,unroll factor=16,unroll,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,3 2,62.91471,0.0,0.0,1.0,2.0,0.0,20,True,unroll factor=4,unroll,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 1,356.51585,0.0,0.0,2.0,6.0,0.0,22,True,unroll factor=8,pipeline II=1,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 0,356.51585,0.0,0.0,1.0,2.0,0.0,19,True,unroll factor=2,pipeline,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,2 1,356.51585,0.0,0.0,1.0,3.0,0.0,19,True,unroll factor=2,pipeline II=1,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 1,20.97187,0.0,0.0,0.0,2.0,0.0,19,True,pipeline,pipeline II=1,True
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 0,356.51585,0.0,0.0,7.0,19.0,0.0,34,True,unroll factor=32,pipeline,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 2,47.18607,0.0,0.0,1.0,2.0,0.0,20,True,unroll factor=8,unroll,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 1,356.51585,0.0,0.0,14.0,35.0,0.0,54,True,unroll factor=64,pipeline II=1,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 2,20.97187,0.0,0.0,0.0,2.0,0.0,19,True,pipeline,unroll,True
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,1 2,20.97187,0.0,0.0,0.0,2.0,0.0,19,True,pipeline II=1,unroll,True
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,4 0,356.51585,0.0,0.0,2.0,6.0,0.0,22,True,unroll factor=8,pipeline,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,0 0,20.97187,0.0,0.0,0.0,2.0,0.0,20,True,pipeline,pipeline,True
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 2,31.45743,0.0,0.0,1.0,3.0,0.0,25,True,unroll factor=32,unroll,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,7 0,356.51585,0.0,0.0,14.0,37.0,0.0,55,True,unroll factor=64,pipeline,False
+rodinia-knn-0-baseline,xck26-sfvc784-2LV-c,10,Vitis HLS 2022.2,6 1,356.51585,0.0,0.0,7.0,19.0,0.0,35,True,unroll factor=32,pipeline II=1,False

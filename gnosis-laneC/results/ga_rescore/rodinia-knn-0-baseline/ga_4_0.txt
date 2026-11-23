@@ -1,0 +1,14 @@
+Kernel: rodinia-knn-0-baseline  top: workload  source: knn.cpp  row: ga_4_0
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+GA row [4 0] from /home/user/gnosis/results/rodinia-knn-0-baseline_xck26_10_s42_g24.csv (xck26-sfvc784-2LV-c, 10 ns), 24 feasible of 24
+  L1: L1:    for(int i = 0; i < NUM_PT_IN_SEARCHSPACE; ++i){       -> #pragma HLS unroll factor=8
+  L2: L2:        for(int j = 0; j < NUM_FEATURE; ++j){             -> #pragma HLS pipeline
+Work dir: /local/scratch/user/smoke_rodinia-knn-0-baseline_ga_4_0_2022.2_xck26_10
+Exit code: 0   Peak RAM: 1689 MB   Wall time: 0:45.84
+
+Ours:    latency=356.51585 ms (35651585 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 0, 'FF': 2, 'LUT': 6}
+GA row: latency=356.51585 ms  util%={'BRAM': 0, 'DSP': 0, 'FF': 2, 'LUT': 6}  synth=22 s (our GA, xck26-sfvc784-2LV-c)
+Ratio ours/dataset latency: 1.0000   exact resource match: True
+Kept reports in /local/scratch/user/smoke_rodinia-knn-0-baseline_ga_4_0_2022.2_xck26_10/reports (KEEP=1 keeps the whole project)

@@ -1,0 +1,20 @@
+design,fclk_mhz,median_ms,cycles,vs_hls_pct,correct,static_fmax_mhz,wns_at_build_clock
+baseline,100.0,388.098,38809828,0.01,True,172,
+baseline,150.0,258.741,38811207,0.01,True,172,
+baseline,214.28,181.126,38811685,0.02,True,172,
+baseline,250.0,155.262,38815433,0.03,True,172,
+baseline,300.0,129.381,38814448,0.02,True,172,
+ZCU104 design 433,100.0,46.699,4669913,8.84,True,160,
+ZCU104 design 433,150.0,31.725,4758824,10.91,True,160,
+ZCU104 design 433,214.28,22.041,4722869,10.08,True,160,
+ZCU104 design 433,250.0,19.045,4761175,10.97,True,160,
+ZCU104 design 433,300.0,15.873,4761933,10.99,True,160,
+KV260 GA design,100.0,28.909,2890929,5.03,True,122,
+KV260 GA design,150.0,19.406,2910861,5.75,True,122,
+KV260 GA design,214.28,13.728,2941722,6.87,False,122,
+KV260 GA design,250.0,11.911,2977630,8.18,False,122,
+"baseline, HLS+Vivado at 300 MHz",300.0,255.215,76564388,0.01,True,,+0.224 ns
+"KV260 GA design, HLS+Vivado at 300 MHz",150.0,17.197,2579558,6.65,True,,-1.533 ns
+"KV260 GA design, HLS+Vivado at 300 MHz",214.28,12.163,2606229,7.75,True,,-1.533 ns
+"KV260 GA design, HLS+Vivado at 300 MHz",300.0,8.829,2648829,9.51,True,,-1.533 ns
+"ZCU104 design 433, HLS+Vivado at 300 MHz",300.0,16.028,4808477,10.75,True,,+0.211 ns

@@ -1,0 +1,490 @@
+
+
+================================================================
+== Synthesis Summary Report of 'md_kernel'
+================================================================
++ General Information: 
+    * Date:           Sun Nov 22 19:57:14 2026
+    * Version:        2022.2.2 (Build 3779808 on Feb 17 2023)
+    * Project:        smoke
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xck26-sfvc784-2LV-c
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------+--------+-------+---------+-----------+----------+---------+------+----------+------+---------+-------------+-------------+-----+
+    |   Modules   |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |      |         |             |             |     |
+    |   & Loops   |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |      FF     |     LUT     | URAM|
+    +-------------+--------+-------+---------+-----------+----------+---------+------+----------+------+---------+-------------+-------------+-----+
+    |+ md_kernel  |  Timing|  -0.78|     2708|  9.018e+03|         -|     2709|     -|        no|     -|  48 (3%)|  99439 (42%)|  69083 (58%)|    -|
+    | o loop_i    |      II|   2.43|     2706|  9.011e+03|       412|        9|   256|       yes|     -|        -|            -|            -|    -|
+    +-------------+--------+-------+---------+-----------+----------+---------+------+----------+------+---------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++---------------------+----------+
+| Interface           | Bitwidth |
++---------------------+----------+
+| NL_address0         | 12       |
+| NL_address1         | 12       |
+| NL_q0               | 32       |
+| NL_q1               | 32       |
+| force_x_address0    | 8        |
+| force_x_d0          | 64       |
+| force_y_address0    | 8        |
+| force_y_d0          | 64       |
+| force_z_address0    | 8        |
+| force_z_d0          | 64       |
+| position_x_address0 | 8        |
+| position_x_address1 | 8        |
+| position_x_q0       | 64       |
+| position_x_q1       | 64       |
+| position_y_address0 | 8        |
+| position_y_address1 | 8        |
+| position_y_q0       | 64       |
+| position_y_q1       | 64       |
+| position_z_address0 | 8        |
+| position_z_address1 | 8        |
+| position_z_q0       | 64       |
+| position_z_q1       | 64       |
++---------------------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------+-----------+----------+
+| Argument   | Direction | Datatype |
++------------+-----------+----------+
+| force_x    | out       | double*  |
+| force_y    | out       | double*  |
+| force_z    | out       | double*  |
+| position_x | in        | double*  |
+| position_y | in        | double*  |
+| position_z | in        | double*  |
+| NL         | in        | int*     |
++------------+-----------+----------+
+
+* SW-to-HW Mapping
++------------+---------------------+---------+----------+
+| Argument   | HW Interface        | HW Type | HW Usage |
++------------+---------------------+---------+----------+
+| force_x    | force_x_address0    | port    | offset   |
+| force_x    | force_x_ce0         | port    |          |
+| force_x    | force_x_we0         | port    |          |
+| force_x    | force_x_d0          | port    |          |
+| force_y    | force_y_address0    | port    | offset   |
+| force_y    | force_y_ce0         | port    |          |
+| force_y    | force_y_we0         | port    |          |
+| force_y    | force_y_d0          | port    |          |
+| force_z    | force_z_address0    | port    | offset   |
+| force_z    | force_z_ce0         | port    |          |
+| force_z    | force_z_we0         | port    |          |
+| force_z    | force_z_d0          | port    |          |
+| position_x | position_x_address0 | port    | offset   |
+| position_x | position_x_ce0      | port    |          |
+| position_x | position_x_q0       | port    |          |
+| position_x | position_x_address1 | port    | offset   |
+| position_x | position_x_ce1      | port    |          |
+| position_x | position_x_q1       | port    |          |
+| position_y | position_y_address0 | port    | offset   |
+| position_y | position_y_ce0      | port    |          |
+| position_y | position_y_q0       | port    |          |
+| position_y | position_y_address1 | port    | offset   |
+| position_y | position_y_ce1      | port    |          |
+| position_y | position_y_q1       | port    |          |
+| position_z | position_z_address0 | port    | offset   |
+| position_z | position_z_ce0      | port    |          |
+| position_z | position_z_q0       | port    |          |
+| position_z | position_z_address1 | port    | offset   |
+| position_z | position_z_ce1      | port    |          |
+| position_z | position_z_q1       | port    |          |
+| NL         | NL_address0         | port    | offset   |
+| NL         | NL_ce0              | port    |          |
+| NL         | NL_q0               | port    |          |
+| NL         | NL_address1         | port    | offset   |
+| NL         | NL_ce1              | port    |          |
+| NL         | NL_q1               | port    |          |
++------------+---------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------+-----+--------+--------------+------+---------+---------+
+| Name                                     | DSP | Pragma | Variable     | Op   | Impl    | Latency |
++------------------------------------------+-----+--------+--------------+------+---------+---------+
+| + md_kernel                              | 48  |        |              |      |         |         |
+|   add_ln24_fu_928_p2                     | -   |        | add_ln24     | add  | fabric  | 0       |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx         | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely         | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz         | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul          | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul1         | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add          | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul2         | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add1         | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv        | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul3         | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | r6inv        | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | mul5         | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | sub          | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | potential    | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | force        | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | mul8         | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | fx           | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul9         | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | fy           | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul4         | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | fz           | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_1       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_1       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_1       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_1      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_1      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add20_1      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_1      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | add22_1      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_1      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | mul23_1      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | r6inv_1      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | mul25_1      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | sub26_1      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | potential_1  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | force_1      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul29_1      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fx_1         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul31_1      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fy_1         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul33_1      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fz_1         | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_2       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_2       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_2       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_2      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_2      | dmul | fabric  | 10      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | add20_2      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_2      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add22_2      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_2      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul23_2      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | r6inv_2      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | mul25_2      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | sub26_2      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | potential_2  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | force_2      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | mul29_2      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | fx_2         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul31_2      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | fy_2         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul33_2      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | fz_2         | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_3       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_3       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_3       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_3      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_3      | dmul | fabric  | 10      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | add20_3      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_3      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | add22_3      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_3      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul23_3      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | r6inv_3      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | mul25_3      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | sub26_3      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | potential_3  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | force_3      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul29_3      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fx_3         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul31_3      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fy_3         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul33_3      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fz_3         | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_4       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_4       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_4       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_4      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_4      | dmul | fabric  | 10      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | add20_4      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_4      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add22_4      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_4      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul23_4      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | r6inv_4      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | mul25_4      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | sub26_4      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | potential_4  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | force_4      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | mul29_4      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | fx_4         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul31_4      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fy_4         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul33_4      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fz_4         | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_5       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_5       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_5       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_5      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_5      | dmul | fabric  | 10      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | add20_5      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_5      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | add22_5      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_5      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul23_5      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | r6inv_5      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | mul25_5      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | sub26_5      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | potential_5  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | force_5      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul29_5      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fx_5         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul31_5      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fy_5         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul33_5      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fz_5         | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_6       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_6       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_6       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_6      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_6      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add20_6      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_6      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add22_6      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_6      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul23_6      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | r6inv_6      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | mul25_6      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | sub26_6      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | potential_6  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | force_6      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | mul29_6      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | fx_6         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul31_6      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fy_6         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul33_6      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fz_6         | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_7       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_7       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_7       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_7      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_7      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add20_7      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_7      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add22_7      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_7      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | mul23_7      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | r6inv_7      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | mul25_7      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | sub26_7      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | potential_7  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | force_7      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul29_7      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | fx_7         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul31_7      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fy_7         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul33_7      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fz_7         | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_8       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_8       | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_8       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_8      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_8      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add20_8      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_8      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add22_8      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_8      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul23_8      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | r6inv_8      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | mul25_8      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | sub26_8      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | potential_8  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | force_8      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | mul29_8      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | fx_8         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | mul31_8      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | fy_8         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | mul33_8      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fz_8         | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_9       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_9       | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_9       | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_9      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_9      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add20_9      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_9      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add22_9      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_9      | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | mul23_9      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | r6inv_9      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | mul25_9      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | sub26_9      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | potential_9  | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | force_9      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | mul29_9      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | fx_9         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U31      | -   |        | mul31_9      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fy_9         | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul33_9      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fz_9         | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_10      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_10      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_10      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_s      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_s      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add20_s      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_s      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add22_s      | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_10     | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul23_s      | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | r6inv_10     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | mul25_s      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | sub26_s      | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | potential_10 | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | force_10     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul29_s      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fx_10        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul31_s      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fy_10        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul33_s      | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fz_10        | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_11      | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_11      | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_11      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_10     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_10     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add20_10     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_10     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | add22_10     | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_11     | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | mul23_10     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | r6inv_11     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | mul25_10     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U12    | 3   |        | sub26_10     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | potential_11 | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | force_11     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul29_10     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U13    | 3   |        | fx_11        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul31_10     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fy_11        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul33_10     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fz_11        | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_12      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_12      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_12      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_11     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_11     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add20_11     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_11     | dmul | fabric  | 10      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | add22_11     | dsub | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_12     | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul23_11     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | r6inv_12     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul25_11     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | sub26_11     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | potential_12 | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | force_12     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul29_11     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fx_12        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul31_11     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fy_12        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul33_11     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fz_12        | dadd | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U4 | 3   |        | delx_13      | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U5 | 3   |        | dely_13      | dsub | fulldsp | 12      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | delz_13      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U20      | -   |        | mul18_12     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U21      | -   |        | mul19_12     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U8     | 3   |        | add20_12     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | mul21_12     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add22_12     | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U38      | -   |        | r2inv_13     | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul23_12     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | r6inv_13     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | mul25_12     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U10    | 3   |        | sub26_12     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | potential_13 | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | force_13     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul29_12     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fx_13        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul31_12     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fy_13        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul33_12     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fz_13        | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_14      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_14      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_14      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_13     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_13     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add20_13     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_13     | dmul | fabric  | 10      |
+|   dadddsub_64ns_64ns_64_13_full_dsp_1_U6 | 3   |        | add22_13     | dsub | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_14     | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U24      | -   |        | mul23_13     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U26      | -   |        | r6inv_14     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U25      | -   |        | mul25_13     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | sub26_13     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | potential_14 | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U28      | -   |        | force_14     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul29_13     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fx_14        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U34      | -   |        | mul31_13     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fy_14        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U35      | -   |        | mul33_13     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fz_14        | dadd | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U1     | 3   |        | delx_15      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U2     | 3   |        | dely_15      | dsub | fulldsp | 12      |
+|   dsub_64ns_64ns_64_13_full_dsp_1_U3     | 3   |        | delz_15      | dsub | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U17      | -   |        | mul18_14     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U18      | -   |        | mul19_14     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U7     | 3   |        | add20_14     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U19      | -   |        | mul21_14     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U9     | 3   |        | add22_14     | dadd | fulldsp | 12      |
+|   ddiv_64ns_64ns_64_59_no_dsp_1_U37      | -   |        | r2inv_15     | ddiv | fabric  | 58      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U23      | -   |        | mul23_14     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U22      | -   |        | r6inv_15     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U27      | -   |        | mul25_14     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U11    | 3   |        | sub26_14     | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U30      | -   |        | potential_15 | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U29      | -   |        | force_15     | dmul | fabric  | 10      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U36      | -   |        | mul29_14     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U14    | 3   |        | fx_15        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U32      | -   |        | mul31_14     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U15    | 3   |        | fy_15        | dadd | fulldsp | 12      |
+|   dmul_64ns_64ns_64_11_no_dsp_1_U33      | -   |        | mul33_14     | dmul | fabric  | 10      |
+|   dadd_64ns_64ns_64_13_full_dsp_1_U16    | 3   |        | fz_15        | dadd | fulldsp | 12      |
++------------------------------------------+-----+--------+--------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+----------------------+
+| Type     | Options | Location             |
++----------+---------+----------------------+
+| pipeline | II=1    | md.c:25 in md_kernel |
+| pipeline |         | md.c:33 in md_kernel |
++----------+---------+----------------------+
+
+

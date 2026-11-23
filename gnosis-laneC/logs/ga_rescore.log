@@ -1,0 +1,21 @@
+nohup: ignoring input
+machsuite-spmv-ellpack: 40 feasible GA designs to re-score, 20 at a time
+machsuite-spmv-ellpack: 40/40 re-scored, 20 with variable latency
+  GA's believed best : ga_3_1  0.00172 ms (best case) -> worst case 0.21211 ms
+  true best (worst-case latency): ga_1_0  0.02528 ms
+machsuite-md-knn: 47 feasible GA designs to re-score, 20 at a time
+machsuite-md-knn: 47/47 re-scored, 0 with variable latency
+  GA's believed best : ga_1_0  0.02465 ms (best case) -> worst case 0.02465 ms
+  true best (worst-case latency): ga_1_0  0.02465 ms
+rodinia-knn-0-baseline: 24 feasible GA designs to re-score, 20 at a time
+rodinia-knn-0-baseline: 24/24 re-scored, 0 with variable latency
+  GA's believed best : ga_1_0  20.97187 ms (best case) -> worst case 20.97187 ms
+  true best (worst-case latency): ga_1_0  20.97187 ms
+machsuite-stencil2d: 224 feasible GA designs to re-score, 20 at a time
+machsuite-stencil2d: 224/224 re-scored, 120 with variable latency
+  GA's believed best : ga_3_4_0_2  0.00170 ms (best case) -> worst case 0.84780 ms
+  true best (worst-case latency): ga_0_3_0_2  0.12105 ms
+machsuite-stencil3d: 879 feasible GA designs to re-score, 20 at a time
+machsuite-stencil3d: 879/879 re-scored, 837 with variable latency
+  GA's believed best : ga_2_2_4_5_4_0_4_4_3  0.01714 ms (best case) -> worst case 0.61506 ms
+  true best (worst-case latency): ga_0_0_0_5_4_2_0_2_2  0.22222 ms

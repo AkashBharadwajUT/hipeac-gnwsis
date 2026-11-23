@@ -1,0 +1,24 @@
+
+
+Implementation tool: Xilinx Vivado v.2022.2.2
+Project:             smoke
+Solution:            solution1
+Device target:       xck26-sfvc784-2LV-c
+Report date:         Sun Nov 22 20:47:04 CET 2026
+
+#=== Post-Implementation Resource usage ===
+SLICE:            0
+LUT:          36685
+FF:           46072
+DSP:            208
+BRAM:             0
+URAM:             0
+LATCH:            0
+SRL:           2763
+CLB:           8283
+
+#=== Final timing ===
+CP required:                     10.000
+CP achieved post-synthesis:      4.122
+CP achieved post-implementation: 7.800
+Timing met

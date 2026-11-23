@@ -1,0 +1,12 @@
+kernel | pareto | done | fit | no-fit | pending | best DS (ms) | best transf. (ms) | GA best (ms)* | GA gain* | ratio med [min-max] | same lat. | var. lat.
+machsuite-md-knn | 20 | 20 | 20 | 0 | 0 | 0.025 | 0.025 | 0.025 | 1.000 | 1.000 [1.000-1.000] | 20 | 0
+machsuite-spmv-ellpack | 13 | 13 | 13 | 0 | 0 | 0.025 | 0.025 | 0.002 | 14.698 | 1.000 [1.000-1.033] | 10 | 3
+machsuite-stencil2d | 168 | 168 | 167 | 1 | 0 | 0.120 | 0.121 | 0.002 | 71.206 | 1.000 [0.751-1.068] | 145 | 22
+machsuite-stencil3d | 219 | 219 | 217 | 2 | 0 | 0.222 | 0.222 | 0.017 | 12.961 | 1.000 [0.942-1.310] | 168 | 22
+rodinia-knn-0-baseline | 2 | 2 | 2 | 0 | 0 | 20.972 | 20.972 | 20.972 | 1.000 | 1.000 [1.000-1.000] | 2 | 0
+rodinia-knn-1-tiling | 228 | 224 | 215 | 13 | 0 | 21.627 | 28.488 | 27.525 | 1.035 | 1.966 [0.998-1.967] | 37 | 0
+rodinia_pathfinder_0_baseline_0 | 311 | 311 | 42 | 269 | 0 | 10.629 | 31.655 | 0.123 | 256.710 | 0.993 [0.760-1.189] | 35 | 42
+
+Latencies are worst case (LatencyWorst). * GA values are the GA's own objective = ClockInfo.Latency, which is the
+  BEST case for designs with variable-trip loops; re-score GA Pareto designs with ga_rescore.sh before trusting them.
+Wrote /home/user/gnosis/transfer/transfer_designs.csv and transfer_summary.csv

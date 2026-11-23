@@ -1,0 +1,247 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Mon Nov 23 00:17:16 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  3.33 ns
+    * C-Synthesis target clock:    3.33 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              2924
+FF:               4729
+DSP:              14
+BRAM:             6
+URAM:             0
+SRL:              272
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++------------+-------------+
+| Timing     | Period (ns) |
++------------+-------------+
+| Target     | 3.330       |
+| Post-Route | 2.113       |
++------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++------------------------------------------------+------+------+-----+------+------+-----+--------+---------+---------+---------------------+------------+
+| Name                                           | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl    | Latency | Variable            | Source     |
++------------------------------------------------+------+------+-----+------+------+-----+--------+---------+---------+---------------------+------------+
+| inst                                           | 2924 | 4729 | 14  | 6    |      |     |        |         |         |                     |            |
+|   (inst)                                       | 5    | 412  |     |      |      |     |        |         |         |                     |            |
+|   control_s_axi_U                              | 227  | 247  |     |      |      |     |        |         |         |                     |            |
+|   gmem_m_axi_U                                 | 1114 | 1684 |     | 2    |      |     |        |         |         |                     |            |
+|   grp_compute_dist_fu_164                      | 983  | 1876 | 14  |      |      |     |        |         |         |                     |            |
+|     (grp_compute_dist_fu_164)                  | 37   | 137  |     |      |      |     |        |         |         |                     |            |
+|     fadd_32ns_32ns_32_11_full_dsp_1_U12        | 167  | 301  | 2   |      |      |     |        |         |         |                     |            |
+|       bind_op fadd                             |      |      |     |      |      |     |        | fulldsp | 10      | sum                 | knn.cpp:22 |
+|     fadd_32ns_32ns_32_11_full_dsp_1_U13        | 195  | 366  | 2   |      |      |     |        |         |         |                     |            |
+|       bind_op fadd                             |      |      |     |      |      |     |        | fulldsp | 10      | sum_1               | knn.cpp:22 |
+|     flow_control_loop_pipe_sequential_init_U   | 24   | 2    |     |      |      |     |        |         |         |                     |            |
+|     fmul_32ns_32ns_32_7_max_dsp_1_U14          | 68   | 171  | 3   |      |      |     |        |         |         |                     |            |
+|       bind_op fmul                             |      |      |     |      |      |     |        | maxdsp  | 6       | mul7                | knn.cpp:22 |
+|     fmul_32ns_32ns_32_7_max_dsp_1_U15          | 68   | 171  | 3   |      |      |     |        |         |         |                     |            |
+|       bind_op fmul                             |      |      |     |      |      |     |        | maxdsp  | 6       | mul7_1              | knn.cpp:22 |
+|     fsub_32ns_32ns_32_11_full_dsp_1_U10        | 196  | 364  | 2   |      |      |     |        |         |         |                     |            |
+|       bind_op fsub                             |      |      |     |      |      |     |        | fulldsp | 10      | feature_delta       | knn.cpp:21 |
+|     fsub_32ns_32ns_32_11_full_dsp_1_U11        | 196  | 364  | 2   |      |      |     |        |         |         |                     |            |
+|       bind_op fsub                             |      |      |     |      |      |     |        | fulldsp | 10      | feature_delta_1     | knn.cpp:21 |
+|     mux_21_32_1_1_U16                          | 16   |      |     |      |      |     |        |         |         |                     |            |
+|     mux_21_32_1_1_U17                          | 16   |      |     |      |      |     |        |         |         |                     |            |
+|   grp_load_1_fu_154                            | 145  | 142  |     |      |      |     |        |         |         |                     |            |
+|     (grp_load_1_fu_154)                        | 103  | 73   |     |      |      |     |        |         |         |                     |            |
+|     grp_load_1_Pipeline_LOAD_TILE_fu_65        | 42   | 69   |     |      |      |     |        |         |         |                     |            |
+|       (grp_load_1_Pipeline_LOAD_TILE_fu_65)    | 11   | 67   |     |      |      |     |        |         |         |                     |            |
+|       flow_control_loop_pipe_sequential_init_U | 31   | 2    |     |      |      |     |        |         |         |                     |            |
+|   grp_store_1_fu_176                           | 187  | 240  |     |      |      |     |        |         |         |                     |            |
+|   local_distance_1_U                           | 66   | 32   |     |      |      |     |        |         |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto    | 1       | local_distance_1    | knn.cpp:54 |
+|   local_distance_2_U                           | 64   | 32   |     |      |      |     |        |         |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto    | 1       | local_distance_2    | knn.cpp:54 |
+|   local_distance_3_U                           | 64   | 32   |     |      |      |     |        |         |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto    | 1       | local_distance_3    | knn.cpp:54 |
+|   local_distance_U                             | 64   | 32   |     |      |      |     |        |         |         |                     |            |
+|     bind_storage ram_1p                        |      |      |     |      |      |     |        | auto    | 1       | local_distance      | knn.cpp:54 |
+|   local_searchSpace_1_U                        | 5    |      |     | 2    |      |     |        |         |         |                     |            |
+|     bind_storage ram_s2p                       |      |      |     |      |      |     |        | auto    | 1       | local_searchSpace_1 | knn.cpp:52 |
+|   local_searchSpace_U                          |      |      |     | 2    |      |     |        |         |         |                     |            |
+|     bind_storage ram_s2p                       |      |      |     |      |      |     |        | auto    | 1       | local_searchSpace   | knn.cpp:52 |
++------------------------------------------------+------+------+-----+------+------+-----+--------+---------+---------+---------------------+------------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 2.50%  | OK     |
+| FD                                                        | 50%       | 2.02%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.92%  | OK     |
+| CARRY8                                                    | 25%       | 0.84%  | OK     |
+| MUXF7                                                     | 15%       | 0.22%  | OK     |
+| DSP                                                       | 80%       | 1.12%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 2.08%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 1.60%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 135    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+----------------------------------------+------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                         | ENDPOINT PIN                                                     | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                        |                                                                  |              |            |                |          DELAY |        DELAY |
++-------+-------+----------------------------------------+------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 1.217 | ap_CS_fsm_reg[39]/C                    | grp_store_1_fu_176/gmem_addr_reg_597_reg[61]/D                   |           11 |         17 |          2.110 |          1.206 |        0.904 |
+| Path2 | 1.255 | grp_store_1_fu_176/ap_CS_fsm_reg[15]/C | gmem_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg/DINADIN[0] |            4 |         32 |          1.565 |          0.598 |        0.967 |
+| Path3 | 1.260 | ap_CS_fsm_reg[35]/C                    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[61]/D                    |           11 |         17 |          2.067 |          1.164 |        0.903 |
+| Path4 | 1.260 | ap_CS_fsm_reg[39]/C                    | grp_store_1_fu_176/gmem_addr_reg_597_reg[60]/D                   |           11 |         17 |          2.067 |          1.164 |        0.903 |
+| Path5 | 1.263 | ap_CS_fsm_reg[35]/C                    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[60]/D                    |           11 |         17 |          2.064 |          1.159 |        0.905 |
++-------+-------+----------------------------------------+------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +--------------------------------------------------+-------------------+
+    | Path1 Cells                                      | Primitive Type    |
+    +--------------------------------------------------+-------------------+
+    | ap_CS_fsm_reg[39]                                | REGISTER.SDR.FDRE |
+    | grp_store_1_fu_176/gmem_addr_reg_597[23]_i_18    | CLB.LUT.LUT3      |
+    | grp_store_1_fu_176/gmem_addr_reg_597[15]_i_21    | CLB.LUT.LUT6      |
+    | grp_store_1_fu_176/gmem_addr_reg_597[15]_i_4     | CLB.LUT.LUT6      |
+    | grp_store_1_fu_176/gmem_addr_reg_597[15]_i_11    | CLB.LUT.LUT2      |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[15]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[23]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[31]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[39]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[47]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[55]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[61]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[61]     | REGISTER.SDR.FDRE |
+    +--------------------------------------------------+-------------------+
+
+    +-------------------------------------------------------+------------------------+
+    | Path2 Cells                                           | Primitive Type         |
+    +-------------------------------------------------------+------------------------+
+    | grp_store_1_fu_176/ap_CS_fsm_reg[15]                  | REGISTER.SDR.FDRE      |
+    | grp_store_1_fu_176/mem_reg_i_78                       | CLB.LUT.LUT3           |
+    | grp_store_1_fu_176/mem_reg_i_74                       | CLB.LUT.LUT6           |
+    | grp_store_1_fu_176/mem_reg_i_53                       | CLB.LUT.LUT6           |
+    | grp_store_1_fu_176/mem_reg_i_19                       | CLB.LUT.LUT3           |
+    | gmem_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg | BLOCKRAM.BRAM.RAMB18E2 |
+    +-------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------+-------------------+
+    | Path3 Cells                                     | Primitive Type    |
+    +-------------------------------------------------+-------------------+
+    | ap_CS_fsm_reg[35]                               | REGISTER.SDR.FDRE |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[24]_i_18    | CLB.LUT.LUT3      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[16]_i_21    | CLB.LUT.LUT6      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[16]_i_4     | CLB.LUT.LUT6      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[16]_i_11    | CLB.LUT.LUT2      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[16]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[24]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[32]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[40]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[48]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[56]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[61]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[61]     | REGISTER.SDR.FDRE |
+    +-------------------------------------------------+-------------------+
+
+    +--------------------------------------------------+-------------------+
+    | Path4 Cells                                      | Primitive Type    |
+    +--------------------------------------------------+-------------------+
+    | ap_CS_fsm_reg[39]                                | REGISTER.SDR.FDRE |
+    | grp_store_1_fu_176/gmem_addr_reg_597[23]_i_18    | CLB.LUT.LUT3      |
+    | grp_store_1_fu_176/gmem_addr_reg_597[15]_i_21    | CLB.LUT.LUT6      |
+    | grp_store_1_fu_176/gmem_addr_reg_597[15]_i_4     | CLB.LUT.LUT6      |
+    | grp_store_1_fu_176/gmem_addr_reg_597[15]_i_11    | CLB.LUT.LUT2      |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[15]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[23]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[31]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[39]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[47]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[55]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[61]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_store_1_fu_176/gmem_addr_reg_597_reg[60]     | REGISTER.SDR.FDRE |
+    +--------------------------------------------------+-------------------+
+
+    +-------------------------------------------------+-------------------+
+    | Path5 Cells                                     | Primitive Type    |
+    +-------------------------------------------------+-------------------+
+    | ap_CS_fsm_reg[35]                               | REGISTER.SDR.FDRE |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[24]_i_18    | CLB.LUT.LUT3      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[16]_i_21    | CLB.LUT.LUT6      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[16]_i_4     | CLB.LUT.LUT6      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114[16]_i_11    | CLB.LUT.LUT2      |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[16]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[24]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[32]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[40]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[48]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[56]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[61]_i_1 | CLB.CARRY.CARRY8  |
+    | grp_load_1_fu_154/trunc_ln6_reg_114_reg[60]     | REGISTER.SDR.FDRE |
+    +-------------------------------------------------+-------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+-----------------------------------------------------------------+
+| Report Type              | Report Location                                                 |
++--------------------------+-----------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/workload_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/workload_failfast_synth.rpt                 |
+| timing                   | impl/verilog/report/workload_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/workload_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/workload_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/workload_utilization_hierarchical_synth.rpt |
++--------------------------+-----------------------------------------------------------------+
+
+

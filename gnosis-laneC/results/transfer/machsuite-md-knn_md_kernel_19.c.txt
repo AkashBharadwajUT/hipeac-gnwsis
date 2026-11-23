@@ -1,0 +1,14 @@
+Kernel: machsuite-md-knn  top: md_kernel  source: md.c  row: md_kernel_19.c
+Loading xilinx/vitis_hls/2022.2
+  Loading requirement: xilinx/.licence
+HLS command: vitis_hls -f run_hls.tcl -l vitis_hls.log  (/remote/labware/packages/xilinx/Vitis_HLS/2022.2/bin/vitis_hls)
+Dataset row md_kernel_19.c (xczu7ev-ffvc1156-2-e, 10 ns), 48 feasible of 48 rows
+  L1: L1:loop_i : for (i = 0; i < nAtoms; i++){                    -> #pragma HLS pipeline
+  L2: L2:loop_j : for( j = 0; j < maxNeighbors; j++){              -> #pragma HLS unroll
+Work dir: /local/scratch/user/smoke_machsuite-md-knn_md_kernel_19_2022.2_xck26_10
+Exit code: 0   Peak RAM: 1698 MB   Wall time: 0:58.81
+
+Ours:    latency=0.02465 ms (2465 cycles x 10.0 ns)  util%={'BRAM': 0, 'DSP': 21, 'FF': 18, 'LUT': 20}
+Dataset: latency=0.02465 ms  util%={'BRAM': 0, 'DSP': 15, 'FF': 9, 'LUT': 10}  synth=38 s (Vitis 2021.1)  [dataset is xczu7ev-ffvc1156-2-e; ours is xck26-sfvc784-2LV-c]
+Ratio ours/dataset latency: 1.0000   exact resource match: False
+Kept reports in /local/scratch/user/smoke_machsuite-md-knn_md_kernel_19_2022.2_xck26_10/reports (KEEP=1 keeps the whole project)

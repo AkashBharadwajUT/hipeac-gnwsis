@@ -1,0 +1,182 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Sun Nov 22 21:15:15 CET 2026
+    * Version:         2022.2 (Build 3779808 on Feb 17 2023)
+    * Project:         smoke
+    * Solution:        solution1 (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xck26-sfvc784-2LV-c
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  3.33 ns
+    * C-Synthesis target clock:    3.33 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       none
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              1896
+FF:               3408
+DSP:              7
+BRAM:             2
+URAM:             0
+SRL:              155
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 3.330       |
+| Post-Synthesis | 2.242       |
+| Post-Route     | 2.796       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++----------------------------------------------+------+------+-----+------+------+-----+--------+---------+---------+-----------------+------------+
+| Name                                         | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl    | Latency | Variable        | Source     |
++----------------------------------------------+------+------+-----+------+------+-----+--------+---------+---------+-----------------+------------+
+| inst                                         | 1896 | 3408 | 7   | 2    |      |     |        |         |         |                 |            |
+|   (inst)                                     | 3    | 332  |     |      |      |     |        |         |         |                 |            |
+|   control_s_axi_U                            | 223  | 247  |     |      |      |     |        |         |         |                 |            |
+|   gmem_m_axi_U                               | 1091 | 1683 |     | 2    |      |     |        |         |         |                 |            |
+|   grp_workload_Pipeline_L1_fu_111            | 580  | 1146 | 7   |      |      |     |        |         |         |                 |            |
+|     (grp_workload_Pipeline_L1_fu_111)        | 41   | 272  |     |      |      |     |        |         |         |                 |            |
+|     fadd_32ns_32ns_32_11_full_dsp_1_U2       | 212  | 357  | 2   |      |      |     |        |         |         |                 |            |
+|       bind_op fadd                           |      |      |     |      |      |     |        | fulldsp | 10      | sum             | knn.cpp:25 |
+|       bind_op fadd                           |      |      |     |      |      |     |        | fulldsp | 10      | sum_1           | knn.cpp:25 |
+|     flow_control_loop_pipe_sequential_init_U | 30   | 2    |     |      |      |     |        |         |         |                 |            |
+|     fmul_32ns_32ns_32_7_max_dsp_1_U3         | 109  | 160  | 3   |      |      |     |        |         |         |                 |            |
+|       bind_op fmul                           |      |      |     |      |      |     |        | maxdsp  | 6       | mul7            | knn.cpp:25 |
+|       bind_op fmul                           |      |      |     |      |      |     |        | maxdsp  | 6       | mul7_1          | knn.cpp:25 |
+|     fsub_32ns_32ns_32_11_full_dsp_1_U1       | 191  | 355  | 2   |      |      |     |        |         |         |                 |            |
+|       bind_op fsub                           |      |      |     |      |      |     |        | fulldsp | 10      | feature_delta   | knn.cpp:24 |
+|       bind_op fsub                           |      |      |     |      |      |     |        | fulldsp | 10      | feature_delta_1 | knn.cpp:24 |
++----------------------------------------------+------+------+-----+------+------+-----+--------+---------+---------+-----------------+------------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 1.62%  | OK     |
+| FD                                                        | 50%       | 1.45%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.27%  | OK     |
+| CARRY8                                                    | 25%       | 0.59%  | OK     |
+| MUXF7                                                     | 15%       | 0.00%  | OK     |
+| DSP                                                       | 80%       | 0.56%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 0.69%  | OK     |
+| URAM                                                      | 80%       | 0.00%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 0.62%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 2196      | 99     | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.391ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.263ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+--------------------+---------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN     | ENDPOINT PIN                    | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                    |                                 |              |            |                |          DELAY |        DELAY |
++-------+-------+--------------------+---------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 0.534 | ap_CS_fsm_reg[0]/C | trunc_ln19_1_reg_201_reg[20]/CE |            0 |        190 |          2.669 |          0.113 |        2.556 |
+| Path2 | 0.534 | ap_CS_fsm_reg[0]/C | trunc_ln19_1_reg_201_reg[52]/CE |            0 |        190 |          2.669 |          0.113 |        2.556 |
+| Path3 | 0.534 | ap_CS_fsm_reg[0]/C | trunc_ln_reg_195_reg[31]/CE     |            0 |        190 |          2.669 |          0.113 |        2.556 |
+| Path4 | 0.536 | ap_CS_fsm_reg[0]/C | gmem_addr_reg_189_reg[31]/CE    |            0 |        190 |          2.667 |          0.113 |        2.554 |
+| Path5 | 0.536 | ap_CS_fsm_reg[0]/C | trunc_ln19_1_reg_201_reg[19]/CE |            0 |        190 |          2.667 |          0.113 |        2.554 |
++-------+-------+--------------------+---------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +------------------------------+-------------------+
+    | Path1 Cells                  | Primitive Type    |
+    +------------------------------+-------------------+
+    | ap_CS_fsm_reg[0]             | REGISTER.SDR.FDSE |
+    | trunc_ln19_1_reg_201_reg[20] | REGISTER.SDR.FDRE |
+    +------------------------------+-------------------+
+
+    +------------------------------+-------------------+
+    | Path2 Cells                  | Primitive Type    |
+    +------------------------------+-------------------+
+    | ap_CS_fsm_reg[0]             | REGISTER.SDR.FDSE |
+    | trunc_ln19_1_reg_201_reg[52] | REGISTER.SDR.FDRE |
+    +------------------------------+-------------------+
+
+    +--------------------------+-------------------+
+    | Path3 Cells              | Primitive Type    |
+    +--------------------------+-------------------+
+    | ap_CS_fsm_reg[0]         | REGISTER.SDR.FDSE |
+    | trunc_ln_reg_195_reg[31] | REGISTER.SDR.FDRE |
+    +--------------------------+-------------------+
+
+    +---------------------------+-------------------+
+    | Path4 Cells               | Primitive Type    |
+    +---------------------------+-------------------+
+    | ap_CS_fsm_reg[0]          | REGISTER.SDR.FDSE |
+    | gmem_addr_reg_189_reg[31] | REGISTER.SDR.FDRE |
+    +---------------------------+-------------------+
+
+    +------------------------------+-------------------+
+    | Path5 Cells                  | Primitive Type    |
+    +------------------------------+-------------------+
+    | ap_CS_fsm_reg[0]             | REGISTER.SDR.FDSE |
+    | trunc_ln19_1_reg_201_reg[19] | REGISTER.SDR.FDRE |
+    +------------------------------+-------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+------------------------------------------------------------------+
+| Report Type              | Report Location                                                  |
++--------------------------+------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/workload_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/workload_failfast_routed.rpt                 |
+| status                   | impl/verilog/report/workload_status_routed.rpt                   |
+| timing                   | impl/verilog/report/workload_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/workload_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/workload_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/workload_utilization_hierarchical_routed.rpt |
++--------------------------+------------------------------------------------------------------+
+
+
