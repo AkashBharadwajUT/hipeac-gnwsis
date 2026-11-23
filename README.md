@@ -12,12 +12,22 @@ It also includes a detailed schema of the dataset and utility scripts for visual
 
 ## HiPEAC Student Challenge 2027: reproduction on the Kria KV260
 
-This fork extends the GNΩSIS repository with our reproduction for the HiPEAC Student Challenge 2027 (Option B): 
-do GNΩSIS's design lessons survive a new device (Kria KV260), a newer tool (Vitis 2022.2 instead of 2021.1), and real hardware? Everything below this section is the original GNΩSIS documentation and is unchanged.
+This fork extends the GNΩSIS repository with our reproduction for the HiPEAC Student Challenge 2027 (Option B):
+do GNΩSIS's design lessons survive a new device (Kria KV260), a newer HLS tool version, and real hardware?
+The study has two complementary lanes; everything below this section is the original GNΩSIS documentation and is unchanged.
 
-Added by the team:
-- `kv260_synthesis.py`, `kv260_all_results.csv`, `output/<app>/kv260_results.csv`: ZCU104 Pareto configurations re-synthesised on the KV260 (`xck26-sfvc784-2LV-c`) with Vitis HLS 2022.2 for selected kernels.
-- `gnosis-laneC/`: KV260 design-space exploration with the original GenHLSOptimizer (10 kernels), worst-case re-scoring, transfer of 961 ZCU104 Pareto designs to the KV260, out-of-context place-and-route at 100 and 300 MHz, and on-board measurements with PYNQ. Scripts, results, figures and its own `README.md` and `requirements.txt` (Python 3.6, needed by GenHLSOptimizer) are inside the folder.
+**Research questions**
+
+| Lane | Question | Who |
+|---|---|---|
+| B | Does tool-version drift (Vitis HLS 2021.1 → 2022.2 → 2025.2) change the latency on the *same* device (ZCU104)? | Akash |
+| C | Do the ZCU104 Pareto designs port to the Kria KV260, and do GNΩSIS's lessons hold on real hardware? | Nitin |
+
+**Added files**
+
+- `kv260_synthesis.py`, `kv260_all_results.csv`, `output/<app>/kv260_results.csv`: early KV260 smoke-test synthesis (ZCU104 Pareto configurations on `xck26-sfvc784-2LV-c`, Vitis HLS 2022.2, selected kernels).
+- `gnosis-laneB/`: **Tool-version drift study on ZCU104.** Re-synthesis of all 961 transfer designs on `xczu7ev-ffvc1156-2-e` with Vitis HLS 2022.2 and a golden-row check with 2025.2 (top-7 fastest per kernel), to isolate tool effects from device effects. Key finding: drift is a one-step change at the 2021.1 → 2022.2 boundary (median 1.82×); 2022.2 and 2025.2 produce identical schedules. Scripts, results (4 CSVs) and its own `README.md` are inside the folder.
+- `gnosis-laneC/`: **KV260 design-space exploration and board validation.** GenHLSOptimizer (NSGA-II) on the KV260, worst-case re-scoring, transfer of 961 ZCU104 Pareto designs to the KV260, out-of-context place-and-route at 100 and 300 MHz, and on-board measurements with PYNQ. Scripts, results, figures and its own `README.md` and `requirements.txt` (Python 3.6, needed by GenHLSOptimizer) are inside the folder.
 
 ## Repository Structure
 
