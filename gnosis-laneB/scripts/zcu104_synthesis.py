@@ -298,6 +298,12 @@ def load_designs(app, row_ids, label_info, ap2l, l2ap):
     df = pd.read_csv(csv_path)
     print(f"  CSV: {os.path.basename(csv_path)}  shape={df.shape}")
 
+    # Filter to ZCU104 at 10 ns before matching Version
+    if 'Device' in df.columns:
+        df = df[df['Device'] == DEVICE]
+    if 'Clock_Period_nsec' in df.columns:
+        df = df[df['Clock_Period_nsec'] == float(CLOCK_NS)]
+
     # Filter to only the rows Nitin transferred
     row_id_set = set(row_ids)
     version_col = None
@@ -312,21 +318,20 @@ def load_designs(app, row_ids, label_info, ap2l, l2ap):
     df_filtered = df[df[version_col].isin(row_id_set)].copy()
     print(f"  Matched {len(df_filtered)} / {len(row_ids)} transfer rows in CSV")
 
-    # Identify label columns (L1, L2, ...)
-    label_cols = [c for c in df.columns if re.match(r'^L\d+$', c)]
-
     designs = []
     for run_id, (_, row) in enumerate(df_filtered.iterrows()):
         label_pragmas = {}
         pragma_parts = []
-        for lc in label_cols:
-            val = row.get(lc)
-            pragma = directive_to_pragma(val, lc, label_info)
+        # ap2l maps CSV column names (Array_N, OuterLoop_N, ...) -> label (L1, L2, ...)
+        for ap, label in ap2l.items():
+            val = row.get(ap)
+            pragma = directive_to_pragma(val, label, label_info)
             if pragma:
-                label_pragmas[lc] = pragma
-                pragma_parts.append(f"'{lc}': '{pragma}'")
+                label_pragmas[label] = pragma
+                pragma_parts.append(f"'{label}': '{pragma}'")
 
-        ds_lat = row.get('Latency_ms') or row.get('latency_ms') or row.get('Latency')
+        ds_lat = (row.get('Latency_msec') or row.get('Latency_ms')
+                  or row.get('latency_ms') or row.get('Latency'))
         version = row[version_col]
         designs.append((run_id, version, label_pragmas, ds_lat, "{" + ", ".join(pragma_parts) + "}"))
 

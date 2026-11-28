@@ -18,15 +18,16 @@ Usage:
 import os
 import pandas as pd
 
-ROOT   = os.path.dirname(os.path.abspath(__file__))
-PARENT = os.path.dirname(ROOT)
+SCRIPTS_DIR  = os.path.dirname(os.path.abspath(__file__))
+LANE_B       = os.path.dirname(SCRIPTS_DIR)          # gnosis-laneB/
+REPO_ROOT    = os.path.dirname(LANE_B)               # hipeac-gnwsis/
 
-ZCU22_CSV   = os.path.join(PARENT, "zcu104_all_results.csv")
-ZCU25_CSV   = os.path.join(PARENT, "zcu104_2025_all_results.csv")
-TRANSFER_CSV = os.path.join(PARENT, "hipeac-gnwsis", "laneC", "transfer",
+ZCU22_CSV    = os.path.join(LANE_B, "results", "zcu104_all_results.csv")
+ZCU25_CSV    = os.path.join(LANE_B, "results", "zcu104_2025_all_results.csv")
+TRANSFER_CSV = os.path.join(REPO_ROOT, "gnosis-laneC", "results", "transfer",
                              "transfer_designs_full.csv")
-OUT22_CSV   = os.path.join(PARENT, "zcu104_analysis_results.csv")
-OUT3VER_CSV = os.path.join(PARENT, "zcu104_3ver_results.csv")
+OUT22_CSV    = os.path.join(LANE_B, "results", "zcu104_analysis_results.csv")
+OUT3VER_CSV  = os.path.join(LANE_B, "results", "zcu104_3ver_results.csv")
 
 KERNEL_ORDER = [
     "machsuite-md-knn",

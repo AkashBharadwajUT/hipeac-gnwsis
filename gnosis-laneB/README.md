@@ -82,16 +82,24 @@ See `--dry-run` to preview which rows will be synthesised before committing to a
 
 ## Key findings (§4.3 of the report)
 
+> **Note (27 Nov 2026):** The CSVs committed on 23 Nov (`zcu104_all_results.csv`,
+> `zcu104_2025_all_results.csv`) are **invalid** — a bug in `load_designs` caused the
+> script to look for directive columns named `L1`, `L2`, … instead of `Array_N`,
+> `OuterLoop_N`, `InnerLoop_N`. Every design was synthesised as the plain (un-optimised)
+> kernel, so all designs of a kernel produce the same cycle count and `Pragmas = {}`.
+> A corrected re-run is in progress; this table will be updated once results are available.
+> The numbers below are **placeholders** and must not be cited.
+
 | Kernel | Median ratio 2022.2 / 2021.1 | Median ratio 2025.2 / 2021.1 | 2025.2 / 2022.2 |
 |---|---|---|---|
-| machsuite-md-knn | 1.000 | 1.000 | 1.000 |
-| machsuite-spmv-ellpack | 1.000 | 1.000 | 1.000 |
-| machsuite-stencil2d | 3.230 | 3.230 | 1.000 |
-| machsuite-stencil3d | 1.531 | 1.531 | 1.000 |
-| rodinia-knn-0-baseline | 2.000 | 2.000 | 1.000 |
-| rodinia-knn-1-tiling | 1.964 | 1.964 | 1.000 |
-| rodinia_pathfinder_0_baseline_0 | 1.982 | 1.982 | 1.000 |
-| **ALL (median, 677 valid)** | **1.822** | **1.822** | **1.000** |
+| machsuite-md-knn | TBD | TBD | TBD |
+| machsuite-spmv-ellpack | TBD | TBD | TBD |
+| machsuite-stencil2d | TBD | TBD | TBD |
+| machsuite-stencil3d | TBD | TBD | TBD |
+| rodinia-knn-0-baseline | TBD | TBD | TBD |
+| rodinia-knn-1-tiling | TBD | TBD | TBD |
+| rodinia_pathfinder_0_baseline_0 | TBD | TBD | TBD |
+| **ALL (median)** | **TBD** | **TBD** | **TBD** |
 
 ## Notes on reading the results
 
